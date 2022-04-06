@@ -25,6 +25,8 @@ public class WriteLatencyClass implements globales{
                 if (atrCons[i].equals(WriteLatencyAtributes[j].getName())) {
                     atributs += j;
                     atributs += ",";
+                    attrNames[16] += WriteLatencyAtributes[j].getName();
+                    attrNames[16] += ",";
                 }
             }
         }
@@ -40,6 +42,21 @@ public class WriteLatencyClass implements globales{
         }
         System.out.println("---------------------------------");
 
+        //------------------------------------
+
+        String[] attrSeparats = AtrConsultar.split(",");
+        String[] nameAttrSeparats = globales.attrNames[16].split(",");
+
+        for (int j = 0; j < attrSeparats.length; j++) {
+
+            String a = "";
+            a += MC.getAttribute(urlWriteLatency, nameAttrSeparats[j]);
+            globales.dcd[16][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[16][j]));
+            qtyVal[16][j]++;
+        }
     }
 
+    public String getValActualWL(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
+        return String.valueOf(MC.getAttribute(urlWriteLatency,AtrCons));
+    }
 }

@@ -24,6 +24,8 @@ public class TotalDiskSpaceUsedClass implements globales{
                 if (atrCons[i].equals(TotalDiskSpaceUsedAtributes[j].getName())) {
                     atributs += j;
                     atributs += ",";
+                    attrNames[15] += TotalDiskSpaceUsedAtributes[j].getName();
+                    attrNames[15] += ",";
                 }
             }
         }
@@ -39,6 +41,22 @@ public class TotalDiskSpaceUsedClass implements globales{
         }
         System.out.println("---------------------------------");
 
+        //------------------------------------
+
+        String[] attrSeparats = AtrConsultar.split(",");
+        String[] nameAttrSeparats = globales.attrNames[15].split(",");
+
+        for (int j = 0; j < attrSeparats.length; j++) {
+
+            String a = "";
+            a += MC.getAttribute(urlTotalDiskSpaceUsed, nameAttrSeparats[j]);
+            globales.dcd[15][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[15][j]));
+            qtyVal[15][j]++;
+        }
+    }
+
+    public String getValActualTDSU(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
+        return String.valueOf(MC.getAttribute(urlTotalDiskSpaceUsed,AtrCons));
     }
 
 }

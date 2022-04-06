@@ -24,6 +24,9 @@ public class RowCacheRequestsClass implements globales{
                 if (atrCons[i].equals(RowCacheRequestsAtributes[j].getName())) {
                     atributs += j;
                     atributs += ",";
+                    attrNames[14] += RowCacheRequestsAtributes[j].getName();
+                    attrNames[14] += ",";
+
                 }
             }
         }
@@ -39,6 +42,21 @@ public class RowCacheRequestsClass implements globales{
         }
         System.out.println("---------------------------------");
 
+        //------------------------------------
+
+        String[] attrSeparats = AtrConsultar.split(",");
+        String[] nameAttrSeparats = globales.attrNames[14].split(",");
+
+        for (int j = 0; j < attrSeparats.length; j++) {
+
+            String a = "";
+            a += MC.getAttribute(urlRowCacheRequests, nameAttrSeparats[j]);
+            globales.dcd[14][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[14][j]));
+            qtyVal[14][j]++;
+        }
     }
 
+    public String getValActualRCR(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
+        return String.valueOf(MC.getAttribute(urlRowCacheRequests,AtrCons));
+    }
 }

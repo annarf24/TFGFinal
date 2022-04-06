@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class InterfazGrafica extends JFrame{
     private JPanel mainPanel;
@@ -338,6 +339,92 @@ public class InterfazGrafica extends JFrame{
             i++;
         }
 
+        chooseButtonAMHS.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[0].split(",");
+                gNum[0] = comboBoxAMHS.getSelectedIndex();
+                GraficaAMHS.removeAll();
+
+                jchart[0][gNum[0]] = ChartFactory.createLineChart("Grafica " + gNum[0], "Cantidad de datos","Total Sales",
+                        globales.dcd[0][Integer.parseInt(IndexAttr[gNum[0]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[0][gNum[0]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaAMHS.setLayout(new BorderLayout());
+                GraficaAMHS.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+
+            }
+        });
+
+        chooseButtonCT.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[1].split(",");
+                gNum[1] = comboBoxCT.getSelectedIndex();
+                GraficaCT.removeAll();
+
+                jchart[1][gNum[1]] = ChartFactory.createLineChart("Grafica " + gNum[1], "Cantidad de datos","Total Sales",
+                        globales.dcd[1][Integer.parseInt(IndexAttr[gNum[1]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[1][gNum[1]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaCT.setLayout(new BorderLayout());
+                GraficaCT.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+            }
+        });
+
+        chooseButtonE.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[2].split(",");
+                gNum[2] = comboBoxE.getSelectedIndex();
+                GraficaE.removeAll();
+
+                jchart[2][gNum[2]] = ChartFactory.createLineChart("Grafica " + gNum[2], "Cantidad de datos","Total Sales",
+                        globales.dcd[2][Integer.parseInt(IndexAttr[gNum[2]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[2][gNum[2]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaE.setLayout(new BorderLayout());
+                GraficaE.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+            }
+        });
+
+        chooseButtonKCHR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[3].split(",");
+                gNum[3] = comboBoxKCHR.getSelectedIndex();
+                GraficaKCHR.removeAll();
+
+                jchart[3][gNum[3]] = ChartFactory.createLineChart("Grafica " + gNum[3], "Cantidad de datos","Total Sales",
+                        globales.dcd[3][Integer.parseInt(IndexAttr[gNum[3]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[3][gNum[3]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaKCHR.setLayout(new BorderLayout());
+                GraficaKCHR.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+
+            }
+        });
+
         chooseButtonKCH.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -359,25 +446,327 @@ public class InterfazGrafica extends JFrame{
             }
         });
 
-        chooseButtonAMHS.addActionListener(new ActionListener() {
+        chooseButtonKCM.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String[] IndexAttr = globales.attr[0].split(",");
-                gNum[0] = comboBoxAMHS.getSelectedIndex();
-                GraficaAMHS.removeAll();
+                String[] IndexAttr = globales.attr[5].split(",");
+                gNum[5] = comboBoxKCM.getSelectedIndex();
+                GraficaKCM.removeAll();
+                if(globales.ValAct[5][gNum[5]].contains("E")) {
+                    String[] partes = globales.ValAct[5][gNum[5]].split("E");
+                    jchart[5][gNum[5]] = ChartFactory.createLineChart("Parametre KeyCacheMises", "Cantidad de datos", "Valor Atributo (E" + partes[1] + ")",
+                            globales.dcd[5][Integer.parseInt(IndexAttr[gNum[5]])]);
+                }
+                else {
+                    jchart[5][gNum[5]] = ChartFactory.createLineChart("Parametre KeyCacheMises", "Cantidad de datos","Valor Atributo",
+                            globales.dcd[5][Integer.parseInt(IndexAttr[gNum[5]])]);
+                }
 
-                jchart[0][gNum[0]] = ChartFactory.createLineChart("Grafica " + gNum[0], "Cantidad de datos","Total Sales",
-                        globales.dcd[0][Integer.parseInt(IndexAttr[gNum[4]])]);
-
-                ChartPanel cPanel = new ChartPanel(jchart[0][gNum[0]]);
+                ChartPanel cPanel = new ChartPanel(jchart[5][gNum[5]]);
                 cPanel.setMouseWheelEnabled(true);
                 cPanel.setPreferredSize(new Dimension(500,400));
 
-                GraficaAMHS.setLayout(new BorderLayout());
-                GraficaAMHS.add(cPanel, BorderLayout.NORTH);
+                GraficaKCM.setLayout(new BorderLayout());
+                GraficaKCM.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+            }
+        });
+
+        chooseButtonKCR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[6].split(",");
+                gNum[6] = comboBoxKCR.getSelectedIndex();
+                GraficaKCR.removeAll();
+
+                jchart[6][gNum[6]] = ChartFactory.createLineChart("Grafica " + gNum[6], "Cantidad de datos","Total Sales",
+                        globales.dcd[6][Integer.parseInt(IndexAttr[gNum[6]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[6][gNum[6]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaKCR.setLayout(new BorderLayout());
+                GraficaKCR.add(cPanel, BorderLayout.NORTH);
                 pack();
                 repaint();
 
+            }
+        });
+
+        chooseButtonRL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[7].split(",");
+                gNum[7] = comboBoxRL.getSelectedIndex();
+                GraficaRL.removeAll();
+
+                jchart[7][gNum[7]] = ChartFactory.createLineChart("Grafica " + gNum[7], "Cantidad de datos","Total Sales",
+                        globales.dcd[7][Integer.parseInt(IndexAttr[gNum[7]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[7][gNum[7]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaRL.setLayout(new BorderLayout());
+                GraficaRL.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+
+            }
+        });
+
+        chooseButtonRTO.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[8].split(",");
+                gNum[8] = comboBoxRTO.getSelectedIndex();
+                GraficaRTO.removeAll();
+
+                jchart[8][gNum[8]] = ChartFactory.createLineChart("Grafica " + gNum[8], "Cantidad de datos","Total Sales",
+                        globales.dcd[8][Integer.parseInt(IndexAttr[gNum[8]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[8][gNum[8]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaRTO.setLayout(new BorderLayout());
+                GraficaRTO.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+
+            }
+        });
+
+        chooseButtonRTL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[9].split(",");
+                gNum[9] = comboBoxRTL.getSelectedIndex();
+                GraficaRTL.removeAll();
+
+                jchart[9][gNum[9]] = ChartFactory.createLineChart("Grafica " + gNum[9], "Cantidad de datos","Total Sales",
+                        globales.dcd[9][Integer.parseInt(IndexAttr[gNum[9]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[9][gNum[9]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaRTL.setLayout(new BorderLayout());
+                GraficaRTL.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+            }
+        });
+
+        chooseButtonRU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[10].split(",");
+                gNum[10] = comboBoxRU.getSelectedIndex();
+                GraficaRU.removeAll();
+
+                jchart[10][gNum[10]] = ChartFactory.createLineChart("Grafica " + gNum[10], "Cantidad de datos","Total Sales",
+                        globales.dcd[10][Integer.parseInt(IndexAttr[gNum[10]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[10][gNum[10]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaRU.setLayout(new BorderLayout());
+                GraficaRU.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+            }
+        });
+
+        chooseButtonRCHR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[11].split(",");
+                gNum[11] = comboBoxRCHR.getSelectedIndex();
+                GraficaRCHR.removeAll();
+
+                jchart[11][gNum[11]] = ChartFactory.createLineChart("Grafica " + gNum[11], "Cantidad de datos","Total Sales",
+                        globales.dcd[11][Integer.parseInt(IndexAttr[gNum[11]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[11][gNum[11]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaRCHR.setLayout(new BorderLayout());
+                GraficaRCHR.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+            }
+        });
+
+        chooseButtonRCH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[12].split(",");
+                gNum[12] = comboBoxRCH.getSelectedIndex();
+                GraficaRCH.removeAll();
+
+                jchart[12][gNum[12]] = ChartFactory.createLineChart("Grafica " + gNum[12], "Cantidad de datos","Total Sales",
+                        globales.dcd[12][Integer.parseInt(IndexAttr[gNum[12]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[12][gNum[12]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaRCH.setLayout(new BorderLayout());
+                GraficaRCH.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+            }
+        });
+
+        chooseButtonRCM.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[13].split(",");
+                gNum[13] = comboBoxRCM.getSelectedIndex();
+                GraficaRCM.removeAll();
+
+                jchart[13][gNum[13]] = ChartFactory.createLineChart("Grafica " + gNum[13], "Cantidad de datos","Total Sales",
+                        globales.dcd[13][Integer.parseInt(IndexAttr[gNum[13]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[13][gNum[13]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaRCM.setLayout(new BorderLayout());
+                GraficaRCM.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+            }
+        });
+
+        chooseButtonRCR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[14].split(",");
+                gNum[14] = comboBoxRCR.getSelectedIndex();
+                GraficaRCR.removeAll();
+
+                jchart[14][gNum[14]] = ChartFactory.createLineChart("Grafica " + gNum[14], "Cantidad de datos","Total Sales",
+                        globales.dcd[14][Integer.parseInt(IndexAttr[gNum[14]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[14][gNum[14]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaRCR.setLayout(new BorderLayout());
+                GraficaRCR.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+
+            }
+        });
+        chooseButtonTDSU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[15].split(",");
+                gNum[15] = comboBoxTDSU.getSelectedIndex();
+                GraficaTDSU.removeAll();
+
+                jchart[15][gNum[15]] = ChartFactory.createLineChart("Grafica " + gNum[15], "Cantidad de datos","Total Sales",
+                        globales.dcd[15][Integer.parseInt(IndexAttr[gNum[15]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[15][gNum[15]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaTDSU.setLayout(new BorderLayout());
+                GraficaTDSU.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+            }
+        });
+
+        chooseButtonWL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[16].split(",");
+                gNum[16] = comboBoxWL.getSelectedIndex();
+                GraficaWL.removeAll();
+
+                jchart[16][gNum[16]] = ChartFactory.createLineChart("Grafica " + gNum[16], "Cantidad de datos","Total Sales",
+                        globales.dcd[16][Integer.parseInt(IndexAttr[gNum[16]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[16][gNum[16]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaWL.setLayout(new BorderLayout());
+                GraficaWL.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+            }
+        });
+
+        chooseButtonWTO.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[17].split(",");
+                gNum[17] = comboBoxWTO.getSelectedIndex();
+                GraficaWTO.removeAll();
+
+                jchart[17][gNum[17]] = ChartFactory.createLineChart("Grafica " + gNum[17], "Cantidad de datos","Total Sales",
+                        globales.dcd[17][Integer.parseInt(IndexAttr[gNum[17]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[17][gNum[17]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaWTO.setLayout(new BorderLayout());
+                GraficaWTO.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+            }
+        });
+
+        chooseButtonWTL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[18].split(",");
+                gNum[18] = comboBoxWTL.getSelectedIndex();
+                GraficaWTL.removeAll();
+
+                jchart[18][gNum[18]] = ChartFactory.createLineChart("Grafica " + gNum[18], "Cantidad de datos","Total Sales",
+                        globales.dcd[18][Integer.parseInt(IndexAttr[gNum[18]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[18][gNum[18]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaWTL.setLayout(new BorderLayout());
+                GraficaWTL.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
+            }
+        });
+
+        chooseButtonWU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[19].split(",");
+                gNum[19] = comboBoxWU.getSelectedIndex();
+                GraficaWU.removeAll();
+
+                jchart[19][gNum[19]] = ChartFactory.createLineChart("Grafica " + gNum[19], "Cantidad de datos","Total Sales",
+                        globales.dcd[19][Integer.parseInt(IndexAttr[gNum[19]])]);
+
+                ChartPanel cPanel = new ChartPanel(jchart[19][gNum[19]]);
+                cPanel.setMouseWheelEnabled(true);
+                cPanel.setPreferredSize(new Dimension(500,400));
+
+                GraficaWU.setLayout(new BorderLayout());
+                GraficaWU.add(cPanel, BorderLayout.NORTH);
+                pack();
+                repaint();
             }
         });
     }

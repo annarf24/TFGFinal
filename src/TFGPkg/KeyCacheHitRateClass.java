@@ -24,6 +24,8 @@ public class KeyCacheHitRateClass implements globales {
                 if (atrCons[i].equals(KeyCacheHitRateAtributes[j].getName())) {
                     atributs += j;
                     atributs += ",";
+                    attrNames[3] += KeyCacheHitRateAtributes[j].getName();
+                    attrNames[3] += ",";
                 }
             }
         }
@@ -39,7 +41,22 @@ public class KeyCacheHitRateClass implements globales {
         }
         System.out.println("---------------------------------");
 
+        //------------------------------------
+
+        String[] attrSeparats = AtrConsultar.split(",");
+        String[] nameAttrSeparats = globales.attrNames[3].split(",");
+
+        for (int j = 0; j < attrSeparats.length; j++) {
+
+            String a = "";
+            a += MC.getAttribute(urlKeyCacheHitRate, nameAttrSeparats[j]);
+            globales.dcd[3][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[3][j]));
+            qtyVal[3][j]++;
+        }
     }
 
+    public String getValActualKCHR(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
+        return String.valueOf(MC.getAttribute(urlKeyCacheHitRate,AtrCons));
+    }
 }
 

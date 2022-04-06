@@ -24,6 +24,8 @@ public class CompletedTasksClass implements globales{
                 if (atrCons[i].equals(CompletedTasksAtributes[j].getName())) {
                     atributs += j;
                     atributs += ",";
+                    attrNames[1] += CompletedTasksAtributes[j].getName();
+                    attrNames[1] += ",";
                 }
             }
         }
@@ -39,6 +41,22 @@ public class CompletedTasksClass implements globales{
         }
         System.out.println("---------------------------------");
 
+        //------------------------------------
+
+        String[] attrSeparats = AtrConsultar.split(",");
+        String[] nameAttrSeparats = globales.attrNames[1].split(",");
+
+        for (int j = 0; j < attrSeparats.length; j++) {
+
+            String a = "";
+            a += MC.getAttribute(urlCompletedTasks, nameAttrSeparats[j]);
+            globales.dcd[1][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[1][j]));
+            qtyVal[1][j]++;
+        }
+
     }
 
+    public String getValActualCT(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
+        return String.valueOf(MC.getAttribute(urlCompletedTasks,AtrCons));
+    }
 }

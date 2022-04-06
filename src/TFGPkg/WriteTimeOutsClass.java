@@ -24,6 +24,8 @@ public class WriteTimeOutsClass implements globales{
                 if (atrCons[i].equals(WriteTimeOutsAtributes[j].getName())) {
                     atributs += j;
                     atributs += ",";
+                    attrNames[17] += WriteTimeOutsAtributes[j].getName();
+                    attrNames[17] += ",";
                 }
             }
         }
@@ -39,5 +41,21 @@ public class WriteTimeOutsClass implements globales{
         }
         System.out.println("---------------------------------");
 
+        //------------------------------------
+
+        String[] attrSeparats = AtrConsultar.split(",");
+        String[] nameAttrSeparats = globales.attrNames[17].split(",");
+
+        for (int j = 0; j < attrSeparats.length; j++) {
+
+            String a = "";
+            a += MC.getAttribute(urlWriteTimeOuts, nameAttrSeparats[j]);
+            globales.dcd[17][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[17][j]));
+            qtyVal[17][j]++;
+        }
+    }
+
+    public String getValActualWTO(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
+        return String.valueOf(MC.getAttribute(urlWriteTimeOuts,AtrCons));
     }
 }

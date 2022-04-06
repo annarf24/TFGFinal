@@ -24,6 +24,8 @@ public class ReadUnavailablesClass implements globales{
                 if (atrCons[i].equals(ReadUnavailablesAtributes[j].getName())) {
                     atributs += j;
                     atributs += ",";
+                    attrNames[10] += ReadUnavailablesAtributes[j].getName();
+                    attrNames[10] += ",";
                 }
             }
         }
@@ -39,6 +41,22 @@ public class ReadUnavailablesClass implements globales{
         }
         System.out.println("---------------------------------");
 
+        //------------------------------------
+
+        String[] attrSeparats = AtrConsultar.split(",");
+        String[] nameAttrSeparats = globales.attrNames[10].split(",");
+
+        for (int j = 0; j < attrSeparats.length; j++) {
+
+            String a = "";
+            a += MC.getAttribute(urlReadUnavailables, nameAttrSeparats[j]);
+            globales.dcd[10][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[10][j]));
+            qtyVal[10][j]++;
+        }
+    }
+
+    public String getValActualRU(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
+        return String.valueOf(MC.getAttribute(urlReadUnavailables,AtrCons));
     }
 
 }

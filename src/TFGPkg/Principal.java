@@ -85,9 +85,31 @@ interface globales {
             {0,0,0,0,0,0}, //WriteUnavailabes
     };
 
-    }
+    String[][] ValAct = {{""}, //AllMemtablesHeapSize
+            {""}, //CompletedTasks
+            {""}, //Exceptions
+            {""}, //KeyCacheHitRate
+            {"", "", "", "", "", ""}, //KeyCacheHits
+            {"", "", "", "", "", ""}, //KeyCacheMisses
+            {"", "", "", "", "", ""}, //KeyCacheRequests
+            {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""}, //ReadLatency
+            {"", "", "", "", "", ""}, //ReadTimeouts
+            {""}, //ReadTotalLatency
+            {"", "", "", "", "", ""}, //ReadUnavailabes
+            {""}, //RowCahceHitRate
+            {"", "", "", "", "", ""}, //RowCacheHits
+            {"", "", "", "", "", ""}, //RowCacheMisses
+            {"", "", "", "", "", ""}, //RowCacheRequests
+            {""}, //TotalDiskSpaceUsed
+            {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""}, //WriteLatency
+            {"", "", "", "", "", ""}, //WriteTimeouts
+            {""}, //WriteTotalLatency
+            {"", "", "", "", "", ""}, //WriteUnavailabes
+    };
+}
 
 public class Principal extends JFrame implements globales{
+
 
     public static void main(String[] args) throws IOException, ReflectionException, MalformedObjectNameException, InstanceNotFoundException, IntrospectionException, AttributeNotFoundException, MBeanException, InterruptedException {
         //rellenar el array de tabs a eliminar de la GUI de false (iniciailzar)
@@ -269,18 +291,24 @@ public class Principal extends JFrame implements globales{
                     case 2:
                         CompletedTasksClass CT = new CompletedTasksClass(MC);
                         CT.consultaCompletedTasks(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(2);
+                        frame.actualitzaLabel(CT.getValActualCT(atrCons),2);
                         break;
 
                     //datos Exceptions
                     case 3:
                         ExceptionsClass E = new ExceptionsClass(MC);
                         E.consultaExceptions(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(3);
+                        frame.actualitzaLabel(E.getValActualE(atrCons),3);
                         break;
 
                     //datos KeyCacheHitRate
                     case 4:
                         KeyCacheHitRateClass KCHR = new KeyCacheHitRateClass(MC);
                         KCHR.consultaKeyCacheHitRate(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(4);
+                        frame.actualitzaLabel(KCHR.getValActualKCHR(atrCons),4);
                         break;
 
                     //datos KeyCacheHits
@@ -295,90 +323,120 @@ public class Principal extends JFrame implements globales{
                     case 6:
                         KeyCacheMissesClass KCM = new KeyCacheMissesClass(MC);
                         KCM.consultaKeyCacheMisses(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(6);
+                        frame.actualitzaLabel(KCM.getValActualKCM(atrCons),6);
                         break;
 
                     //datos KeyCacheRequests
                     case 7:
                         KeyCacheRequestsClass KCR = new KeyCacheRequestsClass(MC);
                         KCR.consultaKeyCacheRequests(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(7);
+                        frame.actualitzaLabel(KCR.getValActualKCR(atrCons),7);
                         break;
 
                     //datos ReadLatency
                     case 8:
                         ReadLatencyClass RL = new ReadLatencyClass(MC);
                         RL.consultaReadLatency(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(8);
+                        frame.actualitzaLabel(RL.getValActualRL(atrCons),8);
                         break;
 
                     //datos ReadTimeOuts
                     case 9:
                         ReadTimeOutsClass RTO = new ReadTimeOutsClass(MC);
                         RTO.consultaReadTimeOuts(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(9);
+                        frame.actualitzaLabel(RTO.getValActualRTO(atrCons),9);
                         break;
 
                     //datos ReadTotalLatency
                     case 10:
                         ReadTotalLatencyClass RTL = new ReadTotalLatencyClass(MC);
                         RTL.consultaReadTotalLatency(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(10);
+                        frame.actualitzaLabel(RTL.getValActualRTL(atrCons),10);
                         break;
 
                     //datos ReadUnavailables
                     case 11:
                         ReadUnavailablesClass RU = new ReadUnavailablesClass(MC);
                         RU.consultaReadUnavailables(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(11);
+                        frame.actualitzaLabel(RU.getValActualRU(atrCons),11);
                         break;
 
                     //datos RowCacheHitRate
                     case 12:
                         RowCacheHitRateClass RCHR = new RowCacheHitRateClass(MC);
                         RCHR.consultaRowCacheHitRate(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(12);
+                        frame.actualitzaLabel(RCHR.getValActualRCHR(atrCons),12);
                         break;
 
                     //datos RowCacheHits
                     case 13:
                         RowCacheHitsClass RCH = new RowCacheHitsClass(MC);
                         RCH.consultaRowCacheHits(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(13);
+                        frame.actualitzaLabel(RCH.getValActualRCH(atrCons),13);
                         break;
 
                     //datos RowCacheMisses
                     case 14:
                         RowCacheMissesClass RCM = new RowCacheMissesClass(MC);
                         RCM.consultaRowCacheMisses(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(14);
+                        frame.actualitzaLabel(RCM.getValActualRCM(atrCons),14);
                         break;
 
                     //datos RowCacheRequests
                     case 15:
                         RowCacheRequestsClass RCR = new RowCacheRequestsClass(MC);
                         RCR.consultaRowCacheRequests(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(15);
+                        frame.actualitzaLabel(RCR.getValActualRCR(atrCons),15);
                         break;
 
                     //datos TotalDiskSpaceUsed
                     case 16:
                         TotalDiskSpaceUsedClass TDSU = new TotalDiskSpaceUsedClass(MC);
                         TDSU.consultaTotalDiskSpaceUsed(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(16);
+                        frame.actualitzaLabel(TDSU.getValActualTDSU(atrCons),16);
                         break;
 
                     //datos WriteLatency
                     case 17:
                         WriteLatencyClass WL = new WriteLatencyClass(MC);
                         WL.consultaWriteLatency(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(17);
+                        frame.actualitzaLabel(WL.getValActualWL(atrCons),17);
                         break;
 
                     //datos WriteTimeOuts
                     case 18:
                         WriteTimeOutsClass WTO = new WriteTimeOutsClass(MC);
                         WTO.consultaWriteTimeOuts(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(18);
+                        frame.actualitzaLabel(WTO.getValActualWTO(atrCons),18);
                         break;
 
                     //datos WriteTotalLatency
                     case 19:
                         WriteTotalLatencyClass WTL = new WriteTotalLatencyClass(MC);
                         WTL.consultaWriteTotalLatency(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(19);
+                        frame.actualitzaLabel(WTL.getValActualWTL(atrCons),19);
                         break;
 
                     //datos WriteUnavailables
                     case 20:
                         WriteUnavailablesClass WU = new WriteUnavailablesClass(MC);
                         WU.consultaWriteUnavailables(globales.attr[opcion - 1]);
+                        atrCons = frame.getAtrConsultat(20);
+                        frame.actualitzaLabel(WU.getValActualWU(atrCons),20);
                         break;
 
                     default:

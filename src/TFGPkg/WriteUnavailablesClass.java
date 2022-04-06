@@ -24,6 +24,8 @@ public class WriteUnavailablesClass implements globales{
                 if (atrCons[i].equals(WriteUnavailablesAtributes[j].getName())) {
                     atributs += j;
                     atributs += ",";
+                    attrNames[19] += WriteUnavailablesAtributes[j].getName();
+                    attrNames[19] += ",";
                 }
             }
         }
@@ -39,6 +41,22 @@ public class WriteUnavailablesClass implements globales{
         }
         System.out.println("---------------------------------");
 
+        //------------------------------------
+
+        String[] attrSeparats = AtrConsultar.split(",");
+        String[] nameAttrSeparats = globales.attrNames[19].split(",");
+
+        for (int j = 0; j < attrSeparats.length; j++) {
+
+            String a = "";
+            a += MC.getAttribute(urlWriteUnavailables, nameAttrSeparats[j]);
+            globales.dcd[19][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[19][j]));
+            qtyVal[19][j]++;
+        }
+    }
+
+    public String getValActualWU(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
+        return String.valueOf(MC.getAttribute(urlWriteUnavailables,AtrCons));
     }
 }
 

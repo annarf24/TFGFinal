@@ -24,6 +24,8 @@ public class ReadTimeOutsClass implements globales{
                 if (atrCons[i].equals(ReadTimeOutsAtributes[j].getName())) {
                     atributs += j;
                     atributs += ",";
+                    attrNames[8] += ReadTimeOutsAtributes[j].getName();
+                    attrNames[8] += ",";
                 }
             }
         }
@@ -39,6 +41,21 @@ public class ReadTimeOutsClass implements globales{
         }
         System.out.println("---------------------------------");
 
+        //------------------------------------
+
+        String[] attrSeparats = AtrConsultar.split(",");
+        String[] nameAttrSeparats = globales.attrNames[8].split(",");
+
+        for (int j = 0; j < attrSeparats.length; j++) {
+
+            String a = "";
+            a += MC.getAttribute(urlReadTimeOuts, nameAttrSeparats[j]);
+            globales.dcd[8][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[8][j]));
+            qtyVal[8][j]++;
+        }
     }
 
+    public String getValActualRTO(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
+        return String.valueOf(MC.getAttribute(urlReadTimeOuts,AtrCons));
+    }
 }

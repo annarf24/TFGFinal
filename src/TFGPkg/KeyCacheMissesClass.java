@@ -24,7 +24,6 @@ public class KeyCacheMissesClass implements globales{
                 if (atrCons[i].equals(KeyCacheMissesAtributes[j].getName())) {
                     atributs += j;
                     atributs += ",";
-                    //--------
                     attrNames[5] += KeyCacheMissesAtributes[j].getName();
                     attrNames[5] += ",";
                 }
@@ -42,18 +41,23 @@ public class KeyCacheMissesClass implements globales{
         }
         System.out.println("---------------------------------");
 
-        //------------------
+        //------------------------------------
+
         String[] attrSeparats = AtrConsultar.split(",");
         String[] nameAttrSeparats = globales.attrNames[5].split(",");
 
         for (int j = 0; j < attrSeparats.length; j++) {
             String a = "";
             a += MC.getAttribute(urlKeyCacheMisses, nameAttrSeparats[j]);
-            globales.dcd[5][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[5][j]));
+            String[] partes = a.split("E");
+            globales.dcd[5][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[5][j]));
             qtyVal[5][j]++;
-            //valAct[4][Integer.parseInt(attr)] += MC.getAttribute(urlKeyCacheHits, KeyCacheHitsAtributes[Integer.parseInt(attr)].getName());
+            ValAct[5][j] = a;
         }
+    }
 
+    public String getValActualKCM(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
+        return String.valueOf(MC.getAttribute(urlKeyCacheMisses,AtrCons));
     }
 
 }

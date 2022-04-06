@@ -15,6 +15,7 @@ public class KeyCacheHitsClass implements globales{
         KeyCacheHitsAtributes = MBeanKeyCacheHits.getAttributes();
         MC = CM;
     }
+
     public String getAtributsKeyCacheHits(Parametro p) {
         String atributs = "";
         String[] atrCons = p.getAtributs();
@@ -28,11 +29,9 @@ public class KeyCacheHitsClass implements globales{
                 }
             }
         }
-
-
         return atributs;
-
     }
+
     public void consultaKeyCacheHits (String AtrConsultar) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
         System.out.println("parametro KeyCache Hits");
         String[] parts = AtrConsultar.split(",");
@@ -42,7 +41,7 @@ public class KeyCacheHitsClass implements globales{
         }
         System.out.println("---------------------------------");
 
-        //_-----------------------------------
+        //------------------------------------
 
         String[] attrSeparats = AtrConsultar.split(",");
         String[] nameAttrSeparats = globales.attrNames[4].split(",");
@@ -54,8 +53,8 @@ public class KeyCacheHitsClass implements globales{
             globales.dcd[4][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[4][j]));
             qtyVal[4][j]++;
         }
-
     }
+
     public String getValActualKCH(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
         return String.valueOf(MC.getAttribute(urlKeyCacheHits,AtrCons));
     }

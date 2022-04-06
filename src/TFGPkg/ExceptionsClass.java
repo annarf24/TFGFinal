@@ -24,6 +24,8 @@ public class ExceptionsClass implements globales{
                 if (atrCons[i].equals(ExceptionsAtributes[j].getName())) {
                     atributs += j;
                     atributs += ",";
+                    attrNames[2] += ExceptionsAtributes[j].getName();
+                    attrNames[2] += ",";
                 }
             }
         }
@@ -39,6 +41,22 @@ public class ExceptionsClass implements globales{
         }
         System.out.println("---------------------------------");
 
+        //------------------------------------
+
+        String[] attrSeparats = AtrConsultar.split(",");
+        String[] nameAttrSeparats = globales.attrNames[2].split(",");
+
+        for (int j = 0; j < attrSeparats.length; j++) {
+
+            String a = "";
+            a += MC.getAttribute(urlExceptions, nameAttrSeparats[j]);
+            globales.dcd[2][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[2][j]));
+            qtyVal[2][j]++;
+        }
+
+    }
+    public String getValActualE(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
+        return String.valueOf(MC.getAttribute(urlExceptions,AtrCons));
     }
 
 }

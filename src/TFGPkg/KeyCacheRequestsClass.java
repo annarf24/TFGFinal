@@ -24,6 +24,8 @@ public class KeyCacheRequestsClass implements globales{
                 if (atrCons[i].equals(KeyCacheRequestsAtributes[j].getName())) {
                     atributs += j;
                     atributs += ",";
+                    attrNames[6] += KeyCacheRequestsAtributes[j].getName();
+                    attrNames[6] += ",";
                 }
             }
         }
@@ -36,9 +38,25 @@ public class KeyCacheRequestsClass implements globales{
         for (String part : parts) {
             System.out.println(KeyCacheRequestsAtributes[Integer.parseInt(part)].getName() + " : "
                     + MC.getAttribute(urlKeyCacheRequests, KeyCacheRequestsAtributes[Integer.parseInt(part)].getName()));
-        }System.out.println("---------------------------------");
+        }
+        System.out.println("---------------------------------");
 
+        //------------------------------------
+
+        String[] attrSeparats = AtrConsultar.split(",");
+        String[] nameAttrSeparats = globales.attrNames[6].split(",");
+
+        for (int j = 0; j < attrSeparats.length; j++) {
+
+            String a = "";
+            a += MC.getAttribute(urlKeyCacheRequests, nameAttrSeparats[j]);
+            globales.dcd[6][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[6][j]));
+            qtyVal[6][j]++;
+        }
     }
 
+    public String getValActualKCR(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
+        return String.valueOf(MC.getAttribute(urlKeyCacheRequests,AtrCons));
+    }
 }
 

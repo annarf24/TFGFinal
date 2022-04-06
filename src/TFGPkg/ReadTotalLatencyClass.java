@@ -24,6 +24,8 @@ public class ReadTotalLatencyClass implements globales{
                 if (atrCons[i].equals(ReadTotalLatencyAtributes[j].getName())) {
                     atributs += j;
                     atributs += ",";
+                    attrNames[9] += ReadTotalLatencyAtributes[j].getName();
+                    attrNames[9] += ",";
                 }
             }
         }
@@ -39,6 +41,21 @@ public class ReadTotalLatencyClass implements globales{
         }
         System.out.println("---------------------------------");
 
+        //------------------------------------
+
+        String[] attrSeparats = AtrConsultar.split(",");
+        String[] nameAttrSeparats = globales.attrNames[9].split(",");
+
+        for (int j = 0; j < attrSeparats.length; j++) {
+
+            String a = "";
+            a += MC.getAttribute(urlReadTotalLatency, nameAttrSeparats[j]);
+            globales.dcd[9][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[9][j]));
+            qtyVal[9][j]++;
+        }
     }
 
+    public String getValActualRTL(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
+        return String.valueOf(MC.getAttribute(urlReadTotalLatency,AtrCons));
+    }
 }
