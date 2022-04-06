@@ -1,13 +1,14 @@
 package TFGPkg;
 
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
+import org.jfree.chart.*;
+import org.jfree.chart.entity.StandardEntityCollection;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.Objects;
 
 public class InterfazGrafica extends JFrame{
@@ -909,6 +910,19 @@ public class InterfazGrafica extends JFrame{
                 String[] IndexAttr = globales.attr[4].split(",");
                 globales.dcd[4][Integer.parseInt(IndexAttr[gNum[4]])].clear();
                 globales.qtyVal[4][gNum[4]] = 0;
+            }
+        });
+
+        SaveButtonKCH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngKCH.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[4][gNum[4]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
     }
