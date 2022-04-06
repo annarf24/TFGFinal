@@ -47,11 +47,12 @@ public class ReadTimeOutsClass implements globales{
         String[] nameAttrSeparats = globales.attrNames[8].split(",");
 
         for (int j = 0; j < attrSeparats.length; j++) {
-
             String a = "";
             a += MC.getAttribute(urlReadTimeOuts, nameAttrSeparats[j]);
-            globales.dcd[8][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[8][j]));
+            String[] partes = a.split("E");
+            globales.dcd[8][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[8][j]));
             qtyVal[8][j]++;
+            ValAct[8][j] = a;
         }
     }
 

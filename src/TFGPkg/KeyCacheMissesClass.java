@@ -59,5 +59,4 @@ public class KeyCacheMissesClass implements globales{
     public String getValActualKCM(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
         return String.valueOf(MC.getAttribute(urlKeyCacheMisses,AtrCons));
     }
-
 }

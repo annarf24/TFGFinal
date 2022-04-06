@@ -47,11 +47,12 @@ public class WriteUnavailablesClass implements globales{
         String[] nameAttrSeparats = globales.attrNames[19].split(",");
 
         for (int j = 0; j < attrSeparats.length; j++) {
-
             String a = "";
             a += MC.getAttribute(urlWriteUnavailables, nameAttrSeparats[j]);
-            globales.dcd[19][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[19][j]));
+            String[] partes = a.split("E");
+            globales.dcd[19][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[19][j]));
             qtyVal[19][j]++;
+            ValAct[19][j] = a;
         }
     }
 

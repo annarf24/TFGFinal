@@ -56,25 +56,27 @@ parametros:
     #- MeanRate
     #- OneMinuteRate
 
-  #- name: ReadLatency
-    #num: 8
-    #atributs:
-    #- 50thPercentile
-    #- 75thPercentile
-    #- 95thPercentile
-    #- 98thPercentile
-    #- 999thPercentile
-    #- 99thPercentile
-    #- Count
-    #- FifteenMinuteRate
-    #- FiveMinuteRate
-    #- Max
-    #- Mean
+  - name: ReadLatency
+    num: 8
+    atributs:
+    - 50thPercentile
+    - 75thPercentile
+    - 95thPercentile
+    - 98thPercentile
+    - 999thPercentile
+    - 99thPercentile
+    - Count
+    #- DurationUnit
+    - FifteenMinuteRate
+    - FiveMinuteRate
+    - Max
+    - Mean
     #- MeanRate
-    #- Min
-    #- OneMinuteRate
+    - Min
+    - OneMinuteRate
+    #- RateUnit
     #- RecentValues
-    #- StdDev
+    - StdDev
 
   #- name: ReadTimeOuts
     #num: 9

@@ -60,8 +60,10 @@ public class AllMemtablesHeapSizeClass implements globales {
 
             String a = "";
             a += MC.getAttribute(urlAllMemtablesHeapSize, nameAttrSeparats[j]);
-            globales.dcd[0][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[0][j]));
+            String[] partes = a.split("E");
+            globales.dcd[0][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[0][j]));
             qtyVal[0][j]++;
+            ValAct[0][j] = a;
         }
     }
     public String getValActualAMHS(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {

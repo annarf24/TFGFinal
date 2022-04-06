@@ -50,8 +50,10 @@ public class RowCacheHitRateClass implements globales{
 
             String a = "";
             a += MC.getAttribute(urlRowCacheHitRate, nameAttrSeparats[j]);
-            globales.dcd[11][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[11][j]));
+            String[] partes = a.split("E");
+            globales.dcd[11][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[11][j]));
             qtyVal[11][j]++;
+            ValAct[11][j] = a;
         }
     }
 

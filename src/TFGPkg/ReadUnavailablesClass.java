@@ -50,8 +50,10 @@ public class ReadUnavailablesClass implements globales{
 
             String a = "";
             a += MC.getAttribute(urlReadUnavailables, nameAttrSeparats[j]);
-            globales.dcd[10][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[10][j]));
+            String[] partes = a.split("E");
+            globales.dcd[10][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[10][j]));
             qtyVal[10][j]++;
+            ValAct[10][j] = a;
         }
     }
 

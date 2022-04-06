@@ -346,8 +346,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[0] = comboBoxAMHS.getSelectedIndex();
                 GraficaAMHS.removeAll();
 
-                jchart[0][gNum[0]] = ChartFactory.createLineChart("Grafica " + gNum[0], "Cantidad de datos","Total Sales",
-                        globales.dcd[0][Integer.parseInt(IndexAttr[gNum[0]])]);
+                if(globales.ValAct[0][gNum[0]].contains("E")) {
+                    String[] partes = globales.ValAct[0][gNum[0]].split("E");
+                    jchart[0][gNum[0]] = ChartFactory.createLineChart("Parametro AllMemtablesHeapSize", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[0][Integer.parseInt(IndexAttr[gNum[0]])]);
+                }
+                else {
+                    jchart[0][gNum[0]] = ChartFactory.createLineChart("Parametro AllMemtablesHeapSize", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[0][Integer.parseInt(IndexAttr[gNum[0]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[0][gNum[0]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -368,8 +375,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[1] = comboBoxCT.getSelectedIndex();
                 GraficaCT.removeAll();
 
-                jchart[1][gNum[1]] = ChartFactory.createLineChart("Grafica " + gNum[1], "Cantidad de datos","Total Sales",
-                        globales.dcd[1][Integer.parseInt(IndexAttr[gNum[1]])]);
+                if(globales.ValAct[1][gNum[1]].contains("E")) {
+                    String[] partes = globales.ValAct[1][gNum[1]].split("E");
+                    jchart[1][gNum[1]] = ChartFactory.createLineChart("Parametro CompetedTasks", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[1][Integer.parseInt(IndexAttr[gNum[1]])]);
+                }
+                else {
+                    jchart[1][gNum[1]] = ChartFactory.createLineChart("Parametro CompletedTasks", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[1][Integer.parseInt(IndexAttr[gNum[1]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[1][gNum[1]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -389,8 +403,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[2] = comboBoxE.getSelectedIndex();
                 GraficaE.removeAll();
 
-                jchart[2][gNum[2]] = ChartFactory.createLineChart("Grafica " + gNum[2], "Cantidad de datos","Total Sales",
-                        globales.dcd[2][Integer.parseInt(IndexAttr[gNum[2]])]);
+                if(globales.ValAct[2][gNum[2]].contains("E")) {
+                    String[] partes = globales.ValAct[2][gNum[2]].split("E");
+                    jchart[2][gNum[2]] = ChartFactory.createLineChart("Parametro Exceptions", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[2][Integer.parseInt(IndexAttr[gNum[2]])]);
+                }
+                else {
+                    jchart[2][gNum[2]] = ChartFactory.createLineChart("Parametro Exceptions", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[2][Integer.parseInt(IndexAttr[gNum[2]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[2][gNum[2]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -410,8 +431,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[3] = comboBoxKCHR.getSelectedIndex();
                 GraficaKCHR.removeAll();
 
-                jchart[3][gNum[3]] = ChartFactory.createLineChart("Grafica " + gNum[3], "Cantidad de datos","Total Sales",
-                        globales.dcd[3][Integer.parseInt(IndexAttr[gNum[3]])]);
+                if(globales.ValAct[3][gNum[3]].contains("E")) {
+                    String[] partes = globales.ValAct[3][gNum[3]].split("E");
+                    jchart[3][gNum[3]] = ChartFactory.createLineChart("Parametro KeyCacheHitRate", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[3][Integer.parseInt(IndexAttr[gNum[3]])]);
+                }
+                else {
+                    jchart[3][gNum[3]] = ChartFactory.createLineChart("Parametro KeyCacheHitRate", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[3][Integer.parseInt(IndexAttr[gNum[3]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[3][gNum[3]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -432,8 +460,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[4] = comboBoxKCH.getSelectedIndex();
                 GraficaKCH.removeAll();
 
-                jchart[4][gNum[4]] = ChartFactory.createLineChart("Grafica " + gNum[4], "Cantidad de datos","Total Sales",
-                        globales.dcd[4][Integer.parseInt(IndexAttr[gNum[4]])]);
+                if(globales.ValAct[4][gNum[4]].contains("E")) {
+                    String[] partes = globales.ValAct[4][gNum[4]].split("E");
+                    jchart[4][gNum[4]] = ChartFactory.createLineChart("Parametro KeyCacheHits", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[4][Integer.parseInt(IndexAttr[gNum[4]])]);
+                }
+                else {
+                    jchart[4][gNum[4]] = ChartFactory.createLineChart("Parametro KeyCacheHits", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[4][Integer.parseInt(IndexAttr[gNum[4]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[4][gNum[4]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -454,11 +489,11 @@ public class InterfazGrafica extends JFrame{
                 GraficaKCM.removeAll();
                 if(globales.ValAct[5][gNum[5]].contains("E")) {
                     String[] partes = globales.ValAct[5][gNum[5]].split("E");
-                    jchart[5][gNum[5]] = ChartFactory.createLineChart("Parametre KeyCacheMises", "Cantidad de datos", "Valor Atributo (E" + partes[1] + ")",
+                    jchart[5][gNum[5]] = ChartFactory.createLineChart("Parametro KeyCacheMisses", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
                             globales.dcd[5][Integer.parseInt(IndexAttr[gNum[5]])]);
                 }
                 else {
-                    jchart[5][gNum[5]] = ChartFactory.createLineChart("Parametre KeyCacheMises", "Cantidad de datos","Valor Atributo",
+                    jchart[5][gNum[5]] = ChartFactory.createLineChart("Parametro KeyCacheMisses", "Cantidad de datos recogidos","Valor del atributo",
                             globales.dcd[5][Integer.parseInt(IndexAttr[gNum[5]])]);
                 }
 
@@ -480,8 +515,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[6] = comboBoxKCR.getSelectedIndex();
                 GraficaKCR.removeAll();
 
-                jchart[6][gNum[6]] = ChartFactory.createLineChart("Grafica " + gNum[6], "Cantidad de datos","Total Sales",
-                        globales.dcd[6][Integer.parseInt(IndexAttr[gNum[6]])]);
+                if(globales.ValAct[6][gNum[6]].contains("E")) {
+                    String[] partes = globales.ValAct[6][gNum[6]].split("E");
+                    jchart[6][gNum[6]] = ChartFactory.createLineChart("Parametro KeyCacheRequests", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[6][Integer.parseInt(IndexAttr[gNum[6]])]);
+                }
+                else {
+                    jchart[6][gNum[6]] = ChartFactory.createLineChart("Parametro KeyCacheRequests", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[6][Integer.parseInt(IndexAttr[gNum[6]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[6][gNum[6]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -502,8 +544,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[7] = comboBoxRL.getSelectedIndex();
                 GraficaRL.removeAll();
 
-                jchart[7][gNum[7]] = ChartFactory.createLineChart("Grafica " + gNum[7], "Cantidad de datos","Total Sales",
-                        globales.dcd[7][Integer.parseInt(IndexAttr[gNum[7]])]);
+                if(globales.ValAct[7][gNum[7]].contains("E")) {
+                    String[] partes = globales.ValAct[7][gNum[7]].split("E");
+                    jchart[7][gNum[7]] = ChartFactory.createLineChart("Parametro ReadLatency", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[7][Integer.parseInt(IndexAttr[gNum[7]])]);
+                }
+                else {
+                    jchart[7][gNum[7]] = ChartFactory.createLineChart("Parametro ReadLatency", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[7][Integer.parseInt(IndexAttr[gNum[7]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[7][gNum[7]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -524,8 +573,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[8] = comboBoxRTO.getSelectedIndex();
                 GraficaRTO.removeAll();
 
-                jchart[8][gNum[8]] = ChartFactory.createLineChart("Grafica " + gNum[8], "Cantidad de datos","Total Sales",
-                        globales.dcd[8][Integer.parseInt(IndexAttr[gNum[8]])]);
+                if(globales.ValAct[8][gNum[8]].contains("E")) {
+                    String[] partes = globales.ValAct[8][gNum[8]].split("E");
+                    jchart[8][gNum[8]] = ChartFactory.createLineChart("Parametro ReadTimeOuts", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[6][Integer.parseInt(IndexAttr[gNum[8]])]);
+                }
+                else {
+                    jchart[8][gNum[8]] = ChartFactory.createLineChart("Parametro ReadTimeOuts", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[8][Integer.parseInt(IndexAttr[gNum[8]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[8][gNum[8]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -546,8 +602,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[9] = comboBoxRTL.getSelectedIndex();
                 GraficaRTL.removeAll();
 
-                jchart[9][gNum[9]] = ChartFactory.createLineChart("Grafica " + gNum[9], "Cantidad de datos","Total Sales",
-                        globales.dcd[9][Integer.parseInt(IndexAttr[gNum[9]])]);
+                if(globales.ValAct[9][gNum[9]].contains("E")) {
+                    String[] partes = globales.ValAct[9][gNum[9]].split("E");
+                    jchart[9][gNum[9]] = ChartFactory.createLineChart("Parametro ReadTotalLatency", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[9][Integer.parseInt(IndexAttr[gNum[9]])]);
+                }
+                else {
+                    jchart[9][gNum[9]] = ChartFactory.createLineChart("Parametro ReadTotalLatency", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[9][Integer.parseInt(IndexAttr[gNum[9]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[9][gNum[9]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -567,8 +630,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[10] = comboBoxRU.getSelectedIndex();
                 GraficaRU.removeAll();
 
-                jchart[10][gNum[10]] = ChartFactory.createLineChart("Grafica " + gNum[10], "Cantidad de datos","Total Sales",
-                        globales.dcd[10][Integer.parseInt(IndexAttr[gNum[10]])]);
+                if(globales.ValAct[10][gNum[10]].contains("E")) {
+                    String[] partes = globales.ValAct[10][gNum[10]].split("E");
+                    jchart[10][gNum[10]] = ChartFactory.createLineChart("Parametro ReadUnavailables", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[10][Integer.parseInt(IndexAttr[gNum[10]])]);
+                }
+                else {
+                    jchart[10][gNum[10]] = ChartFactory.createLineChart("Parametro ReadUnavailables", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[10][Integer.parseInt(IndexAttr[gNum[10]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[10][gNum[10]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -588,8 +658,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[11] = comboBoxRCHR.getSelectedIndex();
                 GraficaRCHR.removeAll();
 
-                jchart[11][gNum[11]] = ChartFactory.createLineChart("Grafica " + gNum[11], "Cantidad de datos","Total Sales",
-                        globales.dcd[11][Integer.parseInt(IndexAttr[gNum[11]])]);
+                if(globales.ValAct[11][gNum[11]].contains("E")) {
+                    String[] partes = globales.ValAct[11][gNum[11]].split("E");
+                    jchart[11][gNum[11]] = ChartFactory.createLineChart("Parametro RowCacheHitRate", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[11][Integer.parseInt(IndexAttr[gNum[11]])]);
+                }
+                else {
+                    jchart[11][gNum[11]] = ChartFactory.createLineChart("Parametro RowCacheHitRate", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[11][Integer.parseInt(IndexAttr[gNum[11]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[11][gNum[11]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -609,8 +686,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[12] = comboBoxRCH.getSelectedIndex();
                 GraficaRCH.removeAll();
 
-                jchart[12][gNum[12]] = ChartFactory.createLineChart("Grafica " + gNum[12], "Cantidad de datos","Total Sales",
-                        globales.dcd[12][Integer.parseInt(IndexAttr[gNum[12]])]);
+                if(globales.ValAct[12][gNum[12]].contains("E")) {
+                    String[] partes = globales.ValAct[12][gNum[12]].split("E");
+                    jchart[12][gNum[12]] = ChartFactory.createLineChart("Parametro RowCacheHits", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[12][Integer.parseInt(IndexAttr[gNum[12]])]);
+                }
+                else {
+                    jchart[12][gNum[12]] = ChartFactory.createLineChart("Parametro RowCacheHits", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[12][Integer.parseInt(IndexAttr[gNum[12]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[12][gNum[12]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -630,8 +714,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[13] = comboBoxRCM.getSelectedIndex();
                 GraficaRCM.removeAll();
 
-                jchart[13][gNum[13]] = ChartFactory.createLineChart("Grafica " + gNum[13], "Cantidad de datos","Total Sales",
-                        globales.dcd[13][Integer.parseInt(IndexAttr[gNum[13]])]);
+                if(globales.ValAct[13][gNum[13]].contains("E")) {
+                    String[] partes = globales.ValAct[13][gNum[13]].split("E");
+                    jchart[13][gNum[13]] = ChartFactory.createLineChart("Parametro RowCacheMisses", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[13][Integer.parseInt(IndexAttr[gNum[13]])]);
+                }
+                else {
+                    jchart[13][gNum[13]] = ChartFactory.createLineChart("Parametro RowCacheMisses", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[13][Integer.parseInt(IndexAttr[gNum[13]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[13][gNum[13]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -651,8 +742,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[14] = comboBoxRCR.getSelectedIndex();
                 GraficaRCR.removeAll();
 
-                jchart[14][gNum[14]] = ChartFactory.createLineChart("Grafica " + gNum[14], "Cantidad de datos","Total Sales",
-                        globales.dcd[14][Integer.parseInt(IndexAttr[gNum[14]])]);
+                if(globales.ValAct[14][gNum[14]].contains("E")) {
+                    String[] partes = globales.ValAct[14][gNum[14]].split("E");
+                    jchart[14][gNum[14]] = ChartFactory.createLineChart("Parametro RowCacheRequests", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[14][Integer.parseInt(IndexAttr[gNum[14]])]);
+                }
+                else {
+                    jchart[14][gNum[14]] = ChartFactory.createLineChart("Parametro RowCacheRequests", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[14][Integer.parseInt(IndexAttr[gNum[14]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[14][gNum[14]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -672,8 +770,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[15] = comboBoxTDSU.getSelectedIndex();
                 GraficaTDSU.removeAll();
 
-                jchart[15][gNum[15]] = ChartFactory.createLineChart("Grafica " + gNum[15], "Cantidad de datos","Total Sales",
-                        globales.dcd[15][Integer.parseInt(IndexAttr[gNum[15]])]);
+                if(globales.ValAct[15][gNum[15]].contains("E")) {
+                    String[] partes = globales.ValAct[15][gNum[15]].split("E");
+                    jchart[15][gNum[15]] = ChartFactory.createLineChart("Parametro TotalDiskSpaceUsed", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[15][Integer.parseInt(IndexAttr[gNum[15]])]);
+                }
+                else {
+                    jchart[15][gNum[15]] = ChartFactory.createLineChart("Parametro TotalDiskSpaceUsed", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[15][Integer.parseInt(IndexAttr[gNum[15]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[15][gNum[15]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -693,8 +798,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[16] = comboBoxWL.getSelectedIndex();
                 GraficaWL.removeAll();
 
-                jchart[16][gNum[16]] = ChartFactory.createLineChart("Grafica " + gNum[16], "Cantidad de datos","Total Sales",
-                        globales.dcd[16][Integer.parseInt(IndexAttr[gNum[16]])]);
+                if(globales.ValAct[16][gNum[16]].contains("E")) {
+                    String[] partes = globales.ValAct[16][gNum[16]].split("E");
+                    jchart[16][gNum[16]] = ChartFactory.createLineChart("Parametro WriteLatency", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[16][Integer.parseInt(IndexAttr[gNum[16]])]);
+                }
+                else {
+                    jchart[16][gNum[16]] = ChartFactory.createLineChart("Parametro WriteLatency", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[16][Integer.parseInt(IndexAttr[gNum[16]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[16][gNum[16]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -714,8 +826,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[17] = comboBoxWTO.getSelectedIndex();
                 GraficaWTO.removeAll();
 
-                jchart[17][gNum[17]] = ChartFactory.createLineChart("Grafica " + gNum[17], "Cantidad de datos","Total Sales",
-                        globales.dcd[17][Integer.parseInt(IndexAttr[gNum[17]])]);
+                if(globales.ValAct[17][gNum[17]].contains("E")) {
+                    String[] partes = globales.ValAct[17][gNum[17]].split("E");
+                    jchart[17][gNum[17]] = ChartFactory.createLineChart("Parametro WriteTimeOuts", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[17][Integer.parseInt(IndexAttr[gNum[17]])]);
+                }
+                else {
+                    jchart[17][gNum[17]] = ChartFactory.createLineChart("Parametro WriteTimeOuts", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[17][Integer.parseInt(IndexAttr[gNum[17]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[17][gNum[17]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -735,8 +854,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[18] = comboBoxWTL.getSelectedIndex();
                 GraficaWTL.removeAll();
 
-                jchart[18][gNum[18]] = ChartFactory.createLineChart("Grafica " + gNum[18], "Cantidad de datos","Total Sales",
-                        globales.dcd[18][Integer.parseInt(IndexAttr[gNum[18]])]);
+                if(globales.ValAct[18][gNum[18]].contains("E")) {
+                    String[] partes = globales.ValAct[18][gNum[18]].split("E");
+                    jchart[18][gNum[18]] = ChartFactory.createLineChart("Parametro WriteTotalLatency", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[18][Integer.parseInt(IndexAttr[gNum[18]])]);
+                }
+                else {
+                    jchart[18][gNum[18]] = ChartFactory.createLineChart("Parametro WriteTotalLatency", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[18][Integer.parseInt(IndexAttr[gNum[18]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[18][gNum[18]]);
                 cPanel.setMouseWheelEnabled(true);
@@ -756,8 +882,15 @@ public class InterfazGrafica extends JFrame{
                 gNum[19] = comboBoxWU.getSelectedIndex();
                 GraficaWU.removeAll();
 
-                jchart[19][gNum[19]] = ChartFactory.createLineChart("Grafica " + gNum[19], "Cantidad de datos","Total Sales",
-                        globales.dcd[19][Integer.parseInt(IndexAttr[gNum[19]])]);
+                if(globales.ValAct[19][gNum[19]].contains("E")) {
+                    String[] partes = globales.ValAct[19][gNum[19]].split("E");
+                    jchart[19][gNum[19]] = ChartFactory.createLineChart("Parametro WriteUnavailables", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                            globales.dcd[19][Integer.parseInt(IndexAttr[gNum[19]])]);
+                }
+                else {
+                    jchart[19][gNum[19]] = ChartFactory.createLineChart("Parametro WriteUnavailables", "Cantidad de datos recogidos","Valor del atributo",
+                            globales.dcd[19][Integer.parseInt(IndexAttr[gNum[19]])]);
+                }
 
                 ChartPanel cPanel = new ChartPanel(jchart[19][gNum[19]]);
                 cPanel.setMouseWheelEnabled(true);

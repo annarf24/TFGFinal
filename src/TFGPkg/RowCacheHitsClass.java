@@ -50,8 +50,11 @@ public class RowCacheHitsClass implements globales{
 
             String a = "";
             a += MC.getAttribute(urlRowCacheHits, nameAttrSeparats[j]);
-            globales.dcd[12][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[12][j]));
+            String[] partes = a.split("E");
+            globales.dcd[12][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[12][j]));
             qtyVal[12][j]++;
+            ValAct[12][j] = a;
+
         }
     }
 

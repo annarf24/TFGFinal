@@ -50,8 +50,11 @@ public class CompletedTasksClass implements globales{
 
             String a = "";
             a += MC.getAttribute(urlCompletedTasks, nameAttrSeparats[j]);
-            globales.dcd[1][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[1][j]));
+            String[] partes = a.split("E");
+            globales.dcd[1][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[1][j]));
             qtyVal[1][j]++;
+            ValAct[1][j] = a;
+
         }
 
     }

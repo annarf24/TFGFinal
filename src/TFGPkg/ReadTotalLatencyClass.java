@@ -50,8 +50,10 @@ public class ReadTotalLatencyClass implements globales{
 
             String a = "";
             a += MC.getAttribute(urlReadTotalLatency, nameAttrSeparats[j]);
-            globales.dcd[9][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[9][j]));
+            String[] partes = a.split("E");
+            globales.dcd[9][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[9][j]));
             qtyVal[9][j]++;
+            ValAct[9][j] = a;
         }
     }
 

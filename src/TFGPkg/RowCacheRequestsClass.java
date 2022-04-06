@@ -48,11 +48,12 @@ public class RowCacheRequestsClass implements globales{
         String[] nameAttrSeparats = globales.attrNames[14].split(",");
 
         for (int j = 0; j < attrSeparats.length; j++) {
-
             String a = "";
             a += MC.getAttribute(urlRowCacheRequests, nameAttrSeparats[j]);
-            globales.dcd[14][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[14][j]));
+            String[] partes = a.split("E");
+            globales.dcd[14][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[14][j]));
             qtyVal[14][j]++;
+            ValAct[14][j] = a;
         }
     }
 

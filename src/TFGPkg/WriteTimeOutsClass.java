@@ -50,8 +50,10 @@ public class WriteTimeOutsClass implements globales{
 
             String a = "";
             a += MC.getAttribute(urlWriteTimeOuts, nameAttrSeparats[j]);
-            globales.dcd[17][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[17][j]));
+            String[] partes = a.split("E");
+            globales.dcd[17][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[17][j]));
             qtyVal[17][j]++;
+            ValAct[17][j] = a;
         }
     }
 

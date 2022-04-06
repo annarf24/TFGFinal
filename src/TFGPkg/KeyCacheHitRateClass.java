@@ -47,11 +47,12 @@ public class KeyCacheHitRateClass implements globales {
         String[] nameAttrSeparats = globales.attrNames[3].split(",");
 
         for (int j = 0; j < attrSeparats.length; j++) {
-
             String a = "";
             a += MC.getAttribute(urlKeyCacheHitRate, nameAttrSeparats[j]);
-            globales.dcd[3][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[3][j]));
+            String[] partes = a.split("E");
+            globales.dcd[3][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[3][j]));
             qtyVal[3][j]++;
+            ValAct[3][j] = a;
         }
     }
 

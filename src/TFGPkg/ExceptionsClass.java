@@ -50,8 +50,11 @@ public class ExceptionsClass implements globales{
 
             String a = "";
             a += MC.getAttribute(urlExceptions, nameAttrSeparats[j]);
-            globales.dcd[2][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[2][j]));
+            String[] partes = a.split("E");
+            globales.dcd[2][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[2][j]));
             qtyVal[2][j]++;
+            ValAct[2][j] = a;
+
         }
 
     }

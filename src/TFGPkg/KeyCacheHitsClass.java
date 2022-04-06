@@ -50,8 +50,10 @@ public class KeyCacheHitsClass implements globales{
 
             String a = "";
             a += MC.getAttribute(urlKeyCacheHits, nameAttrSeparats[j]);
-            globales.dcd[4][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[4][j]));
+            String[] partes = a.split("E");
+            globales.dcd[4][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[4][j]));
             qtyVal[4][j]++;
+            ValAct[4][j] = a;
         }
     }
 

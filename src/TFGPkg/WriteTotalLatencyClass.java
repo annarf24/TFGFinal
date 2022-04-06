@@ -48,11 +48,12 @@ public class WriteTotalLatencyClass implements globales{
         String[] nameAttrSeparats = globales.attrNames[18].split(",");
 
         for (int j = 0; j < attrSeparats.length; j++) {
-
             String a = "";
             a += MC.getAttribute(urlWriteTotalLatency, nameAttrSeparats[j]);
-            globales.dcd[18][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[18][j]));
+            String[] partes = a.split("E");
+            globales.dcd[18][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[18][j]));
             qtyVal[18][j]++;
+            ValAct[18][j] = a;
         }
     }
 

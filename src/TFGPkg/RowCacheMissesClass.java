@@ -47,16 +47,16 @@ public class RowCacheMissesClass implements globales{
         String[] nameAttrSeparats = globales.attrNames[13].split(",");
 
         for (int j = 0; j < attrSeparats.length; j++) {
-
             String a = "";
             a += MC.getAttribute(urlRowCacheMisses, nameAttrSeparats[j]);
-            globales.dcd[13][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[13][j]));
+            String[] partes = a.split("E");
+            globales.dcd[13][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[13][j]));
             qtyVal[13][j]++;
+            ValAct[13][j] = a;
         }
     }
 
     public String getValActualRCM(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
         return String.valueOf(MC.getAttribute(urlRowCacheMisses,AtrCons));
     }
-
 }

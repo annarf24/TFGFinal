@@ -47,11 +47,12 @@ public class TotalDiskSpaceUsedClass implements globales{
         String[] nameAttrSeparats = globales.attrNames[15].split(",");
 
         for (int j = 0; j < attrSeparats.length; j++) {
-
             String a = "";
+            String[] partes = a.split("E");
             a += MC.getAttribute(urlTotalDiskSpaceUsed, nameAttrSeparats[j]);
-            globales.dcd[15][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[15][j]));
+            globales.dcd[15][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[15][j]));
             qtyVal[15][j]++;
+            ValAct[15][j] = a;
         }
     }
 

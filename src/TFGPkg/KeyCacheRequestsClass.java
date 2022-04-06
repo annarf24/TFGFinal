@@ -47,11 +47,12 @@ public class KeyCacheRequestsClass implements globales{
         String[] nameAttrSeparats = globales.attrNames[6].split(",");
 
         for (int j = 0; j < attrSeparats.length; j++) {
-
             String a = "";
             a += MC.getAttribute(urlKeyCacheRequests, nameAttrSeparats[j]);
-            globales.dcd[6][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(a),nameAttrSeparats[j],String.valueOf(qtyVal[6][j]));
+            String[] partes = a.split("E");
+            globales.dcd[6][Integer.parseInt(attrSeparats[j])].addValue(Double.parseDouble(partes[0]),nameAttrSeparats[j],String.valueOf(qtyVal[6][j]));
             qtyVal[6][j]++;
+            ValAct[6][j] = a;
         }
     }
 
