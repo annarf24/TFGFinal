@@ -154,10 +154,24 @@ public class InterfazGrafica extends JFrame{
     private JButton chooseButtonKCH;
     private JButton chooseButtonKCHR;
     private JButton chooseButtonAMHS;
-    private JButton chooseButton;
-    private JButton chooseButton1;
+    private JButton chooseButtonCT;
+    private JButton chooseButtonE;
     private JButton resetButton;
-
+    private JButton chooseButtonKCM;
+    private JButton chooseButtonKCR;
+    private JButton chooseButtonRL;
+    private JButton chooseButtonRTO;
+    private JButton chooseButtonRTL;
+    private JButton chooseButtonRU;
+    private JButton chooseButtonRCHR;
+    private JButton chooseButtonRCH;
+    private JButton chooseButtonRCM;
+    private JButton chooseButtonRCR;
+    private JButton chooseButtonTDSU;
+    private JButton chooseButtonWL;
+    private JButton chooseButtonWTO;
+    private JButton chooseButtonWTL;
+    private JButton chooseButtonWU;
 
 
     public InterfazGrafica(String title) {
