@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TFGFinal:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TFGFinal_jar</output-path>
+    <root id="archive" name="TFGFinal.jar">
+      <element id="module-output" name="TFGFinal" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../TFG/snakeyaml-1.30.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../TFG/jcommon-1.0.23.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../TFG/jfreechart-1.0.19.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
