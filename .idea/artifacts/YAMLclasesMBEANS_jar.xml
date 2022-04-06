@@ -2,7 +2,7 @@
   <artifact type="jar" name="YAMLclasesMBEANS:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/YAMLclasesMBEANS_jar</output-path>
     <root id="archive" name="YAMLclasesMBEANS.jar">
-      <element id="module-output" name="YAMLclasesMBEANS" />
+      <element id="module-output" name="TFGFinal" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../../TFG/jcommon-1.0.23.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../../TFG/jfreechart-1.0.19.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../../TFG/snakeyaml-1.30.jar" path-in-jar="/" />

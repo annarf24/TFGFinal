@@ -1,4 +1,4 @@
-package testYAMLMBeans;
+package TFGPkg;
 
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.yaml.snakeyaml.Yaml;
@@ -87,7 +87,7 @@ interface globales {
 
     }
 
-public class LectYAML extends JFrame implements globales{
+public class Principal extends JFrame implements globales{
 
     public static void main(String[] args) throws IOException, ReflectionException, MalformedObjectNameException, InstanceNotFoundException, IntrospectionException, AttributeNotFoundException, MBeanException, InterruptedException {
         //rellenar el array de tabs a eliminar de la GUI de false (iniciailzar)

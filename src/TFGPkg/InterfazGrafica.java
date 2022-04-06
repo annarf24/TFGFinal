@@ -1,4 +1,4 @@
-package testYAMLMBeans;
+package TFGPkg;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;

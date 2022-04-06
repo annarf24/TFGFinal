@@ -1,4 +1,4 @@
-package testYAMLMBeans;
+package TFGPkg;
 
 public class DataConfig {
     private String nodo;

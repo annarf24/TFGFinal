@@ -1,4 +1,4 @@
-package testYAMLMBeans;
+package TFGPkg;
 
 public class Parametro {
     private String name;

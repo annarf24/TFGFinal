@@ -1,9 +1,8 @@
-package testYAMLMBeans;
+package TFGPkg;
 
 
 import javax.management.*;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class WriteLatencyClass implements globales{
     private ObjectName urlWriteLatency = null;

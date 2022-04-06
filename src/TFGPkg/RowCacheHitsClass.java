@@ -1,8 +1,7 @@
-package testYAMLMBeans;
+package TFGPkg;
 
 import javax.management.*;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class RowCacheHitsClass implements globales{
     private ObjectName urlRowCacheHits = null;

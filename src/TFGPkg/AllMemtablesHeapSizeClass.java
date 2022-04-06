@@ -1,11 +1,7 @@
-package testYAMLMBeans;
-
-import org.jfree.data.category.DefaultCategoryDataset;
+package TFGPkg;
 
 import javax.management.*;
 import java.io.IOException;
-import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class AllMemtablesHeapSizeClass implements globales {
     private ObjectName urlAllMemtablesHeapSize = null;

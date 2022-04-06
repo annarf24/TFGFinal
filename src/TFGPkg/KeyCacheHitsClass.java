@@ -1,10 +1,7 @@
-package testYAMLMBeans;
+package TFGPkg;
 
 import javax.management.*;
 import java.io.IOException;
-import java.util.Objects;
-import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class KeyCacheHitsClass implements globales{
     private ObjectName urlKeyCacheHits = null;
