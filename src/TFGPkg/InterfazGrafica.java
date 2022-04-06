@@ -902,6 +902,15 @@ public class InterfazGrafica extends JFrame{
                 repaint();
             }
         });
+
+        ResetButtonKCH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[4].split(",");
+                globales.dcd[4][Integer.parseInt(IndexAttr[gNum[4]])].clear();
+                globales.qtyVal[4][gNum[4]] = 0;
+            }
+        });
     }
 
     public void actualitzaLabel(String val, int i) {
