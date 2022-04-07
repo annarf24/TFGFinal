@@ -268,6 +268,8 @@ public class Principal extends JFrame implements globales{
         //creacion de la GUI
 
         InterfazGrafica frame = new InterfazGrafica("Consultor de rendimiento de Cassandra");
+        //para hacer que al iniciar aparezca en el centro de la pantalla
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
         //este bucle consulta por cada parametro seleccionado en el YAML, el valor de cada atributo seleccionado en el YAML

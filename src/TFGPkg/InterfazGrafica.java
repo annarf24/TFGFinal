@@ -189,10 +189,6 @@ public class InterfazGrafica extends JFrame{
         //para hacer que al iniciar aparezca de un tamaño razonable
         this.setMinimumSize(new Dimension(960, 640));
 
-        //para hacer que al iniciar aparezca en el centro de la pantalla
-        this.setLocationRelativeTo(null);
-
-
         //matriz de JFreeChart para cada uno de los atributos
         final JFreeChart[][] jchart = {new JFreeChart[1], //AllMemtablesHeapSize
                 new JFreeChart[1], //CompletedTasks
@@ -219,6 +215,7 @@ public class InterfazGrafica extends JFrame{
         final int[] gNum = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 
+        //Bucle que añade los atributos a los comboBox de los parametros seleccionados en el YAML
         for (int i = 0; i < 20; i++) {
             if (globales.EliminarTab[i]) {
                 String [] attrNamesSeparats = globales.attrNames[i].split(",");
@@ -330,6 +327,7 @@ public class InterfazGrafica extends JFrame{
             }
         }
 
+        //Bucle para borrar los tabs que no se han seleccionado en el YAML
         int i = 0;
         int j = 0;
         while (i < 20) {
@@ -340,6 +338,9 @@ public class InterfazGrafica extends JFrame{
             i++;
         }
 
+        //---------------------------------------------------------------------------------------------
+        //---------------------------LISTENERS DE LOS BOTONES DE CHOOSE--------------------------------
+        //---------------------------------------------------------------------------------------------
         chooseButtonAMHS.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -764,6 +765,7 @@ public class InterfazGrafica extends JFrame{
 
             }
         });
+
         chooseButtonTDSU.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -904,12 +906,243 @@ public class InterfazGrafica extends JFrame{
             }
         });
 
+        //---------------------------------------------------------------------------------------------
+        //---------------------------LISTENERS DE LOS BOTONES DE RESET---------------------------------
+        //---------------------------------------------------------------------------------------------
+
+        ResetButtonAMHS.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[0].split(",");
+                globales.dcd[0][Integer.parseInt(IndexAttr[gNum[0]])].clear();
+                globales.qtyVal[0][gNum[0]] = 0;
+            }
+        });
+
+        resetButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[1].split(",");
+                globales.dcd[1][Integer.parseInt(IndexAttr[gNum[1]])].clear();
+                globales.qtyVal[1][gNum[1]] = 0;
+            }
+        });
+
+        ResetButtonE.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[2].split(",");
+                globales.dcd[2][Integer.parseInt(IndexAttr[gNum[2]])].clear();
+                globales.qtyVal[2][gNum[2]] = 0;
+            }
+        });
+
+        ResetButtonKCHR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[3].split(",");
+                globales.dcd[3][Integer.parseInt(IndexAttr[gNum[3]])].clear();
+                globales.qtyVal[3][gNum[3]] = 0;
+            }
+        });
+
         ResetButtonKCH.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[4].split(",");
                 globales.dcd[4][Integer.parseInt(IndexAttr[gNum[4]])].clear();
                 globales.qtyVal[4][gNum[4]] = 0;
+            }
+        });
+
+        ResetButtonKCM.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[5].split(",");
+                globales.dcd[5][Integer.parseInt(IndexAttr[gNum[5]])].clear();
+                globales.qtyVal[5][gNum[5]] = 0;
+            }
+        });
+
+        ResetButtonKCR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[6].split(",");
+                globales.dcd[6][Integer.parseInt(IndexAttr[gNum[6]])].clear();
+                globales.qtyVal[6][gNum[6]] = 0;
+            }
+        });
+
+        ResetButtonRL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[7].split(",");
+                globales.dcd[7][Integer.parseInt(IndexAttr[gNum[7]])].clear();
+                globales.qtyVal[7][gNum[7]] = 0;
+            }
+        });
+
+        ResetButtonRTO.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[8].split(",");
+                globales.dcd[8][Integer.parseInt(IndexAttr[gNum[8]])].clear();
+                globales.qtyVal[8][gNum[8]] = 0;
+            }
+        });
+
+        ResetButtonRTL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[9].split(",");
+                globales.dcd[9][Integer.parseInt(IndexAttr[gNum[9]])].clear();
+                globales.qtyVal[9][gNum[9]] = 0;
+            }
+        });
+
+        ResetButtonRU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[10].split(",");
+                globales.dcd[10][Integer.parseInt(IndexAttr[gNum[10]])].clear();
+                globales.qtyVal[10][gNum[10]] = 0;
+            }
+        });
+
+        ResetButtonRCHR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[11].split(",");
+                globales.dcd[11][Integer.parseInt(IndexAttr[gNum[11]])].clear();
+                globales.qtyVal[11][gNum[11]] = 0;
+            }
+        });
+
+        ResetButtonRCH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[12].split(",");
+                globales.dcd[12][Integer.parseInt(IndexAttr[gNum[12]])].clear();
+                globales.qtyVal[12][gNum[12]] = 0;
+            }
+        });
+
+        ResetButtonRCM.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[13].split(",");
+                globales.dcd[13][Integer.parseInt(IndexAttr[gNum[13]])].clear();
+                globales.qtyVal[13][gNum[13]] = 0;
+            }
+        });
+
+        ResetButtonRCR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[14].split(",");
+                globales.dcd[14][Integer.parseInt(IndexAttr[gNum[14]])].clear();
+                globales.qtyVal[14][gNum[14]] = 0;
+            }
+        });
+
+        ResetButtonTDSU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[15].split(",");
+                globales.dcd[15][Integer.parseInt(IndexAttr[gNum[15]])].clear();
+                globales.qtyVal[15][gNum[15]] = 0;
+            }
+        });
+
+        ResetButtonWL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[16].split(",");
+                globales.dcd[16][Integer.parseInt(IndexAttr[gNum[16]])].clear();
+                globales.qtyVal[16][gNum[16]] = 0;
+            }
+        });
+
+        ResetButtonWTO.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[17].split(",");
+                globales.dcd[17][Integer.parseInt(IndexAttr[gNum[17]])].clear();
+                globales.qtyVal[17][gNum[17]] = 0;
+            }
+        });
+
+        ResetButtonWTL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[18].split(",");
+                globales.dcd[18][Integer.parseInt(IndexAttr[gNum[18]])].clear();
+                globales.qtyVal[18][gNum[18]] = 0;
+            }
+        });
+
+        ResetButtonWU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] IndexAttr = globales.attr[19].split(",");
+                globales.dcd[19][Integer.parseInt(IndexAttr[gNum[19]])].clear();
+                globales.qtyVal[19][gNum[19]] = 0;
+            }
+        });
+
+        //---------------------------------------------------------------------------------------------
+        //---------------------------LISTENERS DE LOS BOTONES DE SAVE----------------------------------
+        //---------------------------------------------------------------------------------------------
+
+        SaveButtonAMHS.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngAMHS.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[0][gNum[0]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonCT.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngCT.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[1][gNum[1]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonE.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngE.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[2][gNum[2]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonKCHR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngKCHR.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[3][gNum[3]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
 
@@ -920,6 +1153,202 @@ public class InterfazGrafica extends JFrame{
                 File f = new File(NombrePngKCH.getText() + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[4][gNum[4]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonKCM.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngKCM.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[5][gNum[5]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonKCR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngKCR.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[6][gNum[6]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonRL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngRL.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[7][gNum[7]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonRTO.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngRTO.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[8][gNum[8]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonRTL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngRTL.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[9][gNum[9]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonRU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngRU.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[10][gNum[10]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonRCHR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngRCHR.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[11][gNum[11]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonRCH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngRCH.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[12][gNum[12]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonRCM.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngRCM.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[13][gNum[13]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonRCR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngRCR.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[14][gNum[14]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        });
+
+        SaveButtonTDSU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngTDSU.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[15][gNum[15]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonWL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngWL.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[16][gNum[16]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonWTO.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngWTO.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[17][gNum[17]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonWTL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngWTL.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[18][gNum[18]], 400, 400, info);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        SaveButtonWU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                File f = new File(NombrePngWU.getText() + ".png");
+                try {
+                    ChartUtilities.saveChartAsPNG(f, jchart[19][gNum[19]], 400, 400, info);
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
