@@ -189,6 +189,9 @@ public class InterfazGrafica extends JFrame{
         //para hacer que al iniciar aparezca de un tamaño razonable
         this.setMinimumSize(new Dimension(960, 640));
 
+        //para hacer que al iniciar aparezca en el centro de la pantalla
+        this.setLocationRelativeTo(null);
+
         //matriz de JFreeChart para cada uno de los atributos
         final JFreeChart[][] jchart = {new JFreeChart[1], //AllMemtablesHeapSize
                 new JFreeChart[1], //CompletedTasks
