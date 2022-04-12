@@ -1,40 +1,40 @@
 ---
-#Elegir uno de los dos nodos para monitorear, no se puedes elegir los dos
+#Escollir un dels dos nodes per monitorejar, no es poden escollir els dos a la vegada
 nodos:
   - "Minerva-11"
   #- "Minerva-12"
 
 
 parametros: 
-#Elegir qué parametros monitorear de entre los siguientes y Escoja los atributos concretos a monitorizar: (quitar el # para escogerlos)
-#Si se elgie el parametro X hay que quitar el # como minimo del name, num, atributs i almmenos el de un atributo
+#Escollir quins paràmetres monitorejar d'entre els següents i escollir els atributs concrets a monitorejar: (treure el # per escollir-los)
+#Si s'escull el parametre X s'ha de treure el # com a minim del name, num, atributs i almenys el d'un atribut
 
   - name: AllMemtablesHeapSize
     num: 1
     atributs:
     - Value
 
-  - name: CompletedTasks
-    num: 2
-    atributs:
-    - Value
+  #- name: CompletedTasks
+    #num: 2
+    #atributs:
+    #- Value
 
-  - name: Exceptions
-    num: 3
-    atributs:
-    - Count
+  #- name: Exceptions
+    #num: 3
+    #atributs:
+    #- Count
 
-  - name: KeyCacheHitRate
-    num: 4
-    atributs:
-    - Value
+  #- name: KeyCacheHitRate
+    #num: 4
+    #atributs:
+    #- Value
 
   - name: KeyCacheHits
     num: 5
     atributs:
     - Count
     - FifteenMinuteRate
-    - FiveMinuteRate
+    #- FiveMinuteRate
     - MeanRate
     - OneMinuteRate
 
@@ -47,14 +47,14 @@ parametros:
     - MeanRate
     - OneMinuteRate
 
-  - name: KeyCacheRequests
-    num: 7
-    atributs:
-    - Count
-    - FifteenMinuteRate
-    - FiveMinuteRate
-    - MeanRate
-    - OneMinuteRate
+  #- name: KeyCacheRequests
+    #num: 7
+    #atributs:
+    #- Count
+    #- FifteenMinuteRate
+    #- FiveMinuteRate
+    #- MeanRate
+    #- OneMinuteRate
 
   - name: ReadLatency
     num: 8
@@ -66,88 +66,6 @@ parametros:
     - 999thPercentile
     - 99thPercentile
     - Count
-    #- DurationUnit
-    - FifteenMinuteRate
-    - FiveMinuteRate
-    - Max
-    - Mean
-    #- MeanRate
-    - Min
-    - OneMinuteRate
-    #- RateUnit
-    #- RecentValues
-    - StdDev
-
-  - name: ReadTimeOuts
-    num: 9
-    atributs:
-    - Count
-    - FifteenMinuteRate
-    - FiveMinuteRate
-    - MeanRate
-    - OneMinuteRate
-
-  - name: ReadTotalLatency
-    num: 10
-    atributs:
-    - Count
-
-  - name: ReadUnavailables
-    num: 11
-    atributs:
-    - Count
-    - FifteenMinuteRate
-    - FiveMinuteRate
-    - MeanRate
-    - OneMinuteRate
-
-  - name: RowCacheHitRate
-    num: 12
-    atributs:
-    - Value
-
-  - name: RowCacheHits
-    num: 13
-    atributs:
-    - Count
-    - FifteenMinuteRate
-    - FiveMinuteRate
-    - MeanRate
-    - OneMinuteRate
-
-  - name: RowCacheMisses
-    num: 14
-    atributs:
-    - Count
-    - FifteenMinuteRate
-    - FiveMinuteRate
-    - MeanRate
-    - OneMinuteRate
-
-  - name: RowCacheRequests
-    num: 15
-    atributs:
-    - Count
-    - FifteenMinuteRate
-    - FiveMinuteRate
-    - MeanRate
-    - OneMinuteRate
-
-  - name: TotalDiskSpaceUsed
-    num: 16
-    atributs:
-    - Value
-
-  - name: WriteLatency
-    num: 17
-    atributs:
-    - 50thPercentile
-    - 75thPercentile
-    - 95thPercentile
-    - 98thPercentile
-    - 999thPercentile
-    - 99thPercentile
-    - Count
     - FifteenMinuteRate
     - FiveMinuteRate
     - Max
@@ -158,25 +76,105 @@ parametros:
     #- RecentValues
     - StdDev
 
-  - name: WriteTimeOuts
-    num: 18
-    atributs:
-    - Count
-    - FifteenMinuteRate
-    - FiveMinuteRate
-    - MeanRate
-    - OneMinuteRate
+  #- name: ReadTimeOuts
+    #num: 9
+    #atributs:
+    #- Count
+    #- FifteenMinuteRate
+    #- FiveMinuteRate
+    #- MeanRate
+    #- OneMinuteRate
 
-  - name: WriteTotalLatency
-    num: 19
-    atributs:
-    - Count
+  #- name: ReadTotalLatency
+    #num: 10
+    #atributs:
+    #- Count
 
-  - name: WriteUnavailables
-    num: 20
-    atributs:
-    - Count
-    - FifteenMinuteRate
-    - FiveMinuteRate
-    - MeanRate
-    - OneMinuteRate
+  #- name: ReadUnavailables
+    #num: 11
+    #atributs:
+    #- Count
+    #- FifteenMinuteRate
+    #- FiveMinuteRate
+    #- MeanRate
+    #- OneMinuteRate
+
+  #- name: RowCacheHitRate
+    #num: 12
+    #atributs:
+    #- Value
+
+  #- name: RowCacheHits
+    #num: 13
+    #atributs:
+    #- Count
+    #- FifteenMinuteRate
+    #- FiveMinuteRate
+    #- MeanRate
+    #- OneMinuteRate
+
+  #- name: RowCacheMisses
+    #num: 14
+    #atributs:
+    #- Count
+    #- FifteenMinuteRate
+    #- FiveMinuteRate
+    #- MeanRate
+    #- OneMinuteRate
+
+  #- name: RowCacheRequests
+    #num: 15
+    #atributs:
+    #- Count
+    #- FifteenMinuteRate
+    #- FiveMinuteRate
+    #- MeanRate
+    #- OneMinuteRate
+
+  #- name: TotalDiskSpaceUsed
+    #num: 16
+    #atributs:
+    #- Value
+
+  #- name: WriteLatency
+    #num: 17
+    #atributs:
+    #- 50thPercentile
+    #- 75thPercentile
+    #- 95thPercentile
+    #- 98thPercentile
+    #- 999thPercentile
+    #- 99thPercentile
+    #- Count
+    #- FifteenMinuteRate
+    #- FiveMinuteRate
+    #- Max
+    #- Mean
+    #- MeanRate
+    #- Min
+    #- OneMinuteRate
+    #- RecentValues
+    #- StdDev
+
+  #- name: WriteTimeOuts
+    #num: 18
+    #atributs:
+    #- Count
+    #- FifteenMinuteRate
+    #- FiveMinuteRate
+    #- MeanRate
+    #- OneMinuteRate
+
+  #- name: WriteTotalLatency
+    #num: 19
+    #atributs:
+    #- Count
+
+  #- name: WriteUnavailables
+    #num: 20
+    #atributs:
+    #- Count
+    #- FifteenMinuteRate
+    #- FiveMinuteRate
+    #- MeanRate
+    #- OneMinuteRate

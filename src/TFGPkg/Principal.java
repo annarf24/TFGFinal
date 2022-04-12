@@ -111,17 +111,18 @@ interface globales {
 public class Principal extends JFrame implements globales{
 
 
-    public static void main(String[] args) throws IOException, ReflectionException, MalformedObjectNameException, InstanceNotFoundException, IntrospectionException, AttributeNotFoundException, MBeanException, InterruptedException {
-        //rellenar el array de tabs a eliminar de la GUI de false (iniciailzar)
+    public static void main(String[] args) throws IOException, ReflectionException, MalformedObjectNameException,
+            InstanceNotFoundException, IntrospectionException, AttributeNotFoundException, MBeanException, InterruptedException {
+        //omplir l'array de tabs a eliminar de la GUI de false (iniciailzar)
         Arrays.fill(globales.EliminarTab, false);
         globales.cerrar[0] = false;
 
-        //Lectura del fichero YAML
+        //Lectura del ficher YAML
         InputStream inputStream = new FileInputStream(new File("configMonitorizador.yaml"));
         Yaml yaml = new Yaml(new Constructor(DataConfig.class));
         DataConfig data = yaml.load(inputStream);
 
-        //creación de la conexión al nodo de minerva seleccionado en el YAML
+        //creació de la conexió al node de minerva seleccionat en el YAML
         JMXConnector JMXMinerva = ConnexioMinerva(data.getNodo() , "7199");
         MBeanServerConnection MC = JMXMinerva.getMBeanServerConnection();
 
@@ -132,9 +133,9 @@ public class Principal extends JFrame implements globales{
         }
 
 
-        //este bucle se ejecuta para cada uno de los parametros elegidos en el YAML que se almacenan en la variable data
-        //el bucle sirbe para obtener los atributos de cada uno de los parametros escogidos, mediante la función
-        //getAtributs de cada una de las clases
+        //equest bucle s'executa par cada un dels parametres escollits al YAML que s'emmagatzemen a la variable data
+        //el bucle serveix para obtenir els atributs de cada un dels paràmetres escollits, mitjançant la funció
+        //getAtributs de cada una de les classes
         for (int i = 0; i < data.getParametros().length; i++) {
             int opcion = data.getParametros()[i].getNum();
             switch (opcion) {
@@ -265,14 +266,15 @@ public class Principal extends JFrame implements globales{
             }
         }
 
-        //creacion de la GUI
+        //creació de la GUI
 
         InterfazGrafica frame = new InterfazGrafica("Consultor de rendimiento de Cassandra");
         frame.setVisible(true);
 
-        //este bucle consulta por cada parametro seleccionado en el YAML, el valor de cada atributo seleccionado en el YAML
-        //i procesado en el bucle anterior e imprime los valores por terminal. Esta separado del anterior para poder poner
-        //este en un bucle while infinito sin tener que estar leyendo el YAML constantemente
+        //aquest bucle consulta per cada parametre seleccionat al YAML, el valor de cada atributo seleccionat al YAML
+        //i processat al bucle anterior, i li passa els valors a la interfície gràfica perque pugui crear
+        // les gràfiques i actualitzar l'etiqueta de valor actual. Està separat de l'anterior para poder posar
+        //aquest en un bucle while infinito sense haber d'estar llegint el YAML constantement.
         while (!globales.cerrar[0]) {
             for (int i = 0; i < data.getParametros().length; i++) {
                 int opcion = data.getParametros()[i].getNum();
@@ -444,10 +446,10 @@ public class Principal extends JFrame implements globales{
                         break;
                 }
             }
-            //se para dos segundos entre cada consulta
+            //es para dos segons entre cada consulta
             Thread.sleep(2000);
         }
-        //se cierra la conexión de minerva, como hacerlo con un while infinito????
+        //es tanca la conexió de minerva
         JMXMinerva.close();
     }
 

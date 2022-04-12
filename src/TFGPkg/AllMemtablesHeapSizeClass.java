@@ -9,19 +9,21 @@ public class AllMemtablesHeapSizeClass implements globales {
     private MBeanAttributeInfo[] AllMemtablesHeapSizeAtributes = null;
     private MBeanServerConnection MC = null;
 
-    public AllMemtablesHeapSizeClass(MBeanServerConnection CM) throws MalformedObjectNameException, ReflectionException, InstanceNotFoundException, IntrospectionException, IOException {
+    public AllMemtablesHeapSizeClass(MBeanServerConnection CM) throws MalformedObjectNameException, ReflectionException,
+            InstanceNotFoundException, IntrospectionException, IOException {
+
         urlAllMemtablesHeapSize = new ObjectName("org.apache.cassandra.metrics:type=Table,name=AllMemtablesHeapSize");
         MBeanAllMemtablesHeapSize = CM.getMBeanInfo(urlAllMemtablesHeapSize);
         AllMemtablesHeapSizeAtributes = MBeanAllMemtablesHeapSize.getAttributes();
         MC = CM;
     }
 
-    //se pasa el parametro que se quiere consultar para obtener los atributos a consultar
+    //es passa el parametre que es vol consultar per obtenir els atributs a consultar
     public String getAtributsAllMemtablesHeapSize(Parametro p) {
         //inicialitza atributs
         String atributs = "";
 
-        //Array amb els nomes dels atributs que es volen consultar del parametre
+        //Array amb els noms dels atributs que es volen consultar del parametre
         String[] atrCons = p.getAtributs();
 
         //en aquest bucle es comparen els noms dels atributs del parametre amb els noms dels atributs que es volen consultar
@@ -33,25 +35,16 @@ public class AllMemtablesHeapSizeClass implements globales {
                 if (atrCons[i].equals(AllMemtablesHeapSizeAtributes[j].getName())) {
                     atributs += j;
                     atributs += ",";
-                    attrNames[0] += AllMemtablesHeapSizeAtributes[j].getName();
-                    attrNames[0] += ",";
+                    globales.attrNames[0] += AllMemtablesHeapSizeAtributes[j].getName();
+                    globales.attrNames[0] += ",";
                 }
             }
         }
         return atributs;
     }
 
-    public void consultaAllMemtablesHeapSize (String AtrConsultar) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
-        //---------------------hay que borrar ---------------------------
-        System.out.println("parametro All Memtables Heap Size");
-        String[] parts = AtrConsultar.split(",");
-        for (String part : parts) {
-            System.out.println(AllMemtablesHeapSizeAtributes[Integer.parseInt(part)].getName() + " : "
-                    + MC.getAttribute(urlAllMemtablesHeapSize, AllMemtablesHeapSizeAtributes[Integer.parseInt(part)].getName()));
-        }
-        System.out.println("---------------------------------");
-
-        //-----------------------------------------------------------------
+    public void consultaAllMemtablesHeapSize (String AtrConsultar) throws ReflectionException, AttributeNotFoundException,
+            InstanceNotFoundException, MBeanException, IOException {
 
         String[] attrSeparats = AtrConsultar.split(",");
         String[] nameAttrSeparats = globales.attrNames[0].split(",");
@@ -66,7 +59,9 @@ public class AllMemtablesHeapSizeClass implements globales {
             ValAct[0][j] = a;
         }
     }
-    public String getValActualAMHS(String AtrCons) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
+    public String getValActualAMHS(String AtrCons) throws ReflectionException, AttributeNotFoundException,
+            InstanceNotFoundException, MBeanException, IOException {
+
         return String.valueOf(MC.getAttribute(urlAllMemtablesHeapSize,AtrCons));
     }
 

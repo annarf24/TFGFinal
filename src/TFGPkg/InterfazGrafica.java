@@ -7,11 +7,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.util.Objects;
+import java.io.*;
+import java.sql.Timestamp;
 
-public class InterfazGrafica extends JFrame{
+public class InterfazGrafica extends JFrame implements globales{
     private JPanel mainPanel;
     private JTabbedPane tabbedPane1;
     private JPanel AllMemtablesHeapSizeJPanel;
@@ -30,110 +29,92 @@ public class InterfazGrafica extends JFrame{
     private JPanel RowCacheMissesJPanel;
     private JPanel RowCacheRequestsJPanel;
     private JComboBox comboBoxAMHS;
-    private JTextField NombrePngAMHS;
     private JLabel ValorActualAMHS;
     private JPanel GraficaAMHS;
     private JButton ResetButtonAMHS;
-    private JTextField NombrePngCT;
     private JComboBox comboBoxCT;
     private JButton SaveButtonCT;
     private JPanel GraficaCT;
     private JLabel ValorActualCT;
     private JComboBox comboBoxE;
-    private JTextField NombrePngE;
     private JButton ResetButtonE;
     private JButton SaveButtonE;
     private JPanel GraficaE;
     private JLabel ValorActualE;
     private JComboBox comboBoxKCHR;
-    private JTextField NombrePngKCHR;
     private JButton ResetButtonKCHR;
     private JButton SaveButtonKCHR;
     private JPanel GraficaKCHR;
     private JLabel ValorActualKCHR;
     private JComboBox comboBoxKCH;
-    private JTextField NombrePngKCH;
     private JButton SaveButtonKCH;
     private JButton ResetButtonKCH;
     private JPanel GraficaKCH;
     private JLabel ValorActualKCH;
     private JComboBox comboBoxKCM;
-    private JTextField NombrePngKCM;
     private JButton ResetButtonKCM;
     private JButton SaveButtonKCM;
     private JPanel GraficaKCM;
     private JLabel ValorActualKCM;
     private JComboBox comboBoxKCR;
-    private JTextField NombrePngKCR;
     private JButton SaveButtonKCR;
     private JButton ResetButtonKCR;
     private JPanel GraficaKCR;
     private JLabel ValorActualKCR;
     private JComboBox comboBoxRL;
-    private JTextField NombrePngRL;
     private JButton ResetButtonRL;
     private JButton SaveButtonRL;
     private JPanel GraficaRL;
     private JLabel ValorActualRL;
     private JComboBox comboBoxRTO;
-    private JTextField NombrePngRTO;
     private JButton SaveButtonRTO;
     private JButton ResetButtonRTO;
     private JPanel GraficaRTO;
     private JLabel ValorActualRTO;
     private JComboBox comboBoxRTL;
-    private JTextField NombrePngRTL;
     private JButton ResetButtonRTL;
     private JButton SaveButtonRTL;
     private JPanel GraficaRTL;
     private JLabel ValorActualRTL;
     private JComboBox comboBoxRU;
-    private JTextField NombrePngRU;
     private JButton ResetButtonRU;
     private JButton SaveButtonRU;
     private JPanel GraficaRU;
     private JLabel ValorActualRU;
     private JComboBox comboBoxRCHR;
-    private JTextField NombrePngRCHR;
     private JButton ResetButtonRCHR;
     private JButton SaveButtonRCHR;
     private JPanel GraficaRCHR;
     private JLabel ValorActualRCHR;
     private JComboBox comboBoxRCH;
-    private JTextField NombrePngRCH;
     private JButton SaveButtonRCH;
     private JButton ResetButtonRCH;
     private JPanel GraficaRCH;
     private JLabel ValorActualRCH;
     private JComboBox comboBoxRCM;
-    private JTextField NombrePngRCM;
     private JButton ResetButtonRCM;
     private JButton SaveButtonRCM;
     private JPanel GraficaRCM;
     private JLabel ValorActualRCM;
     private JComboBox comboBoxRCR;
-    private JTextField NombrePngRCR;
     private JButton ResetButtonRCR;
     private JButton SaveButtonRCR;
     private JPanel GraficaRCR;
     private JLabel ValorActualRCR;
     private JPanel TotalDiskSpaceUsedJPanel;
     private JComboBox comboBoxTDSU;
-    private JTextField NombrePngTDSU;
     private JButton ResetButtonTDSU;
     private JButton SaveButtonTDSU;
     private JPanel GraficaTDSU;
     private JLabel ValorActualTDSU;
     private JPanel WriteLatencyJPanel;
     private JComboBox comboBoxWL;
-    private JTextField NombrePngWL;
     private JButton ResetButtonWL;
     private JButton SaveButtonWL;
     private JPanel GraficaWL;
     private JLabel ValorActualWL;
     private JPanel WriteTimeOutsJPanel;
     private JComboBox comboBoxWTO;
-    private JTextField NombrePngWTO;
     private JButton ResetButtonWTO;
     private JButton SaveButtonWTO;
     private JPanel GraficaWTO;
@@ -141,13 +122,11 @@ public class InterfazGrafica extends JFrame{
     private JPanel WriteTotalLatencyJPanel;
     private JPanel WriteUnavailablesJPanel;
     private JComboBox comboBoxWTL;
-    private JTextField NombrePngWTL;
     private JButton ResetButtonWTL;
     private JButton SaveButtonWTL;
     private JPanel GraficaWTL;
     private JLabel ValorActualWTL;
     private JComboBox comboBoxWU;
-    private JTextField NombrePngWU;
     private JButton ResetButtonWU;
     private JButton SaveButtonWU;
     private JPanel GraficaWU;
@@ -174,7 +153,229 @@ public class InterfazGrafica extends JFrame{
     private JButton chooseButtonWTO;
     private JButton chooseButtonWTL;
     private JButton chooseButtonWU;
+    private JButton saveAllChartsButtonWTL;
+    private JLabel InitialTSWTL;
+    private JLabel CurrentTSWTL;
+    private JLabel ElapsedTimeWTL;
+    private JButton saveAllChartsButtonWU;
+    private JButton saveAllDataButtonWTL;
+    private JButton saveCurrentDataButtonWTL;
+    private JButton saveAllChartsButtonAMHS;
+    private JButton saveCurrentDataButtonAMHS;
+    private JButton saveAllDataButtonAMHS;
+    private JButton saveAllChartsButtonCT;
+    private JButton saveCurrentDataButtonCT;
+    private JButton saveAllDataButtonCT;
+    private JLabel InitialTSAMHS;
+    private JLabel CurrentTSAMHS;
+    private JLabel ElapsedTimeAMHS;
+    private JLabel InitialTSCT;
+    private JLabel CurrentTSCT;
+    private JLabel ElapsedTimeCT;
+    private JButton saveAllChartsButtonE;
+    private JButton saveCurrentDataButtonE;
+    private JButton saveAllDataButtonE;
+    private JButton saveAllChartsButtonKCHR;
+    private JButton saveCurrentDataButtonKCHR;
+    private JButton saveAllDataButtonKCHR;
+    private JButton saveCurrentDataButtonKCH;
+    private JButton saveAllDataButtonKCH;
+    private JButton saveAllChartsButtonKCH;
+    private JButton saveAllChartsButtonKCM;
+    private JButton saveCurrentDataButtonKCM;
+    private JButton saveAllDataButtonKCM;
+    private JButton saveAllChartsButtonKCR;
+    private JButton saveCurrentDataButtonKCR;
+    private JButton saveAllDataButtonKCR;
+    private JButton saveAllChartsButtonRL;
+    private JButton saveCurrentDataButtonRL;
+    private JButton saveAllDataButtonRL;
+    private JButton saveAllChartsButtonRTO;
+    private JButton saveCurrentDataButtonRTO;
+    private JButton saveAllDataButtonRTO;
+    private JButton saveAllChartsButtonRTL;
+    private JButton saveCurrentDataButtonRTL;
+    private JButton saveAllDataButtonRTL;
+    private JButton saveAllChartsButtonRU;
+    private JButton saveCurrentDataButtonRU;
+    private JButton saveAllDataButtonRU;
+    private JButton saveAllChartsButtonRCHR;
+    private JButton saveCurrentDataButtonRCHR;
+    private JButton saveAllDataButtonRCHR;
+    private JButton saveAllChartsButtonRCH;
+    private JButton saveCurrentDataButtonRCH;
+    private JButton saveAllDataButtonRCH;
+    private JButton saveAllChartsButtonRCM;
+    private JButton saveCurrentDataButtonRCM;
+    private JButton saveAllDataButtonRCM;
+    private JButton saveAllChartsButtonRCR;
+    private JButton saveCurrentDataButtonRCR;
+    private JButton saveAllDataButtonRCR;
+    private JButton saveAllChartsButtonTDSU;
+    private JButton saveCurrentDataButtonTDSU;
+    private JButton saveAllDataButtonTDSU;
+    private JButton saveAllChartsButtonWL;
+    private JButton saveCurrentDataButtonWL;
+    private JButton saveAllDataButtonWL;
+    private JButton saveAllChartsButtonWTO;
+    private JButton saveCurrentDataButtonWTO;
+    private JButton saveAllDataButtonWTO;
+    private JButton saveCurrentDataButtonWU;
+    private JButton saveAllDataButtonWU;
+    private JLabel InitialTSE;
+    private JLabel CurrentTSE;
+    private JLabel ElapsedTimeE;
+    private JLabel InitialTSKCHR;
+    private JLabel CurrentTSKCHR;
+    private JLabel ElapsedTimeKCHR;
+    private JLabel InitialTSKCH;
+    private JLabel CurrentTSKCH;
+    private JLabel ElapsedTimeKCH;
+    private JLabel InitialTSKCM;
+    private JLabel CurrentTSKCM;
+    private JLabel ElapsedTimeKCM;
+    private JLabel InitialTSKCR;
+    private JLabel CurrentTSKCR;
+    private JLabel ElapsedTimeKCR;
+    private JLabel InitialTSRL;
+    private JLabel CurrentTSRL;
+    private JLabel ElapsedTimeRL;
+    private JLabel InitialTSWU;
+    private JLabel CurrentTSWU;
+    private JLabel ElapsedTimeWU;
+    private JLabel ElapsedTimeWTO;
+    private JLabel CurrentTSWTO;
+    private JLabel InitialTSWTO;
+    private JLabel ElapsedTimeWL;
+    private JLabel CurrentTSWL;
+    private JLabel InitialTSWL;
+    private JLabel ElapsedTimeTDSU;
+    private JLabel CurrentTSTDSU;
+    private JLabel InitialTSTDSU;
+    private JLabel ElapsedTimeRCR;
+    private JLabel CurrentTSRCR;
+    private JLabel InitialTSRCR;
+    private JLabel ElapsedTimeRCM;
+    private JLabel CurrentTSRCM;
+    private JLabel InitialTSRCM;
+    private JLabel ElapsedTimeRCH;
+    private JLabel CurrentTSRCH;
+    private JLabel InitialTSRCH;
+    private JLabel ElapsedTimeRCHR;
+    private JLabel CurrentTSRCHR;
+    private JLabel InitialTSRCHR;
+    private JLabel ElapsedTimeRU;
+    private JLabel CurrentTSRU;
+    private JLabel InitialTSRU;
+    private JLabel ElapsedTimeRTL;
+    private JLabel CurrentTSRTL;
+    private JLabel InitialTSRTL;
+    private JLabel ElapsedTimeRTO;
+    private JLabel CurrentTSRTO;
+    private JLabel InitialTSRTO;
 
+    private boolean[][] creada = {{false}, //AllMemtablesHeapSize
+            {false}, //CompletedTasks
+            {false}, //Exceptions
+            {false}, //KeyCacheHitRate
+            {false, false, false, false, false, false}, //KeyCacheHits
+            {false, false, false, false, false, false}, //KeyCacheMisses
+            {false, false, false, false, false, false}, //KeyCacheRequests
+            {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false}, //ReadLatency
+            {false, false, false, false, false, false}, //ReadTimeouts
+            {false}, //ReadTotalLatency
+            {false, false, false, false, false, false}, //ReadUnavailabes
+            {false}, //RowCahceHitRate
+            {false, false, false, false, false, false}, //RowCacheHits
+            {false, false, false, false, false, false}, //RowCacheMisses
+            {false, false, false, false, false, false}, //RowCacheRequests
+            {false}, //TotalDiskSpaceUsed
+            {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false}, //WriteLatency
+            {false, false, false, false, false, false}, //WriteTimeouts
+            {false}, //WriteTotalLatency
+            {false, false, false, false, false, false}, //WriteUnavailabes
+    };
+
+    final int[] h = {0};
+    final int[] m = {0};
+    final int[] s = {0};
+
+
+    private void actualizarTimeLabel() {
+        String tiempo = (h[0]<=9?"0":"")+h[0]+":"+(m[0]<=9?"0":"")+m[0]+":"+(s[0]<=9?"0":"")+s[0];
+        Long datatimeE = System.currentTimeMillis();
+        Timestamp timeE = new Timestamp(datatimeE);
+
+        for (int i = 0; i < 20; i++) {
+            if (globales.EliminarTab[i]) {
+                switch (i) {
+                    case 0:
+                        ElapsedTimeAMHS.setText("Elapsed Time: "+tiempo);
+                        CurrentTSAMHS.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 1:
+                        ElapsedTimeCT.setText("Elapsed Time: "+tiempo);
+                        CurrentTSCT.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 2:
+                        ElapsedTimeE.setText("Elapsed Time: "+tiempo);
+                        CurrentTSE.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 3:
+                        ElapsedTimeKCHR.setText("Elapsed Time: "+tiempo);
+                        CurrentTSKCHR.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 4:
+                        ElapsedTimeKCH.setText("Elapsed Time: "+tiempo);
+                        CurrentTSKCH.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 5:
+                        ElapsedTimeKCM.setText("Elapsed Time: "+tiempo);
+                        CurrentTSKCM.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 6:
+                        ElapsedTimeKCR.setText("Elapsed Time: "+tiempo);
+                        CurrentTSKCR.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 7:
+                        ElapsedTimeRL.setText("Elapsed Time: "+tiempo);
+                        CurrentTSRL.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 8:
+                        ElapsedTimeRTO.setText("Elapsed Time: "+tiempo);
+                        CurrentTSRTO.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 9:
+                        ElapsedTimeRTL.setText("Elapsed Time: "+tiempo);
+                        CurrentTSRTL.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 10:
+                        ElapsedTimeRU.setText("Elapsed Time: "+tiempo);
+                        CurrentTSRU.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 11:
+                        ElapsedTimeRCHR.setText("Elapsed Time: "+tiempo);
+                        CurrentTSRCHR.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 12:
+                        ElapsedTimeRCH.setText("Elapsed Time: "+tiempo);
+                        CurrentTSRCH.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 13:
+                        ElapsedTimeRCM.setText("Elapsed Time: "+tiempo);
+                        CurrentTSRCM.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 14:
+                        ElapsedTimeRCR.setText("Elapsed Time: "+tiempo);
+                        CurrentTSRCR.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 15:
+                        ElapsedTimeTDSU.setText("Elapsed Time: "+tiempo);
+                        CurrentTSTDSU.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 16:
+                        ElapsedTimeWL.setText("Elapsed Time: "+tiempo);
+                        CurrentTSWL.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 17:
+                        ElapsedTimeWTO.setText("Elapsed Time: "+tiempo);
+                        CurrentTSWTO.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 18:
+                        ElapsedTimeWTL.setText("Elapsed Time: "+tiempo);
+                        CurrentTSWTL.setText("Current Time stamp: " + String.valueOf(timeE));
+                    case 19:
+                        ElapsedTimeWU.setText("Elapsed Time: "+tiempo);
+                        CurrentTSWU.setText("Current Time stamp: " + String.valueOf(timeE));
+                    default:
+
+                }
+            }
+        }
+
+    }
 
     public InterfazGrafica(String title) {
         //para ponerle titulo a la pestaña
@@ -217,6 +418,27 @@ public class InterfazGrafica extends JFrame{
         //Array que contiene qué opcion del combobox està seleccionada para cada parametro
         final int[] gNum = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
+        /*Lo relacionado con las labels del tiempo*/
+        Long datatime = System.currentTimeMillis();
+        Timestamp timeS = new Timestamp(datatime);
+
+        ActionListener acciones = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                s[0] += 2;
+                if(s[0] == 60) {
+                    s[0] = 0;
+                    ++m[0];
+                }
+                if(m[0]==60) {
+                    m[0] = 0;
+                    ++h[0];
+                }
+                actualizarTimeLabel();
+            }
+        };
+        Timer t = new Timer(2000, acciones);
+        t.start();
 
         //Bucle que añade los atributos a los comboBox de los parametros seleccionados en el YAML
         for (int i = 0; i < 20; i++) {
@@ -226,101 +448,121 @@ public class InterfazGrafica extends JFrame{
                 switch (i) {
                     case 0:
                         comboBoxAMHS.removeAllItems();
+                        InitialTSAMHS.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxAMHS.addItem(attr);
                         }
                     case 1:
                         comboBoxCT.removeAllItems();
+                        InitialTSCT.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxCT.addItem(attr);
                         }
                     case 2:
                         comboBoxE.removeAllItems();
+                        InitialTSE.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxE.addItem(attr);
                         }
                     case 3:
                         comboBoxKCHR.removeAllItems();
+                        InitialTSKCHR.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxKCHR.addItem(attr);
                         }
                     case 4:
                         comboBoxKCH.removeAllItems();
+                        InitialTSKCH.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxKCH.addItem(attr);
                         }
                     case 5:
                         comboBoxKCM.removeAllItems();
+                        InitialTSKCM.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxKCM.addItem(attr);
                         }
                     case 6:
                         comboBoxKCR.removeAllItems();
+                        InitialTSKCR.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxKCR.addItem(attr);
                         }
                     case 7:
                         comboBoxRL.removeAllItems();
+                        InitialTSRL.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxRL.addItem(attr);
                         }
                     case 8:
                         comboBoxRTO.removeAllItems();
+                        InitialTSRTO.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxRTO.addItem(attr);
                         }
                     case 9:
                         comboBoxRTL.removeAllItems();
+                        InitialTSRTL.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxRTL.addItem(attr);
                         }
                     case 10:
                         comboBoxRU.removeAllItems();
+                        InitialTSRU.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxRU.addItem(attr);
                         }
                     case 11:
                         comboBoxRCHR.removeAllItems();
+                        InitialTSRCHR.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxRCHR.addItem(attr);
                         }
                     case 12:
                         comboBoxRCH.removeAllItems();
+                        InitialTSRCH.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxRCH.addItem(attr);
                         }
                     case 13:
                         comboBoxRCM.removeAllItems();
+                        InitialTSRCM.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxRCM.addItem(attr);
                         }
                     case 14:
                         comboBoxRCR.removeAllItems();
+                        InitialTSRCR.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxRCR.addItem(attr);
                         }
                     case 15:
                         comboBoxTDSU.removeAllItems();
+                        InitialTSTDSU.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxTDSU.addItem(attr);
                         }
                     case 16:
                         comboBoxWL.removeAllItems();
+                        InitialTSWL.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxWL.addItem(attr);
                         }
                     case 17:
                         comboBoxWTO.removeAllItems();
+                        InitialTSWTO.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxWTO.addItem(attr);
                         }
                     case 18:
                         comboBoxWTL.removeAllItems();
+                        InitialTSWTL.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxWTL.addItem(attr);
                         }
                     case 19:
                         comboBoxWU.removeAllItems();
+                        InitialTSWU.setText("Initial Time Stamp: " + timeS);
                         for (String attr : attrNamesSeparats) {
                             comboBoxWU.addItem(attr);
                         }
@@ -349,21 +591,24 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[0].split(",");
                 gNum[0] = comboBoxAMHS.getSelectedIndex();
+                creada[0][gNum[0]] = true;
                 GraficaAMHS.removeAll();
 
                 if(globales.ValAct[0][gNum[0]].contains("E")) {
                     String[] partes = globales.ValAct[0][gNum[0]].split("E");
-                    jchart[0][gNum[0]] = ChartFactory.createLineChart("Parametro AllMemtablesHeapSize", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[0][gNum[0]] = ChartFactory.createLineChart("Parametro AllMemtablesHeapSize",
+                            "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
                             globales.dcd[0][Integer.parseInt(IndexAttr[gNum[0]])]);
                 }
                 else {
-                    jchart[0][gNum[0]] = ChartFactory.createLineChart("Parametro AllMemtablesHeapSize", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[0][gNum[0]] = ChartFactory.createLineChart("Parametro AllMemtablesHeapSize",
+                            "Cantidad de datos recogidos","Valor del atributo",
                             globales.dcd[0][Integer.parseInt(IndexAttr[gNum[0]])]);
                 }
 
                 ChartPanel cPanel = new ChartPanel(jchart[0][gNum[0]]);
                 cPanel.setMouseWheelEnabled(true);
-                cPanel.setPreferredSize(new Dimension(500,400));
+                cPanel.setPreferredSize(new Dimension(960,540));
 
                 GraficaAMHS.setLayout(new BorderLayout());
                 GraficaAMHS.add(cPanel, BorderLayout.NORTH);
@@ -378,6 +623,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[1].split(",");
                 gNum[1] = comboBoxCT.getSelectedIndex();
+                creada[1][gNum[1]] = true;
                 GraficaCT.removeAll();
 
                 if(globales.ValAct[1][gNum[1]].contains("E")) {
@@ -406,6 +652,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[2].split(",");
                 gNum[2] = comboBoxE.getSelectedIndex();
+                creada[2][gNum[2]] = true;
                 GraficaE.removeAll();
 
                 if(globales.ValAct[2][gNum[2]].contains("E")) {
@@ -434,6 +681,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[3].split(",");
                 gNum[3] = comboBoxKCHR.getSelectedIndex();
+                creada[3][gNum[3]] = true;
                 GraficaKCHR.removeAll();
 
                 if(globales.ValAct[3][gNum[3]].contains("E")) {
@@ -463,15 +711,16 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[4].split(",");
                 gNum[4] = comboBoxKCH.getSelectedIndex();
+                creada[4][gNum[4]] = true;
                 GraficaKCH.removeAll();
 
                 if(globales.ValAct[4][gNum[4]].contains("E")) {
                     String[] partes = globales.ValAct[4][gNum[4]].split("E");
-                    jchart[4][gNum[4]] = ChartFactory.createLineChart("Parametro KeyCacheHits", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[4][gNum[4]] = ChartFactory.createLineChart("KeyCacheHits Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[4][Integer.parseInt(IndexAttr[gNum[4]])]);
                 }
                 else {
-                    jchart[4][gNum[4]] = ChartFactory.createLineChart("Parametro KeyCacheHits", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[4][gNum[4]] = ChartFactory.createLineChart("KeyCacheHits Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[4][Integer.parseInt(IndexAttr[gNum[4]])]);
                 }
 
@@ -491,6 +740,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[5].split(",");
                 gNum[5] = comboBoxKCM.getSelectedIndex();
+                creada[5][gNum[5]] = true;
                 GraficaKCM.removeAll();
                 if(globales.ValAct[5][gNum[5]].contains("E")) {
                     String[] partes = globales.ValAct[5][gNum[5]].split("E");
@@ -518,6 +768,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[6].split(",");
                 gNum[6] = comboBoxKCR.getSelectedIndex();
+                creada[6][gNum[6]] = true;
                 GraficaKCR.removeAll();
 
                 if(globales.ValAct[6][gNum[6]].contains("E")) {
@@ -547,6 +798,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[7].split(",");
                 gNum[7] = comboBoxRL.getSelectedIndex();
+                creada[7][gNum[7]] = true;
                 GraficaRL.removeAll();
 
                 if(globales.ValAct[7][gNum[7]].contains("E")) {
@@ -576,6 +828,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[8].split(",");
                 gNum[8] = comboBoxRTO.getSelectedIndex();
+                creada[8][gNum[8]] = true;
                 GraficaRTO.removeAll();
 
                 if(globales.ValAct[8][gNum[8]].contains("E")) {
@@ -605,6 +858,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[9].split(",");
                 gNum[9] = comboBoxRTL.getSelectedIndex();
+                creada[9][gNum[9]] = true;
                 GraficaRTL.removeAll();
 
                 if(globales.ValAct[9][gNum[9]].contains("E")) {
@@ -633,6 +887,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[10].split(",");
                 gNum[10] = comboBoxRU.getSelectedIndex();
+                creada[10][gNum[10]] = true;
                 GraficaRU.removeAll();
 
                 if(globales.ValAct[10][gNum[10]].contains("E")) {
@@ -661,6 +916,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[11].split(",");
                 gNum[11] = comboBoxRCHR.getSelectedIndex();
+                creada[11][gNum[11]] = true;
                 GraficaRCHR.removeAll();
 
                 if(globales.ValAct[11][gNum[11]].contains("E")) {
@@ -689,6 +945,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[12].split(",");
                 gNum[12] = comboBoxRCH.getSelectedIndex();
+                creada[12][gNum[12]] = true;
                 GraficaRCH.removeAll();
 
                 if(globales.ValAct[12][gNum[12]].contains("E")) {
@@ -717,6 +974,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[13].split(",");
                 gNum[13] = comboBoxRCM.getSelectedIndex();
+                creada[13][gNum[13]] = true;
                 GraficaRCM.removeAll();
 
                 if(globales.ValAct[13][gNum[13]].contains("E")) {
@@ -745,6 +1003,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[14].split(",");
                 gNum[14] = comboBoxRCR.getSelectedIndex();
+                creada[14][gNum[14]] = true;
                 GraficaRCR.removeAll();
 
                 if(globales.ValAct[14][gNum[14]].contains("E")) {
@@ -774,6 +1033,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[15].split(",");
                 gNum[15] = comboBoxTDSU.getSelectedIndex();
+                creada[15][gNum[15]] = true;
                 GraficaTDSU.removeAll();
 
                 if(globales.ValAct[15][gNum[15]].contains("E")) {
@@ -802,6 +1062,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[16].split(",");
                 gNum[16] = comboBoxWL.getSelectedIndex();
+                creada[16][gNum[16]] = true;
                 GraficaWL.removeAll();
 
                 if(globales.ValAct[16][gNum[16]].contains("E")) {
@@ -830,6 +1091,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[17].split(",");
                 gNum[17] = comboBoxWTO.getSelectedIndex();
+                creada[17][gNum[17]] = true;
                 GraficaWTO.removeAll();
 
                 if(globales.ValAct[17][gNum[17]].contains("E")) {
@@ -858,6 +1120,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[18].split(",");
                 gNum[18] = comboBoxWTL.getSelectedIndex();
+                creada[18][gNum[18]] = true;
                 GraficaWTL.removeAll();
 
                 if(globales.ValAct[18][gNum[18]].contains("E")) {
@@ -886,6 +1149,7 @@ public class InterfazGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[19].split(",");
                 gNum[19] = comboBoxWU.getSelectedIndex();
+                creada[19][gNum[19]] = true;
                 GraficaWU.removeAll();
 
                 if(globales.ValAct[19][gNum[19]].contains("E")) {
@@ -1101,7 +1365,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngAMHS.getText() + ".png");
+                File f = new File("AllMemtablesHeapSize_"+ comboBoxAMHS.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[0][gNum[0]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1114,7 +1378,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngCT.getText() + ".png");
+                File f = new File("CompletedTasks_"+comboBoxCT.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[1][gNum[1]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1127,7 +1391,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngE.getText() + ".png");
+                File f = new File("Exceptions_"+comboBoxE.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[2][gNum[2]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1140,7 +1404,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngKCHR.getText() + ".png");
+                File f = new File("KeyCacheHitRate_"+comboBoxKCHR.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[3][gNum[3]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1153,7 +1417,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngKCH.getText() + ".png");
+                File f = new File("KeyChacheHits_"+comboBoxKCH.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[4][gNum[4]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1166,7 +1430,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngKCM.getText() + ".png");
+                File f = new File("KeyCacheMisses_"+comboBoxKCM.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[5][gNum[5]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1179,7 +1443,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngKCR.getText() + ".png");
+                File f = new File("KeyCacheRequests_"+comboBoxKCR.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[6][gNum[6]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1192,7 +1456,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngRL.getText() + ".png");
+                File f = new File("ReadLatency_"+comboBoxRL.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[7][gNum[7]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1205,7 +1469,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngRTO.getText() + ".png");
+                File f = new File("ReadTimeOuts_"+comboBoxRTO.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[8][gNum[8]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1218,7 +1482,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngRTL.getText() + ".png");
+                File f = new File("ReadUnavailables_"+comboBoxRTL.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[9][gNum[9]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1231,7 +1495,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngRU.getText() + ".png");
+                File f = new File("RowCacheHitRate_"+comboBoxRU.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[10][gNum[10]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1244,7 +1508,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngRCHR.getText() + ".png");
+                File f = new File("RowCacheHitRate_"+comboBoxRCHR.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[11][gNum[11]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1257,7 +1521,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngRCH.getText() + ".png");
+                File f = new File("RowCacheHits_"+comboBoxRCH.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[12][gNum[12]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1270,7 +1534,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngRCM.getText() + ".png");
+                File f = new File("RowCacheMisses_"+comboBoxRCM.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[13][gNum[13]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1283,7 +1547,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngRCR.getText() + ".png");
+                File f = new File("RowCacheRequests_"+comboBoxRCR.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[14][gNum[14]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1297,7 +1561,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngTDSU.getText() + ".png");
+                File f = new File("TotalDiskSpaceUsed_"+comboBoxTDSU.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[15][gNum[15]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1310,7 +1574,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngWL.getText() + ".png");
+                File f = new File("WriteLatency_"+comboBoxWL.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[16][gNum[16]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1323,7 +1587,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngWTO.getText() + ".png");
+                File f = new File("WriteTimeOuts_"+comboBoxWTO.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[17][gNum[17]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1336,7 +1600,7 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngWTL.getText() + ".png");
+                File f = new File("WriteTotalLatency_"+comboBoxWTL.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[18][gNum[18]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1349,12 +1613,165 @@ public class InterfazGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File(NombrePngWU.getText() + ".png");
+                File f = new File("WriteUnavailables_"+comboBoxWU.getSelectedItem() + "_Chart.png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[19][gNum[19]], 400, 400, info);
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
+            }
+        });
+        //---------------------------------------------------------------------------------------------
+        //-------------------------LISTENERS DE LOS BOTONES DE SAVE ALL CHARTS-------------------------
+        //---------------------------------------------------------------------------------------------
+        saveAllChartsButtonAMHS.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonCT.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonE.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonKCHR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonKCH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonKCM.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonKCR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonRL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonRTO.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+
+            }
+        });
+        saveAllChartsButtonRTL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonRU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonRCHR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonRCH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonRCM.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonRCR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonTDSU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonWL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonWTO.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonWTL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        saveAllChartsButtonWU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SaveAllCharts(jchart);
+            }
+        });
+        //---------------------------------------------------------------------------------------------
+        //----------------------LISTENERS DE LOS BOTONES DE SAVE CURRENT DATA--------------------------
+        //---------------------------------------------------------------------------------------------
+        saveCurrentDataButtonAMHS.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("AllMemtablesHeapSize_" + comboBoxAMHS.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[0].split(",");
+                ps.println("Valores del atributo " + comboBoxAMHS.getSelectedItem());
+                for(int i = 0; i < globales.dcd[0][Integer.parseInt(IndexAttr[gNum[17]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[0][Integer.parseInt(IndexAttr[gNum[17]])].getValue(0,i));
+                }
+            }
+        });
+        //---------------------------------------------------------------------------------------------
+        //----------------------LISTENERS DE LOS BOTONES DE SAVE ALL DATA------------------------------
+        //---------------------------------------------------------------------------------------------
+        saveAllDataButtonAMHS.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
             }
         });
     }
@@ -1578,5 +1995,46 @@ public class InterfazGrafica extends JFrame{
         }
 
         return ret;
+    }
+
+    public void SaveAllCharts( JFreeChart[][] jchart) {
+        for (int i = 0; i < jchart.length; i++) {
+            int k = 0;
+            for (int j = 0; j < jchart[i].length; j++) {
+                    if (creada[i][j]) {
+                        ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                        File f = new File("Grafica_"+i+"_"+j+".png" );
+                        k++;
+                        try {
+                            ChartUtilities.saveChartAsPNG(f, jchart[i][j], 400, 400, info);
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+            }
+        }
+
+    }
+//FALTA AFEGIR SEPARADORS ENTRE LES DADES PER INDICAR DE QUIN PARAMETRE I QUIN ATRIBUT SON
+    public void saveAllData() {
+        FileOutputStream os = null;
+        try {
+            os = new FileOutputStream("AllData.txt");
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        PrintStream ps = new PrintStream(os);
+        for (int i = 0;  i < globales.dcd.length; i++) {
+            ps.println("-------------parametre"+i+"---------------");
+            for (int j = 0; j < globales.dcd[i].length; j++) {
+                if (creada[i][j]) {
+                    ps.println("-------------atribut"+j+"---------------");
+                    for (int k = 0; k < globales.dcd[i][j].getColumnCount(); k++) {
+                        ps.println(globales.dcd[i][j].getValue(0,k));
+                    }
+                }
+            }
+        }
+
     }
 }
