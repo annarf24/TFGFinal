@@ -1760,15 +1760,475 @@ public class InterfazGrafica extends JFrame implements globales{
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[0].split(",");
                 ps.println("Valores del atributo " + comboBoxAMHS.getSelectedItem());
-                for(int i = 0; i < globales.dcd[0][Integer.parseInt(IndexAttr[gNum[17]])].getColumnCount(); i++) {
-                    ps.println(globales.dcd[0][Integer.parseInt(IndexAttr[gNum[17]])].getValue(0,i));
+                for(int i = 0; i < globales.dcd[0][Integer.parseInt(IndexAttr[gNum[0]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[0][Integer.parseInt(IndexAttr[gNum[0]])].getValue(0,i));
                 }
             }
         });
+
+        saveCurrentDataButtonCT.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("CompletedTasks_" + comboBoxCT.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[1].split(",");
+                ps.println("Valores del atributo " + comboBoxCT.getSelectedItem());
+                for(int i = 0; i < globales.dcd[1][Integer.parseInt(IndexAttr[gNum[1]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[1][Integer.parseInt(IndexAttr[gNum[1]])].getValue(0,i));
+                }
+            }
+        });
+
+        saveCurrentDataButtonE.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("Exceptions_" + comboBoxE.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[2].split(",");
+                ps.println("Valores del atributo " + comboBoxE.getSelectedItem());
+                for(int i = 0; i < globales.dcd[2][Integer.parseInt(IndexAttr[gNum[2]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[2][Integer.parseInt(IndexAttr[gNum[2]])].getValue(0,i));
+                }
+            }
+        });
+
+        saveCurrentDataButtonKCHR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("KeyCacheHitRate_" + comboBoxKCHR.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[3].split(",");
+                ps.println("Valores del atributo " + comboBoxKCHR.getSelectedItem());
+                for(int i = 0; i < globales.dcd[3][Integer.parseInt(IndexAttr[gNum[3]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[3][Integer.parseInt(IndexAttr[gNum[3]])].getValue(0,i));
+                }
+
+            }
+        });
+
+        saveCurrentDataButtonKCH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("KeyCacheHits_" + comboBoxKCH.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[4].split(",");
+                ps.println("Valores del atributo " + comboBoxKCH.getSelectedItem());
+                for(int i = 0; i < globales.dcd[4][Integer.parseInt(IndexAttr[gNum[4]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[4][Integer.parseInt(IndexAttr[gNum[4]])].getValue(0,i));
+                }
+
+            }
+        });
+
+        saveCurrentDataButtonKCM.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("KeyCacheMisses_" + comboBoxKCM.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[5].split(",");
+                ps.println("Valores del atributo " + comboBoxKCM.getSelectedItem());
+                for(int i = 0; i < globales.dcd[5][Integer.parseInt(IndexAttr[gNum[5]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[5][Integer.parseInt(IndexAttr[gNum[5]])].getValue(0,i));
+                }
+
+            }
+        });
+
+        saveCurrentDataButtonKCR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("KeyCacheRequests_" + comboBoxKCR.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[6].split(",");
+                ps.println("Valores del atributo " + comboBoxKCR.getSelectedItem());
+                for(int i = 0; i < globales.dcd[6][Integer.parseInt(IndexAttr[gNum[6]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[6][Integer.parseInt(IndexAttr[gNum[6]])].getValue(0,i));
+                }
+
+            }
+        });
+        saveCurrentDataButtonRL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("ReadLatency_" + comboBoxRL.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[7].split(",");
+                ps.println("Valores del atributo " + comboBoxRL.getSelectedItem());
+                for(int i = 0; i < globales.dcd[7][Integer.parseInt(IndexAttr[gNum[7]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[7][Integer.parseInt(IndexAttr[gNum[7]])].getValue(0,i));
+                }
+
+            }
+        });
+        saveCurrentDataButtonRTO.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("ReadTimeOuts_" + comboBoxRTO.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[8].split(",");
+                ps.println("Valores del atributo " + comboBoxRTO.getSelectedItem());
+                for(int i = 0; i < globales.dcd[8][Integer.parseInt(IndexAttr[gNum[8]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[8][Integer.parseInt(IndexAttr[gNum[8]])].getValue(0,i));
+                }
+
+            }
+        });
+        saveCurrentDataButtonRTL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("ReadTotalLatency_" + comboBoxRTL.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[9].split(",");
+                ps.println("Valores del atributo " + comboBoxRTL.getSelectedItem());
+                for(int i = 0; i < globales.dcd[9][Integer.parseInt(IndexAttr[gNum[9]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[9][Integer.parseInt(IndexAttr[gNum[9]])].getValue(0,i));
+                }
+
+            }
+        });
+        saveCurrentDataButtonRU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("ReadUnavailables_" + comboBoxRU.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[10].split(",");
+                ps.println("Valores del atributo " + comboBoxRU.getSelectedItem());
+                for(int i = 0; i < globales.dcd[10][Integer.parseInt(IndexAttr[gNum[10]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[10][Integer.parseInt(IndexAttr[gNum[10]])].getValue(0,i));
+                }
+
+            }
+        });
+        saveCurrentDataButtonRCHR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("RowCacheHitRate_" + comboBoxRCHR.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[11].split(",");
+                ps.println("Valores del atributo " + comboBoxRCHR.getSelectedItem());
+                for(int i = 0; i < globales.dcd[11][Integer.parseInt(IndexAttr[gNum[11]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[11][Integer.parseInt(IndexAttr[gNum[11]])].getValue(0,i));
+                }
+
+            }
+        });
+        saveCurrentDataButtonRCH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("RowCacheHits_" + comboBoxRCH.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[12].split(",");
+                ps.println("Valores del atributo " + comboBoxRCH.getSelectedItem());
+                for(int i = 0; i < globales.dcd[12][Integer.parseInt(IndexAttr[gNum[12]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[12][Integer.parseInt(IndexAttr[gNum[12]])].getValue(0,i));
+                }
+
+            }
+        });
+        saveCurrentDataButtonRCM.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("RowCacheMisses_" + comboBoxRCM.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[13].split(",");
+                ps.println("Valores del atributo " + comboBoxRCM.getSelectedItem());
+                for(int i = 0; i < globales.dcd[13][Integer.parseInt(IndexAttr[gNum[13]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[13][Integer.parseInt(IndexAttr[gNum[13]])].getValue(0,i));
+                }
+
+            }
+        });
+        saveCurrentDataButtonRCR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("RowCacheRequests_" + comboBoxRCR.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[14].split(",");
+                ps.println("Valores del atributo " + comboBoxRCR.getSelectedItem());
+                for(int i = 0; i < globales.dcd[14][Integer.parseInt(IndexAttr[gNum[14]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[14][Integer.parseInt(IndexAttr[gNum[14]])].getValue(0,i));
+                }
+
+            }
+        });
+        saveCurrentDataButtonTDSU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("TotalDiskSpaceUsed_" + comboBoxTDSU.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[15].split(",");
+                ps.println("Valores del atributo " + comboBoxTDSU.getSelectedItem());
+                for(int i = 0; i < globales.dcd[15][Integer.parseInt(IndexAttr[gNum[15]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[15][Integer.parseInt(IndexAttr[gNum[15]])].getValue(0,i));
+                }
+
+            }
+        });
+        saveCurrentDataButtonWL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("WriteLatency_" + comboBoxWL.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[16].split(",");
+                ps.println("Valores del atributo " + comboBoxWL.getSelectedItem());
+                for(int i = 0; i < globales.dcd[16][Integer.parseInt(IndexAttr[gNum[16]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[16][Integer.parseInt(IndexAttr[gNum[16]])].getValue(0,i));
+                }
+
+            }
+        });
+        saveCurrentDataButtonWTO.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("WriteTimeOuts_" + comboBoxWTO.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[17].split(",");
+                ps.println("Valores del atributo " + comboBoxWTO.getSelectedItem());
+                for(int i = 0; i < globales.dcd[17][Integer.parseInt(IndexAttr[gNum[17]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[17][Integer.parseInt(IndexAttr[gNum[17]])].getValue(0,i));
+                }
+            }
+        });
+        saveCurrentDataButtonWTL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("WriteTotalLatency_" + comboBoxWTL.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[18].split(",");
+                ps.println("Valores del atributo " + comboBoxWTL.getSelectedItem());
+                for(int i = 0; i < globales.dcd[18][Integer.parseInt(IndexAttr[gNum[18]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[18][Integer.parseInt(IndexAttr[gNum[18]])].getValue(0,i));
+                }
+
+            }
+        });
+        saveCurrentDataButtonWU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileOutputStream os = null;
+                try {
+                    os = new FileOutputStream("WriteUnavailables_" + comboBoxWU.getSelectedItem() + "_Data.txt");
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                PrintStream ps = new PrintStream(os);
+                String[] IndexAttr = globales.attr[19].split(",");
+                ps.println("Valores del atributo " + comboBoxWU.getSelectedItem());
+                for(int i = 0; i < globales.dcd[19][Integer.parseInt(IndexAttr[gNum[19]])].getColumnCount(); i++) {
+                    ps.println(globales.dcd[19][Integer.parseInt(IndexAttr[gNum[19]])].getValue(0,i));
+                }
+
+            }
+        });
+
         //---------------------------------------------------------------------------------------------
         //----------------------LISTENERS DE LOS BOTONES DE SAVE ALL DATA------------------------------
         //---------------------------------------------------------------------------------------------
         saveAllDataButtonAMHS.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonCT.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonE.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonKCHR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonKCH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonKCM.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonKCR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonRL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonRTO.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonRTL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonRU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonRCHR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonRCH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonRCM.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonRCR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonTDSU.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonWL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonWTO.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonWTL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveAllData();
+            }
+        });
+        saveAllDataButtonWU.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 saveAllData();
@@ -1781,102 +2241,102 @@ public class InterfazGrafica extends JFrame implements globales{
 
             //AllMemtablesHeapSize
             case 1:
-                ValorActualAMHS.setText("Valor: "+val);
+                ValorActualAMHS.setText("Current Value: "+val);
                 break;
 
             //CompletedTasks
             case 2:
-                ValorActualCT.setText("Valor: "+val);
+                ValorActualCT.setText("Current Value: "+val);
                 break;
 
             //Exceptions
             case 3:
-                ValorActualE.setText("Valor: "+val);
+                ValorActualE.setText("Current Value: "+val);
                 break;
 
             //KeyCacheHitRate
             case 4:
-                ValorActualKCHR.setText("Valor: "+val);
+                ValorActualKCHR.setText("Current Value: "+val);
                 break;
 
             //KeyCacheHits
             case 5:
-                ValorActualKCH.setText("Valor: "+val);
+                ValorActualKCH.setText("Current Value: "+val);
                 break;
 
             //KeyCacheMisses
             case 6:
-                ValorActualKCM.setText("Valor: "+val);
+                ValorActualKCM.setText("Current Value: "+val);
                 break;
 
             //KeyCacheRequests
             case 7:
-                ValorActualKCR.setText("Valor: "+val);
+                ValorActualKCR.setText("Current Value: "+val);
                 break;
 
             //ReadLatency
             case 8:
-                ValorActualRL.setText("Valor: "+val);
+                ValorActualRL.setText("Current Value: "+val);
                 break;
 
             //ReadTimeOuts
             case 9:
-                ValorActualRTO.setText("Valor: "+val);
+                ValorActualRTO.setText("Current Value: "+val);
                 break;
 
             //ReadTotalLatency
             case 10:
-                ValorActualRTL.setText("Valor: "+val);
+                ValorActualRTL.setText("Current Value: "+val);
                 break;
 
             //ReadUnavailables
             case 11:
-                ValorActualRU.setText("Valor: "+val);
+                ValorActualRU.setText("Current Value: "+val);
                 break;
 
             //RowCacheHitRate
             case 12:
-                ValorActualRCHR.setText("Valor: "+val);
+                ValorActualRCHR.setText("Current Value: "+val);
                 break;
 
             //RowCacheHits
             case 13:
-                ValorActualRCH.setText("Valor: "+val);
+                ValorActualRCH.setText("Current Value: "+val);
                 break;
 
             //RowCacheMisses
             case 14:
-                ValorActualRCM.setText("Valor: "+val);
+                ValorActualRCM.setText("Current Value: "+val);
                 break;
 
             //RowCacheRequests
             case 15:
-                ValorActualRCR.setText("Valor: "+val);
+                ValorActualRCR.setText("Current Value: "+val);
                 break;
 
             //TotalDiskSpaceUsed
             case 16:
-                ValorActualTDSU.setText("Valor: "+val);
+                ValorActualTDSU.setText("Current Value: "+val);
                 break;
 
             //WriteLatency
             case 17:
-                ValorActualWL.setText("Valor: "+val);
+                ValorActualWL.setText("Current Value: "+val);
                 break;
 
             //WriteTimeOuts
             case 18:
-                ValorActualWTO.setText("Valor: "+val);
+                ValorActualWTO.setText("Current Value: "+val);
                 break;
 
             //WriteTotalLatency
             case 19:
-                ValorActualWTL.setText("Valor: "+val);
+                ValorActualWTL.setText("Current Value: "+val);
                 break;
 
             //WriteUnavailables
             case 20:
-                ValorActualWU.setText("Valor: "+val);
+                ValorActualWU.setText("Current Value: "+val);
                 break;
 
             default:
