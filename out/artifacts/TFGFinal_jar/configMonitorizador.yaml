@@ -70,10 +70,8 @@ parametros:
     - FiveMinuteRate
     - Max
     - Mean
-    #- MeanRate
     - Min
     - OneMinuteRate
-    #- RecentValues
     - StdDev
 
   #- name: ReadTimeOuts
@@ -150,10 +148,8 @@ parametros:
     #- FiveMinuteRate
     #- Max
     #- Mean
-    #- MeanRate
     #- Min
     #- OneMinuteRate
-    #- RecentValues
     #- StdDev
 
   #- name: WriteTimeOuts

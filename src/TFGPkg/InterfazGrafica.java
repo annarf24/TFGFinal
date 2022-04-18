@@ -592,7 +592,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[0].split(",");
                 gNum[0] = comboBoxAMHS.getSelectedIndex();
-                creada[0][gNum[0]] = true;
+                creada[0][Integer.parseInt(IndexAttr[gNum[0]])] = true;
                 GraficaAMHS.removeAll();
 
                 if(globales.ValAct[0][gNum[0]].contains("E")) {
@@ -624,7 +624,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[1].split(",");
                 gNum[1] = comboBoxCT.getSelectedIndex();
-                creada[1][gNum[1]] = true;
+                creada[1][Integer.parseInt(IndexAttr[gNum[1]])] = true;
                 GraficaCT.removeAll();
 
                 if(globales.ValAct[1][gNum[1]].contains("E")) {
@@ -653,7 +653,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[2].split(",");
                 gNum[2] = comboBoxE.getSelectedIndex();
-                creada[2][gNum[2]] = true;
+                creada[2][Integer.parseInt(IndexAttr[gNum[2]])] = true;
                 GraficaE.removeAll();
 
                 if(globales.ValAct[2][gNum[2]].contains("E")) {
@@ -682,7 +682,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[3].split(",");
                 gNum[3] = comboBoxKCHR.getSelectedIndex();
-                creada[3][gNum[3]] = true;
+                creada[3][Integer.parseInt(IndexAttr[gNum[3]])] = true;
                 GraficaKCHR.removeAll();
 
                 if(globales.ValAct[3][gNum[3]].contains("E")) {
@@ -712,7 +712,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[4].split(",");
                 gNum[4] = comboBoxKCH.getSelectedIndex();
-                creada[4][gNum[4]] = true;
+                creada[4][Integer.parseInt(IndexAttr[gNum[4]])] = true;
                 GraficaKCH.removeAll();
 
                 if(globales.ValAct[4][gNum[4]].contains("E")) {
@@ -741,7 +741,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[5].split(",");
                 gNum[5] = comboBoxKCM.getSelectedIndex();
-                creada[5][gNum[5]] = true;
+                creada[5][Integer.parseInt(IndexAttr[gNum[5]])] = true;
                 GraficaKCM.removeAll();
                 if(globales.ValAct[5][gNum[5]].contains("E")) {
                     String[] partes = globales.ValAct[5][gNum[5]].split("E");
@@ -769,7 +769,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[6].split(",");
                 gNum[6] = comboBoxKCR.getSelectedIndex();
-                creada[6][gNum[6]] = true;
+                creada[6][Integer.parseInt(IndexAttr[gNum[6]])] = true;
                 GraficaKCR.removeAll();
 
                 if(globales.ValAct[6][gNum[6]].contains("E")) {
@@ -799,7 +799,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[7].split(",");
                 gNum[7] = comboBoxRL.getSelectedIndex();
-                creada[7][gNum[7]] = true;
+                creada[7][Integer.parseInt(IndexAttr[gNum[7]])] = true;
                 GraficaRL.removeAll();
 
                 if(globales.ValAct[7][gNum[7]].contains("E")) {
@@ -829,7 +829,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[8].split(",");
                 gNum[8] = comboBoxRTO.getSelectedIndex();
-                creada[8][gNum[8]] = true;
+                creada[8][Integer.parseInt(IndexAttr[gNum[8]])] = true;
                 GraficaRTO.removeAll();
 
                 if(globales.ValAct[8][gNum[8]].contains("E")) {
@@ -859,7 +859,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[9].split(",");
                 gNum[9] = comboBoxRTL.getSelectedIndex();
-                creada[9][gNum[9]] = true;
+                creada[9][Integer.parseInt(IndexAttr[gNum[9]])] = true;
                 GraficaRTL.removeAll();
 
                 if(globales.ValAct[9][gNum[9]].contains("E")) {
@@ -888,7 +888,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[10].split(",");
                 gNum[10] = comboBoxRU.getSelectedIndex();
-                creada[10][gNum[10]] = true;
+                creada[10][Integer.parseInt(IndexAttr[gNum[10]])] = true;
                 GraficaRU.removeAll();
 
                 if(globales.ValAct[10][gNum[10]].contains("E")) {
@@ -917,7 +917,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[11].split(",");
                 gNum[11] = comboBoxRCHR.getSelectedIndex();
-                creada[11][gNum[11]] = true;
+                creada[11][Integer.parseInt(IndexAttr[gNum[11]])] = true;
                 GraficaRCHR.removeAll();
 
                 if(globales.ValAct[11][gNum[11]].contains("E")) {
@@ -946,7 +946,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[12].split(",");
                 gNum[12] = comboBoxRCH.getSelectedIndex();
-                creada[12][gNum[12]] = true;
+                creada[12][Integer.parseInt(IndexAttr[gNum[12]])] = true;
                 GraficaRCH.removeAll();
 
                 if(globales.ValAct[12][gNum[12]].contains("E")) {
@@ -975,7 +975,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[13].split(",");
                 gNum[13] = comboBoxRCM.getSelectedIndex();
-                creada[13][gNum[13]] = true;
+                creada[13][Integer.parseInt(IndexAttr[gNum[13]])] = true;
                 GraficaRCM.removeAll();
 
                 if(globales.ValAct[13][gNum[13]].contains("E")) {
@@ -1004,7 +1004,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[14].split(",");
                 gNum[14] = comboBoxRCR.getSelectedIndex();
-                creada[14][gNum[14]] = true;
+                creada[14][Integer.parseInt(IndexAttr[gNum[14]])] = true;
                 GraficaRCR.removeAll();
 
                 if(globales.ValAct[14][gNum[14]].contains("E")) {
@@ -1034,7 +1034,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[15].split(",");
                 gNum[15] = comboBoxTDSU.getSelectedIndex();
-                creada[15][gNum[15]] = true;
+                creada[15][Integer.parseInt(IndexAttr[gNum[15]])] = true;
                 GraficaTDSU.removeAll();
 
                 if(globales.ValAct[15][gNum[15]].contains("E")) {
@@ -1063,7 +1063,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[16].split(",");
                 gNum[16] = comboBoxWL.getSelectedIndex();
-                creada[16][gNum[16]] = true;
+                creada[16][Integer.parseInt(IndexAttr[gNum[16]])] = true;
                 GraficaWL.removeAll();
 
                 if(globales.ValAct[16][gNum[16]].contains("E")) {
@@ -1092,7 +1092,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[17].split(",");
                 gNum[17] = comboBoxWTO.getSelectedIndex();
-                creada[17][gNum[17]] = true;
+                creada[17][Integer.parseInt(IndexAttr[gNum[17]])] = true;
                 GraficaWTO.removeAll();
 
                 if(globales.ValAct[17][gNum[17]].contains("E")) {
@@ -1121,7 +1121,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[18].split(",");
                 gNum[18] = comboBoxWTL.getSelectedIndex();
-                creada[18][gNum[18]] = true;
+                creada[18][Integer.parseInt(IndexAttr[gNum[18]])] = true;
                 GraficaWTL.removeAll();
 
                 if(globales.ValAct[18][gNum[18]].contains("E")) {
@@ -1150,7 +1150,7 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[19].split(",");
                 gNum[19] = comboBoxWU.getSelectedIndex();
-                creada[19][gNum[19]] = true;
+                creada[19][Integer.parseInt(IndexAttr[gNum[19]])] = true;
                 GraficaWU.removeAll();
 
                 if(globales.ValAct[19][gNum[19]].contains("E")) {
@@ -2458,6 +2458,7 @@ public class InterfazGrafica extends JFrame implements globales{
         return ret;
     }
 
+    //FALTA FER QUE EL NOM DE L'ARXIU SIGUI PARAMETRE+ATRIBUT+TIMESTAMP
     public void SaveAllCharts( JFreeChart[][] jchart) {
         for (int i = 0; i < jchart.length; i++) {
             int k = 0;
@@ -2476,11 +2477,17 @@ public class InterfazGrafica extends JFrame implements globales{
         }
 
     }
-//FALTA AFEGIR SEPARADORS ENTRE LES DADES PER INDICAR DE QUIN PARAMETRE I QUIN ATRIBUT SON
+
+    //funció que crea un arxiu txt i hi guarda tots els valors numèrics dels atributs que s'han consultat almenys un cop al llarg de l'execució
+    //(només es crida quan s'apreta el botó SaveAllData)
+    //l'arxiu resultant consta de separadors amb els noms dels paràmetres i atributs que representen els valors numèrics
+    //el nom de l'arxiu txt consta també d'un timestamp del moment en que s'ha creat
     public void saveAllData() {
+        Long datatimeE = System.currentTimeMillis();
+        Timestamp timeE = new Timestamp(datatimeE);
         FileOutputStream os = null;
         try {
-            os = new FileOutputStream("AllData.txt");
+            os = new FileOutputStream("AllData_" + timeE + ".txt");
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }
@@ -2555,7 +2562,7 @@ public class InterfazGrafica extends JFrame implements globales{
             }
             for (int j = 0; j < globales.dcd[i].length; j++) {
                 if (creada[i][j]) {
-                    ps.println("-------------atribut"+j+"---------------");
+                    ps.println("********************" + globales.dcd[i][j].getRowKey(0) + "**********************");
                     for (int k = 0; k < globales.dcd[i][j].getColumnCount(); k++) {
                         ps.println(globales.dcd[i][j].getValue(0,k));
                     }
