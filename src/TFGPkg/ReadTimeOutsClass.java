@@ -33,15 +33,6 @@ public class ReadTimeOutsClass implements globales{
     }
 
     public void consultaReadTimeOuts (String AtrConsultar) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
-        System.out.println("parametro Read TimeOuts");
-        String[] parts = AtrConsultar.split(",");
-        for (String part : parts) {
-            System.out.println(ReadTimeOutsAtributes[Integer.parseInt(part)].getName() + " : "
-                    + MC.getAttribute(urlReadTimeOuts, ReadTimeOutsAtributes[Integer.parseInt(part)].getName()));
-        }
-        System.out.println("---------------------------------");
-
-        //------------------------------------
 
         String[] attrSeparats = AtrConsultar.split(",");
         String[] nameAttrSeparats = globales.attrNames[8].split(",");

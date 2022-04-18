@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.sql.Timestamp;
+import java.util.Arrays;
 
 public class InterfazGrafica extends JFrame implements globales{
     private JPanel mainPanel;
@@ -274,7 +275,7 @@ public class InterfazGrafica extends JFrame implements globales{
     private JLabel CurrentTSRTO;
     private JLabel InitialTSRTO;
 
-    private boolean[][] creada = {{false}, //AllMemtablesHeapSize
+    private Boolean[][] creada = {{false}, //AllMemtablesHeapSize
             {false}, //CompletedTasks
             {false}, //Exceptions
             {false}, //KeyCacheHitRate
@@ -2485,7 +2486,73 @@ public class InterfazGrafica extends JFrame implements globales{
         }
         PrintStream ps = new PrintStream(os);
         for (int i = 0;  i < globales.dcd.length; i++) {
-            ps.println("-------------parametre"+i+"---------------");
+            if (Arrays.stream(creada[i]).anyMatch(k -> k == true)) {
+                switch (i) {
+                    case 0:
+                        ps.println("-------------Parameter AllMemtableHeapSize---------------");
+                        break;
+                    case 1:
+                        ps.println("-------------Parameter CompletedTasks--------------------");
+                        break;
+                    case 2:
+                        ps.println("-------------Parameter Exceptions------------------------");
+                        break;
+                    case 3:
+                        ps.println("-------------Parameter KeyCacheHitRate-------------------");
+                        break;
+                    case 4:
+                        ps.println("-------------Parameter KeyChacheHits---------------------");
+                        break;
+                    case 5:
+                        ps.println("-------------Parameter KeyCacheMisses--------------------");
+                        break;
+                    case 6:
+                        ps.println("-------------Parameter KeyCacherequests------------------");
+                        break;
+                    case 7:
+                        ps.println("-------------Parameter ReadLatency-----------------------");
+                        break;
+                    case 8:
+                        ps.println("-------------Parameter ReadTimeOuts----------------------");
+                        break;
+                    case 9:
+                        ps.println("-------------Parameter ReadTotalLatency------------------");
+                        break;
+                    case 10:
+                        ps.println("-------------Parameter ReadUnavailables------------------");
+                        break;
+                    case 11:
+                        ps.println("-------------Parameter RowCacheHitRate-------------------");
+                        break;
+                    case 12:
+                        ps.println("-------------Parameter RowCacheHits----------------------");
+                        break;
+                    case 13:
+                        ps.println("-------------Parameter RowCacheMisses--------------------");
+                        break;
+                    case 14:
+                        ps.println("-------------Parameter RowCacheRequests------------------");
+                        break;
+                    case 15:
+                        ps.println("-------------Parameter TotalDiskSpaceUsed----------------");
+                        break;
+                    case 16:
+                        ps.println("-------------Parameter WriteLatency----------------------");
+                        break;
+                    case 17:
+                        ps.println("-------------Parameter WriteTimeOuts---------------------");
+                        break;
+                    case 18:
+                        ps.println("-------------Parameter WriteTotalLatency-----------------");
+                        break;
+                    case 19:
+                        ps.println("-------------Parameter WriteUnavailables-----------------");
+                        break;
+                    default:
+                        break;
+                }
+
+            }
             for (int j = 0; j < globales.dcd[i].length; j++) {
                 if (creada[i][j]) {
                     ps.println("-------------atribut"+j+"---------------");

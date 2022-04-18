@@ -34,15 +34,6 @@ public class WriteLatencyClass implements globales{
     }
 
     public void consultaWriteLatency (String AtrConsultar) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
-        System.out.println("parametro Write Latency");
-        String[] parts = AtrConsultar.split(",");
-        for (String part : parts) {
-            System.out.println(WriteLatencyAtributes[Integer.parseInt(part)].getName() + " : "
-                    + MC.getAttribute(urlWriteLatency, WriteLatencyAtributes[Integer.parseInt(part)].getName()));
-        }
-        System.out.println("---------------------------------");
-
-        //------------------------------------
 
         String[] attrSeparats = AtrConsultar.split(",");
         String[] nameAttrSeparats = globales.attrNames[16].split(",");

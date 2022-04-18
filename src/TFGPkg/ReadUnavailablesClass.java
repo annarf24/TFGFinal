@@ -33,15 +33,6 @@ public class ReadUnavailablesClass implements globales{
     }
 
     public void consultaReadUnavailables (String AtrConsultar) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
-        System.out.println("parametro Read Unavailables");
-        String[] parts = AtrConsultar.split(",");
-        for (String part : parts) {
-            System.out.println(ReadUnavailablesAtributes[Integer.parseInt(part)].getName() + " : "
-                    + MC.getAttribute(urlReadUnavailables, ReadUnavailablesAtributes[Integer.parseInt(part)].getName()));
-        }
-        System.out.println("---------------------------------");
-
-        //------------------------------------
 
         String[] attrSeparats = AtrConsultar.split(",");
         String[] nameAttrSeparats = globales.attrNames[10].split(",");

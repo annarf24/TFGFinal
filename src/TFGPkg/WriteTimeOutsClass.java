@@ -33,15 +33,6 @@ public class WriteTimeOutsClass implements globales{
     }
 
     public void consultaWriteTimeOuts (String AtrConsultar) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
-        System.out.println("parametro Write TimeOuts");
-        String[] parts = AtrConsultar.split(",");
-        for (String part : parts) {
-            System.out.println(WriteTimeOutsAtributes[Integer.parseInt(part)].getName() + " : "
-                    + MC.getAttribute(urlWriteTimeOuts, WriteTimeOutsAtributes[Integer.parseInt(part)].getName()));
-        }
-        System.out.println("---------------------------------");
-
-        //------------------------------------
 
         String[] attrSeparats = AtrConsultar.split(",");
         String[] nameAttrSeparats = globales.attrNames[17].split(",");

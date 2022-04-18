@@ -33,15 +33,6 @@ public class KeyCacheRequestsClass implements globales{
     }
 
     public void consultaKeyCacheRequests (String AtrConsultar) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
-        System.out.println("parametro KeyCache Requests");
-        String[] parts = AtrConsultar.split(",");
-        for (String part : parts) {
-            System.out.println(KeyCacheRequestsAtributes[Integer.parseInt(part)].getName() + " : "
-                    + MC.getAttribute(urlKeyCacheRequests, KeyCacheRequestsAtributes[Integer.parseInt(part)].getName()));
-        }
-        System.out.println("---------------------------------");
-
-        //------------------------------------
 
         String[] attrSeparats = AtrConsultar.split(",");
         String[] nameAttrSeparats = globales.attrNames[6].split(",");

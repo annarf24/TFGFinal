@@ -33,15 +33,6 @@ public class TotalDiskSpaceUsedClass implements globales{
     }
 
     public void consultaTotalDiskSpaceUsed (String AtrConsultar) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
-        System.out.println("parametro TotalDiskSpaceUsed");
-        String[] parts = AtrConsultar.split(",");
-        for (String part : parts) {
-            System.out.println(TotalDiskSpaceUsedAtributes[Integer.parseInt(part)].getName() + " : "
-                    + MC.getAttribute(urlTotalDiskSpaceUsed, TotalDiskSpaceUsedAtributes[Integer.parseInt(part)].getName()));
-        }
-        System.out.println("---------------------------------");
-
-        //------------------------------------
 
         String[] attrSeparats = AtrConsultar.split(",");
         String[] nameAttrSeparats = globales.attrNames[15].split(",");

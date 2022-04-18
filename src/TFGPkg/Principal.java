@@ -270,7 +270,7 @@ public class Principal extends JFrame implements globales{
 
         InterfazGrafica frame = new InterfazGrafica("Consultor de rendimiento de Cassandra");
         frame.setVisible(true);
-
+        
         //aquest bucle consulta per cada parametre seleccionat al YAML, el valor de cada atributo seleccionat al YAML
         //i processat al bucle anterior, i li passa els valors a la interfície gràfica perque pugui crear
         // les gràfiques i actualitzar l'etiqueta de valor actual. Està separat de l'anterior para poder posar

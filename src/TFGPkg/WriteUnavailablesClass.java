@@ -33,15 +33,6 @@ public class WriteUnavailablesClass implements globales{
     }
 
     public void consultaWriteUnavailables (String AtrConsultar) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
-        System.out.println("parametro Write Unavailables");
-        String[] parts = AtrConsultar.split(",");
-        for (String part : parts) {
-            System.out.println(WriteUnavailablesAtributes[Integer.parseInt(part)].getName() + " : "
-                    + MC.getAttribute(urlWriteUnavailables, WriteUnavailablesAtributes[Integer.parseInt(part)].getName()));
-        }
-        System.out.println("---------------------------------");
-
-        //------------------------------------
 
         String[] attrSeparats = AtrConsultar.split(",");
         String[] nameAttrSeparats = globales.attrNames[19].split(",");

@@ -33,15 +33,6 @@ public class KeyCacheHitRateClass implements globales {
     }
 
     public void consultaKeyCacheHitRate(String AtrConsultar) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
-        System.out.println("parametro KeyCache HitRate");
-        String[] parts = AtrConsultar.split(",");
-        for (String part : parts) {
-            System.out.println(KeyCacheHitRateAtributes[Integer.parseInt(part)].getName() + " : "
-                    + MC.getAttribute(urlKeyCacheHitRate, KeyCacheHitRateAtributes[Integer.parseInt(part)].getName()));
-        }
-        System.out.println("---------------------------------");
-
-        //------------------------------------
 
         String[] attrSeparats = AtrConsultar.split(",");
         String[] nameAttrSeparats = globales.attrNames[3].split(",");

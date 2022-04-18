@@ -33,15 +33,6 @@ public class ReadTotalLatencyClass implements globales{
 
     }
     public void consultaReadTotalLatency (String AtrConsultar) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
-        System.out.println("parametro Read TotalLatency");
-        String[] parts = AtrConsultar.split(",");
-        for (String part : parts) {
-            System.out.println(ReadTotalLatencyAtributes[Integer.parseInt(part)].getName() + " : "
-                    + MC.getAttribute(urlReadTotalLatency, ReadTotalLatencyAtributes[Integer.parseInt(part)].getName()));
-        }
-        System.out.println("---------------------------------");
-
-        //------------------------------------
 
         String[] attrSeparats = AtrConsultar.split(",");
         String[] nameAttrSeparats = globales.attrNames[9].split(",");

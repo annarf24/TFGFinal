@@ -33,15 +33,6 @@ public class CompletedTasksClass implements globales{
     }
 
     public void consultaCompletedTasks (String AtrConsultar) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
-        System.out.println("parametro CompletedTasks");
-        String[] parts = AtrConsultar.split(",");
-        for (String part : parts) {
-            System.out.println(CompletedTasksAtributes[Integer.parseInt(part)].getName() + " : "
-                    + MC.getAttribute(urlCompletedTasks, CompletedTasksAtributes[Integer.parseInt(part)].getName()));
-        }
-        System.out.println("---------------------------------");
-
-        //------------------------------------
 
         String[] attrSeparats = AtrConsultar.split(",");
         String[] nameAttrSeparats = globales.attrNames[1].split(",");

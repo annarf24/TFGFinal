@@ -33,15 +33,6 @@ public class RowCacheHitsClass implements globales{
     }
 
     public void consultaRowCacheHits (String AtrConsultar) throws ReflectionException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, IOException {
-        System.out.println("parametro RowCache Hits");
-        String[] parts = AtrConsultar.split(",");
-        for (String part : parts) {
-            System.out.println(RowCacheHitsAtributes[Integer.parseInt(part)].getName() + " : "
-                    + MC.getAttribute(urlRowCacheHits, RowCacheHitsAtributes[Integer.parseInt(part)].getName()));
-        }
-        System.out.println("---------------------------------");
-
-        //------------------------------------
 
         String[] attrSeparats = AtrConsultar.split(",");
         String[] nameAttrSeparats = globales.attrNames[12].split(",");
