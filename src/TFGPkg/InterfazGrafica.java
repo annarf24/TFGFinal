@@ -1844,7 +1844,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[0].split(",");
-                ps.println("Valores del atributo " + comboBoxAMHS.getSelectedItem());
+                ps.println("Atribute " + comboBoxAMHS.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[0][Integer.parseInt(IndexAttr[gNum[0]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[0][Integer.parseInt(IndexAttr[gNum[0]])].getValue(0,i));
                 }
@@ -1864,7 +1864,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[1].split(",");
-                ps.println("Valores del atributo " + comboBoxCT.getSelectedItem());
+                ps.println("Atribute " + comboBoxCT.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[1][Integer.parseInt(IndexAttr[gNum[1]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[1][Integer.parseInt(IndexAttr[gNum[1]])].getValue(0,i));
                 }
@@ -1884,7 +1884,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[2].split(",");
-                ps.println("Valores del atributo " + comboBoxE.getSelectedItem());
+                ps.println("Atribute " + comboBoxE.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[2][Integer.parseInt(IndexAttr[gNum[2]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[2][Integer.parseInt(IndexAttr[gNum[2]])].getValue(0,i));
                 }
@@ -1904,7 +1904,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[3].split(",");
-                ps.println("Valores del atributo " + comboBoxKCHR.getSelectedItem());
+                ps.println("Atribute " + comboBoxKCHR.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[3][Integer.parseInt(IndexAttr[gNum[3]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[3][Integer.parseInt(IndexAttr[gNum[3]])].getValue(0,i));
                 }
@@ -1925,7 +1925,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[4].split(",");
-                ps.println("Valores del atributo " + comboBoxKCH.getSelectedItem());
+                ps.println("Atribute " + comboBoxKCH.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[4][Integer.parseInt(IndexAttr[gNum[4]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[4][Integer.parseInt(IndexAttr[gNum[4]])].getValue(0,i));
                 }
@@ -1946,7 +1946,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[5].split(",");
-                ps.println("Valores del atributo " + comboBoxKCM.getSelectedItem());
+                ps.println("Atribute " + comboBoxKCM.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[5][Integer.parseInt(IndexAttr[gNum[5]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[5][Integer.parseInt(IndexAttr[gNum[5]])].getValue(0,i));
                 }
@@ -1967,7 +1967,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[6].split(",");
-                ps.println("Valores del atributo " + comboBoxKCR.getSelectedItem());
+                ps.println("Atribute " + comboBoxKCR.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[6][Integer.parseInt(IndexAttr[gNum[6]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[6][Integer.parseInt(IndexAttr[gNum[6]])].getValue(0,i));
                 }
@@ -1987,7 +1987,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[7].split(",");
-                ps.println("Valores del atributo " + comboBoxRL.getSelectedItem());
+                ps.println("Atribute " + comboBoxRL.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[7][Integer.parseInt(IndexAttr[gNum[7]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[7][Integer.parseInt(IndexAttr[gNum[7]])].getValue(0,i));
                 }
@@ -2007,7 +2007,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[8].split(",");
-                ps.println("Valores del atributo " + comboBoxRTO.getSelectedItem());
+                ps.println("Atribute " + comboBoxRTO.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[8][Integer.parseInt(IndexAttr[gNum[8]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[8][Integer.parseInt(IndexAttr[gNum[8]])].getValue(0,i));
                 }
@@ -2027,7 +2027,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[9].split(",");
-                ps.println("Valores del atributo " + comboBoxRTL.getSelectedItem());
+                ps.println("Atribute " + comboBoxRTL.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[9][Integer.parseInt(IndexAttr[gNum[9]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[9][Integer.parseInt(IndexAttr[gNum[9]])].getValue(0,i));
                 }
@@ -2047,7 +2047,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[10].split(",");
-                ps.println("Valores del atributo " + comboBoxRU.getSelectedItem());
+                ps.println("Atribute " + comboBoxRU.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[10][Integer.parseInt(IndexAttr[gNum[10]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[10][Integer.parseInt(IndexAttr[gNum[10]])].getValue(0,i));
                 }
@@ -2067,7 +2067,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[11].split(",");
-                ps.println("Valores del atributo " + comboBoxRCHR.getSelectedItem());
+                ps.println("Atribute " + comboBoxRCHR.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[11][Integer.parseInt(IndexAttr[gNum[11]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[11][Integer.parseInt(IndexAttr[gNum[11]])].getValue(0,i));
                 }
@@ -2087,7 +2087,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[12].split(",");
-                ps.println("Valores del atributo " + comboBoxRCH.getSelectedItem());
+                ps.println("Atribute  " + comboBoxRCH.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[12][Integer.parseInt(IndexAttr[gNum[12]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[12][Integer.parseInt(IndexAttr[gNum[12]])].getValue(0,i));
                 }
@@ -2107,7 +2107,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[13].split(",");
-                ps.println("Valores del atributo " + comboBoxRCM.getSelectedItem());
+                ps.println("Atribute " + comboBoxRCM.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[13][Integer.parseInt(IndexAttr[gNum[13]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[13][Integer.parseInt(IndexAttr[gNum[13]])].getValue(0,i));
                 }
@@ -2127,7 +2127,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[14].split(",");
-                ps.println("Valores del atributo " + comboBoxRCR.getSelectedItem());
+                ps.println("Atribute " + comboBoxRCR.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[14][Integer.parseInt(IndexAttr[gNum[14]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[14][Integer.parseInt(IndexAttr[gNum[14]])].getValue(0,i));
                 }
@@ -2147,7 +2147,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[15].split(",");
-                ps.println("Valores del atributo " + comboBoxTDSU.getSelectedItem());
+                ps.println("Atribute " + comboBoxTDSU.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[15][Integer.parseInt(IndexAttr[gNum[15]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[15][Integer.parseInt(IndexAttr[gNum[15]])].getValue(0,i));
                 }
@@ -2167,7 +2167,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[16].split(",");
-                ps.println("Valores del atributo " + comboBoxWL.getSelectedItem());
+                ps.println("Atribute  " + comboBoxWL.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[16][Integer.parseInt(IndexAttr[gNum[16]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[16][Integer.parseInt(IndexAttr[gNum[16]])].getValue(0,i));
                 }
@@ -2187,7 +2187,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[17].split(",");
-                ps.println("Valores del atributo " + comboBoxWTO.getSelectedItem());
+                ps.println("Atribute " + comboBoxWTO.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[17][Integer.parseInt(IndexAttr[gNum[17]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[17][Integer.parseInt(IndexAttr[gNum[17]])].getValue(0,i));
                 }
@@ -2206,7 +2206,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[18].split(",");
-                ps.println("Valores del atributo " + comboBoxWTL.getSelectedItem());
+                ps.println("Atribute " + comboBoxWTL.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[18][Integer.parseInt(IndexAttr[gNum[18]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[18][Integer.parseInt(IndexAttr[gNum[18]])].getValue(0,i));
                 }
@@ -2226,7 +2226,7 @@ public class InterfazGrafica extends JFrame implements globales{
                 }
                 PrintStream ps = new PrintStream(os);
                 String[] IndexAttr = globales.attr[19].split(",");
-                ps.println("Valores del atributo " + comboBoxWU.getSelectedItem());
+                ps.println("Atribute " + comboBoxWU.getSelectedItem() + " values");
                 for(int i = 0; i < globales.dcd[19][Integer.parseInt(IndexAttr[gNum[19]])].getColumnCount(); i++) {
                     ps.println(globales.dcd[19][Integer.parseInt(IndexAttr[gNum[19]])].getValue(0,i));
                 }
