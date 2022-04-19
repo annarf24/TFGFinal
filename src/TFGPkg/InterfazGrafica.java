@@ -275,7 +275,29 @@ public class InterfazGrafica extends JFrame implements globales{
     private JLabel CurrentTSRTO;
     private JLabel InitialTSRTO;
 
-    private Boolean[][] creada = {{false}, //AllMemtablesHeapSize
+    private Boolean[][] creadaData = {{false}, //AllMemtablesHeapSize
+            {false}, //CompletedTasks
+            {false}, //Exceptions
+            {false}, //KeyCacheHitRate
+            {false, false, false, false, false, false}, //KeyCacheHits
+            {false, false, false, false, false, false}, //KeyCacheMisses
+            {false, false, false, false, false, false}, //KeyCacheRequests
+            {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false}, //ReadLatency
+            {false, false, false, false, false, false}, //ReadTimeouts
+            {false}, //ReadTotalLatency
+            {false, false, false, false, false, false}, //ReadUnavailabes
+            {false}, //RowCahceHitRate
+            {false, false, false, false, false, false}, //RowCacheHits
+            {false, false, false, false, false, false}, //RowCacheMisses
+            {false, false, false, false, false, false}, //RowCacheRequests
+            {false}, //TotalDiskSpaceUsed
+            {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false}, //WriteLatency
+            {false, false, false, false, false, false}, //WriteTimeouts
+            {false}, //WriteTotalLatency
+            {false, false, false, false, false, false}, //WriteUnavailabes
+    };
+
+    private Boolean[][] creadaChart = {{false}, //AllMemtablesHeapSize
             {false}, //CompletedTasks
             {false}, //Exceptions
             {false}, //KeyCacheHitRate
@@ -592,7 +614,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[0].split(",");
                 gNum[0] = comboBoxAMHS.getSelectedIndex();
-                creada[0][Integer.parseInt(IndexAttr[gNum[0]])] = true;
+                creadaData[0][Integer.parseInt(IndexAttr[gNum[0]])] = true;
+                creadaChart[0][gNum[0]] = true;
                 GraficaAMHS.removeAll();
 
                 if(globales.ValAct[0][gNum[0]].contains("E")) {
@@ -624,7 +647,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[1].split(",");
                 gNum[1] = comboBoxCT.getSelectedIndex();
-                creada[1][Integer.parseInt(IndexAttr[gNum[1]])] = true;
+                creadaData[1][Integer.parseInt(IndexAttr[gNum[1]])] = true;
+                creadaChart[1][gNum[1]] = true;
                 GraficaCT.removeAll();
 
                 if(globales.ValAct[1][gNum[1]].contains("E")) {
@@ -653,7 +677,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[2].split(",");
                 gNum[2] = comboBoxE.getSelectedIndex();
-                creada[2][Integer.parseInt(IndexAttr[gNum[2]])] = true;
+                creadaData[2][Integer.parseInt(IndexAttr[gNum[2]])] = true;
+                creadaChart[2][gNum[2]] = true;
                 GraficaE.removeAll();
 
                 if(globales.ValAct[2][gNum[2]].contains("E")) {
@@ -682,7 +707,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[3].split(",");
                 gNum[3] = comboBoxKCHR.getSelectedIndex();
-                creada[3][Integer.parseInt(IndexAttr[gNum[3]])] = true;
+                creadaData[3][Integer.parseInt(IndexAttr[gNum[3]])] = true;
+                creadaChart[3][gNum[3]] = true;
                 GraficaKCHR.removeAll();
 
                 if(globales.ValAct[3][gNum[3]].contains("E")) {
@@ -712,7 +738,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[4].split(",");
                 gNum[4] = comboBoxKCH.getSelectedIndex();
-                creada[4][Integer.parseInt(IndexAttr[gNum[4]])] = true;
+                creadaData[4][Integer.parseInt(IndexAttr[gNum[4]])] = true;
+                creadaChart[4][gNum[4]] = true;
                 GraficaKCH.removeAll();
 
                 if(globales.ValAct[4][gNum[4]].contains("E")) {
@@ -741,7 +768,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[5].split(",");
                 gNum[5] = comboBoxKCM.getSelectedIndex();
-                creada[5][Integer.parseInt(IndexAttr[gNum[5]])] = true;
+                creadaData[5][Integer.parseInt(IndexAttr[gNum[5]])] = true;
+                creadaChart[5][gNum[5]] = true;
                 GraficaKCM.removeAll();
                 if(globales.ValAct[5][gNum[5]].contains("E")) {
                     String[] partes = globales.ValAct[5][gNum[5]].split("E");
@@ -769,7 +797,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[6].split(",");
                 gNum[6] = comboBoxKCR.getSelectedIndex();
-                creada[6][Integer.parseInt(IndexAttr[gNum[6]])] = true;
+                creadaData[6][Integer.parseInt(IndexAttr[gNum[6]])] = true;
+                creadaChart[6][gNum[6]] = true;
                 GraficaKCR.removeAll();
 
                 if(globales.ValAct[6][gNum[6]].contains("E")) {
@@ -799,7 +828,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[7].split(",");
                 gNum[7] = comboBoxRL.getSelectedIndex();
-                creada[7][Integer.parseInt(IndexAttr[gNum[7]])] = true;
+                creadaData[7][Integer.parseInt(IndexAttr[gNum[7]])] = true;
+                creadaChart[7][gNum[7]] = true;
                 GraficaRL.removeAll();
 
                 if(globales.ValAct[7][gNum[7]].contains("E")) {
@@ -829,7 +859,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[8].split(",");
                 gNum[8] = comboBoxRTO.getSelectedIndex();
-                creada[8][Integer.parseInt(IndexAttr[gNum[8]])] = true;
+                creadaData[8][Integer.parseInt(IndexAttr[gNum[8]])] = true;
+                creadaChart[8][gNum[8]] = true;
                 GraficaRTO.removeAll();
 
                 if(globales.ValAct[8][gNum[8]].contains("E")) {
@@ -859,7 +890,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[9].split(",");
                 gNum[9] = comboBoxRTL.getSelectedIndex();
-                creada[9][Integer.parseInt(IndexAttr[gNum[9]])] = true;
+                creadaData[9][Integer.parseInt(IndexAttr[gNum[9]])] = true;
+                creadaChart[9][gNum[9]] = true;
                 GraficaRTL.removeAll();
 
                 if(globales.ValAct[9][gNum[9]].contains("E")) {
@@ -888,7 +920,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[10].split(",");
                 gNum[10] = comboBoxRU.getSelectedIndex();
-                creada[10][Integer.parseInt(IndexAttr[gNum[10]])] = true;
+                creadaData[10][Integer.parseInt(IndexAttr[gNum[10]])] = true;
+                creadaChart[10][gNum[10]] = true;
                 GraficaRU.removeAll();
 
                 if(globales.ValAct[10][gNum[10]].contains("E")) {
@@ -917,7 +950,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[11].split(",");
                 gNum[11] = comboBoxRCHR.getSelectedIndex();
-                creada[11][Integer.parseInt(IndexAttr[gNum[11]])] = true;
+                creadaData[11][Integer.parseInt(IndexAttr[gNum[11]])] = true;
+                creadaChart[11][gNum[11]] = true;
                 GraficaRCHR.removeAll();
 
                 if(globales.ValAct[11][gNum[11]].contains("E")) {
@@ -946,7 +980,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[12].split(",");
                 gNum[12] = comboBoxRCH.getSelectedIndex();
-                creada[12][Integer.parseInt(IndexAttr[gNum[12]])] = true;
+                creadaData[12][Integer.parseInt(IndexAttr[gNum[12]])] = true;
+                creadaChart[12][gNum[12]] = true;
                 GraficaRCH.removeAll();
 
                 if(globales.ValAct[12][gNum[12]].contains("E")) {
@@ -975,7 +1010,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[13].split(",");
                 gNum[13] = comboBoxRCM.getSelectedIndex();
-                creada[13][Integer.parseInt(IndexAttr[gNum[13]])] = true;
+                creadaData[13][Integer.parseInt(IndexAttr[gNum[13]])] = true;
+                creadaChart[13][gNum[13]] = true;
                 GraficaRCM.removeAll();
 
                 if(globales.ValAct[13][gNum[13]].contains("E")) {
@@ -1004,7 +1040,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[14].split(",");
                 gNum[14] = comboBoxRCR.getSelectedIndex();
-                creada[14][Integer.parseInt(IndexAttr[gNum[14]])] = true;
+                creadaData[14][Integer.parseInt(IndexAttr[gNum[14]])] = true;
+                creadaChart[14][gNum[14]] = true;
                 GraficaRCR.removeAll();
 
                 if(globales.ValAct[14][gNum[14]].contains("E")) {
@@ -1034,7 +1071,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[15].split(",");
                 gNum[15] = comboBoxTDSU.getSelectedIndex();
-                creada[15][Integer.parseInt(IndexAttr[gNum[15]])] = true;
+                creadaData[15][Integer.parseInt(IndexAttr[gNum[15]])] = true;
+                creadaChart[15][gNum[15]] = true;
                 GraficaTDSU.removeAll();
 
                 if(globales.ValAct[15][gNum[15]].contains("E")) {
@@ -1063,7 +1101,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[16].split(",");
                 gNum[16] = comboBoxWL.getSelectedIndex();
-                creada[16][Integer.parseInt(IndexAttr[gNum[16]])] = true;
+                creadaData[16][Integer.parseInt(IndexAttr[gNum[16]])] = true;
+                creadaChart[16][gNum[16]] = true;
                 GraficaWL.removeAll();
 
                 if(globales.ValAct[16][gNum[16]].contains("E")) {
@@ -1092,7 +1131,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[17].split(",");
                 gNum[17] = comboBoxWTO.getSelectedIndex();
-                creada[17][Integer.parseInt(IndexAttr[gNum[17]])] = true;
+                creadaData[17][Integer.parseInt(IndexAttr[gNum[17]])] = true;
+                creadaChart[17][gNum[17]] = true;
                 GraficaWTO.removeAll();
 
                 if(globales.ValAct[17][gNum[17]].contains("E")) {
@@ -1121,7 +1161,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[18].split(",");
                 gNum[18] = comboBoxWTL.getSelectedIndex();
-                creada[18][Integer.parseInt(IndexAttr[gNum[18]])] = true;
+                creadaData[18][Integer.parseInt(IndexAttr[gNum[18]])] = true;
+                creadaChart[18][gNum[18]] = true;
                 GraficaWTL.removeAll();
 
                 if(globales.ValAct[18][gNum[18]].contains("E")) {
@@ -1150,7 +1191,8 @@ public class InterfazGrafica extends JFrame implements globales{
             public void actionPerformed(ActionEvent e) {
                 String[] IndexAttr = globales.attr[19].split(",");
                 gNum[19] = comboBoxWU.getSelectedIndex();
-                creada[19][Integer.parseInt(IndexAttr[gNum[19]])] = true;
+                creadaData[19][Integer.parseInt(IndexAttr[gNum[19]])] = true;
+                creadaChart[19][gNum[19]] = true;
                 GraficaWU.removeAll();
 
                 if(globales.ValAct[19][gNum[19]].contains("E")) {
@@ -2538,20 +2580,89 @@ public class InterfazGrafica extends JFrame implements globales{
         return ret;
     }
 
-    //FALTA FER QUE EL NOM DE L'ARXIU SIGUI PARAMETRE+ATRIBUT+TIMESTAMP
-    public void SaveAllCharts( JFreeChart[][] jchart) {
-        for (int i = 0; i < jchart.length; i++) {
+    //funció que guarda un .png per  cada gràfica que s'ha consultat al llarg de l'execució, aquest .png reb el nom del
+    //paràmetre + identificador de gràfica + un time stamp del moment de guardat. Els .png es guarden a la carpeta on s'ha iniciat
+    //el programa
+    public void SaveAllCharts( JFreeChart[][] jchartP) {
+        Long datatimeE = System.currentTimeMillis();
+        Timestamp timeE = new Timestamp(datatimeE);
+        for (int i = 0; i < globales.dcd.length; i++) {
             int k = 0;
-            for (int j = 0; j < jchart[i].length; j++) {
-                    if (creada[i][j]) {
+            for (int j = 0; j < globales.dcd[i].length; j++) {
+                    if (creadaChart[i][j]) {
                         ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                        File f = new File("Grafica_"+i+"_"+j+".png" );
-                        k++;
+                        File f;
+                        switch (i) {
+                            case 0:
+                                f = new File("AllMemtableHeapSize_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 1:
+                                f = new File("CompletedTasks_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 2:
+                                f = new File("Exceptions_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 3:
+                                f = new File("KeyCacheHitRate_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 4:
+                                f = new File("KeyCacheHits_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 5:
+                                f = new File("KeyCacheMisses_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 6:
+                                f = new File("KeyCacheRequests_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 7:
+                                f = new File("ReadLatency_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 8:
+                                f = new File("ReadTimeOuts_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 9:
+                                f = new File("ReadTotalLatency_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 10:
+                                f = new File("ReadUnavailables_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 11:
+                                f = new File("RowCacheHitRate_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 12:
+                                f = new File("RowCacheHits_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 13:
+                                f = new File("RowCacheMisses_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 14:
+                                f = new File("RowCacheRequests_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 15:
+                                f = new File("TotalDiskSpaceUsed_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 16:
+                                f = new File("WriteLatency_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 17:
+                                f = new File("WriteTimeOuts_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 18:
+                                f = new File("WriteTotalLatency_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            case 19:
+                                f = new File("WriteUnavailables_Chart"+k+"_"+ timeE +".png");
+                                break;
+                            default:
+                                f = new File ("error.png");
+                                break;
+                        }
                         try {
-                            ChartUtilities.saveChartAsPNG(f, jchart[i][j], 400, 400, info);
+                            ChartUtilities.saveChartAsPNG(f, jchartP[i][j], 400, 400, info);
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }
+                        k++;
                     }
             }
         }
@@ -2573,7 +2684,7 @@ public class InterfazGrafica extends JFrame implements globales{
         }
         PrintStream ps = new PrintStream(os);
         for (int i = 0;  i < globales.dcd.length; i++) {
-            if (Arrays.stream(creada[i]).anyMatch(k -> k == true)) {
+            if (Arrays.stream(creadaData[i]).anyMatch(k -> k == true)) {
                 switch (i) {
                     case 0:
                         ps.println("-------------Parameter AllMemtableHeapSize---------------");
@@ -2641,7 +2752,7 @@ public class InterfazGrafica extends JFrame implements globales{
 
             }
             for (int j = 0; j < globales.dcd[i].length; j++) {
-                if (creada[i][j]) {
+                if (creadaData[i][j]) {
                     ps.println("********************" + globales.dcd[i][j].getRowKey(0) + "**********************");
                     for (int k = 0; k < globales.dcd[i][j].getColumnCount(); k++) {
                         ps.println(globales.dcd[i][j].getValue(0,k));
