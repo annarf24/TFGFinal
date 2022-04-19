@@ -18,8 +18,8 @@ import java.util.Arrays;
 
 //el programa tiene, una clase por cada parametro que se puede consultar,
 //las clases DataConfig y Parametro que se usan para poder leer el YAML
-//y la clase ... junto con el .form que son para la interfaz gráfica.
-//finalmente tiene la clase LectYAML que es la principal
+//y la clase InterfazGrafica junto con el .form que son para la interfaz gráfica.
+//finalmente tiene la clase Principal que es la principal, osea, la que contiene el main
 
 interface globales {
 
@@ -261,14 +261,14 @@ public class Principal extends JFrame implements globales{
                     break;
 
                 default:
-                    System.out.println(opcion + " no es una opcion");
+                    System.out.println(opcion + "not an option");
                     break;
             }
         }
 
         //creació de la GUI
 
-        InterfazGrafica frame = new InterfazGrafica("Consultor de rendimiento de Cassandra");
+        InterfazGrafica frame = new InterfazGrafica("Cassandra Performance Monitor");
         frame.setVisible(true);
 
         //aquest bucle consulta per cada parametre seleccionat al YAML, el valor de cada atributo seleccionat al YAML
@@ -444,7 +444,7 @@ public class Principal extends JFrame implements globales{
                         break;
 
                     default:
-                        System.out.println("Esta no es una opcion");
+                        System.out.println("not an option");
                         break;
                 }
             }

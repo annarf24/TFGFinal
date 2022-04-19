@@ -597,19 +597,19 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[0][gNum[0]].contains("E")) {
                     String[] partes = globales.ValAct[0][gNum[0]].split("E");
-                    jchart[0][gNum[0]] = ChartFactory.createLineChart("Parametro AllMemtablesHeapSize",
-                            "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[0][gNum[0]] = ChartFactory.createLineChart("AllMemtablesHeapSize Parameter",
+                            "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[0][Integer.parseInt(IndexAttr[gNum[0]])]);
                 }
                 else {
-                    jchart[0][gNum[0]] = ChartFactory.createLineChart("Parametro AllMemtablesHeapSize",
-                            "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[0][gNum[0]] = ChartFactory.createLineChart("AllMemtablesHeapSize Parameter",
+                            "Amount of Data","Attribute Value",
                             globales.dcd[0][Integer.parseInt(IndexAttr[gNum[0]])]);
                 }
 
                 ChartPanel cPanel = new ChartPanel(jchart[0][gNum[0]]);
                 cPanel.setMouseWheelEnabled(true);
-                cPanel.setPreferredSize(new Dimension(960,540));
+                cPanel.setPreferredSize(new Dimension(500,400));
 
                 GraficaAMHS.setLayout(new BorderLayout());
                 GraficaAMHS.add(cPanel, BorderLayout.NORTH);
@@ -629,11 +629,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[1][gNum[1]].contains("E")) {
                     String[] partes = globales.ValAct[1][gNum[1]].split("E");
-                    jchart[1][gNum[1]] = ChartFactory.createLineChart("Parametro CompetedTasks", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[1][gNum[1]] = ChartFactory.createLineChart("CompetedTasks Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[1][Integer.parseInt(IndexAttr[gNum[1]])]);
                 }
                 else {
-                    jchart[1][gNum[1]] = ChartFactory.createLineChart("Parametro CompletedTasks", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[1][gNum[1]] = ChartFactory.createLineChart("CompletedTasks Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[1][Integer.parseInt(IndexAttr[gNum[1]])]);
                 }
 
@@ -658,11 +658,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[2][gNum[2]].contains("E")) {
                     String[] partes = globales.ValAct[2][gNum[2]].split("E");
-                    jchart[2][gNum[2]] = ChartFactory.createLineChart("Parametro Exceptions", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[2][gNum[2]] = ChartFactory.createLineChart("Exceptions Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[2][Integer.parseInt(IndexAttr[gNum[2]])]);
                 }
                 else {
-                    jchart[2][gNum[2]] = ChartFactory.createLineChart("Parametro Exceptions", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[2][gNum[2]] = ChartFactory.createLineChart("Exceptions Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[2][Integer.parseInt(IndexAttr[gNum[2]])]);
                 }
 
@@ -687,11 +687,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[3][gNum[3]].contains("E")) {
                     String[] partes = globales.ValAct[3][gNum[3]].split("E");
-                    jchart[3][gNum[3]] = ChartFactory.createLineChart("Parametro KeyCacheHitRate", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[3][gNum[3]] = ChartFactory.createLineChart("KeyCacheHitRate Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[3][Integer.parseInt(IndexAttr[gNum[3]])]);
                 }
                 else {
-                    jchart[3][gNum[3]] = ChartFactory.createLineChart("Parametro KeyCacheHitRate", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[3][gNum[3]] = ChartFactory.createLineChart("KeyCacheHitRate Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[3][Integer.parseInt(IndexAttr[gNum[3]])]);
                 }
 
@@ -745,11 +745,11 @@ public class InterfazGrafica extends JFrame implements globales{
                 GraficaKCM.removeAll();
                 if(globales.ValAct[5][gNum[5]].contains("E")) {
                     String[] partes = globales.ValAct[5][gNum[5]].split("E");
-                    jchart[5][gNum[5]] = ChartFactory.createLineChart("Parametro KeyCacheMisses", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[5][gNum[5]] = ChartFactory.createLineChart("KeyCacheMisses Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[5][Integer.parseInt(IndexAttr[gNum[5]])]);
                 }
                 else {
-                    jchart[5][gNum[5]] = ChartFactory.createLineChart("Parametro KeyCacheMisses", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[5][gNum[5]] = ChartFactory.createLineChart("KeyCacheMisses Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[5][Integer.parseInt(IndexAttr[gNum[5]])]);
                 }
 
@@ -774,11 +774,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[6][gNum[6]].contains("E")) {
                     String[] partes = globales.ValAct[6][gNum[6]].split("E");
-                    jchart[6][gNum[6]] = ChartFactory.createLineChart("Parametro KeyCacheRequests", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[6][gNum[6]] = ChartFactory.createLineChart("KeyCacheRequests Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[6][Integer.parseInt(IndexAttr[gNum[6]])]);
                 }
                 else {
-                    jchart[6][gNum[6]] = ChartFactory.createLineChart("Parametro KeyCacheRequests", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[6][gNum[6]] = ChartFactory.createLineChart("KeyCacheRequests Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[6][Integer.parseInt(IndexAttr[gNum[6]])]);
                 }
 
@@ -804,11 +804,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[7][gNum[7]].contains("E")) {
                     String[] partes = globales.ValAct[7][gNum[7]].split("E");
-                    jchart[7][gNum[7]] = ChartFactory.createLineChart("Parametro ReadLatency", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[7][gNum[7]] = ChartFactory.createLineChart("ReadLatency Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[7][Integer.parseInt(IndexAttr[gNum[7]])]);
                 }
                 else {
-                    jchart[7][gNum[7]] = ChartFactory.createLineChart("Parametro ReadLatency", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[7][gNum[7]] = ChartFactory.createLineChart("ReadLatency Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[7][Integer.parseInt(IndexAttr[gNum[7]])]);
                 }
 
@@ -834,11 +834,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[8][gNum[8]].contains("E")) {
                     String[] partes = globales.ValAct[8][gNum[8]].split("E");
-                    jchart[8][gNum[8]] = ChartFactory.createLineChart("Parametro ReadTimeOuts", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[8][gNum[8]] = ChartFactory.createLineChart("ReadTimeOuts Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[6][Integer.parseInt(IndexAttr[gNum[8]])]);
                 }
                 else {
-                    jchart[8][gNum[8]] = ChartFactory.createLineChart("Parametro ReadTimeOuts", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[8][gNum[8]] = ChartFactory.createLineChart("ReadTimeOuts Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[8][Integer.parseInt(IndexAttr[gNum[8]])]);
                 }
 
@@ -864,11 +864,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[9][gNum[9]].contains("E")) {
                     String[] partes = globales.ValAct[9][gNum[9]].split("E");
-                    jchart[9][gNum[9]] = ChartFactory.createLineChart("Parametro ReadTotalLatency", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[9][gNum[9]] = ChartFactory.createLineChart("ReadTotalLatency Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[9][Integer.parseInt(IndexAttr[gNum[9]])]);
                 }
                 else {
-                    jchart[9][gNum[9]] = ChartFactory.createLineChart("Parametro ReadTotalLatency", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[9][gNum[9]] = ChartFactory.createLineChart("ReadTotalLatency Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[9][Integer.parseInt(IndexAttr[gNum[9]])]);
                 }
 
@@ -893,11 +893,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[10][gNum[10]].contains("E")) {
                     String[] partes = globales.ValAct[10][gNum[10]].split("E");
-                    jchart[10][gNum[10]] = ChartFactory.createLineChart("Parametro ReadUnavailables", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[10][gNum[10]] = ChartFactory.createLineChart("ReadUnavailables Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[10][Integer.parseInt(IndexAttr[gNum[10]])]);
                 }
                 else {
-                    jchart[10][gNum[10]] = ChartFactory.createLineChart("Parametro ReadUnavailables", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[10][gNum[10]] = ChartFactory.createLineChart("ReadUnavailables Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[10][Integer.parseInt(IndexAttr[gNum[10]])]);
                 }
 
@@ -922,11 +922,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[11][gNum[11]].contains("E")) {
                     String[] partes = globales.ValAct[11][gNum[11]].split("E");
-                    jchart[11][gNum[11]] = ChartFactory.createLineChart("Parametro RowCacheHitRate", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[11][gNum[11]] = ChartFactory.createLineChart("RowCacheHitRate Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[11][Integer.parseInt(IndexAttr[gNum[11]])]);
                 }
                 else {
-                    jchart[11][gNum[11]] = ChartFactory.createLineChart("Parametro RowCacheHitRate", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[11][gNum[11]] = ChartFactory.createLineChart("RowCacheHitRate Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[11][Integer.parseInt(IndexAttr[gNum[11]])]);
                 }
 
@@ -951,11 +951,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[12][gNum[12]].contains("E")) {
                     String[] partes = globales.ValAct[12][gNum[12]].split("E");
-                    jchart[12][gNum[12]] = ChartFactory.createLineChart("Parametro RowCacheHits", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[12][gNum[12]] = ChartFactory.createLineChart("RowCacheHits Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[12][Integer.parseInt(IndexAttr[gNum[12]])]);
                 }
                 else {
-                    jchart[12][gNum[12]] = ChartFactory.createLineChart("Parametro RowCacheHits", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[12][gNum[12]] = ChartFactory.createLineChart("RowCacheHits Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[12][Integer.parseInt(IndexAttr[gNum[12]])]);
                 }
 
@@ -980,11 +980,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[13][gNum[13]].contains("E")) {
                     String[] partes = globales.ValAct[13][gNum[13]].split("E");
-                    jchart[13][gNum[13]] = ChartFactory.createLineChart("Parametro RowCacheMisses", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[13][gNum[13]] = ChartFactory.createLineChart("RowCacheMisses Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[13][Integer.parseInt(IndexAttr[gNum[13]])]);
                 }
                 else {
-                    jchart[13][gNum[13]] = ChartFactory.createLineChart("Parametro RowCacheMisses", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[13][gNum[13]] = ChartFactory.createLineChart("RowCacheMisses Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[13][Integer.parseInt(IndexAttr[gNum[13]])]);
                 }
 
@@ -1009,11 +1009,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[14][gNum[14]].contains("E")) {
                     String[] partes = globales.ValAct[14][gNum[14]].split("E");
-                    jchart[14][gNum[14]] = ChartFactory.createLineChart("Parametro RowCacheRequests", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[14][gNum[14]] = ChartFactory.createLineChart("RowCacheRequests Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[14][Integer.parseInt(IndexAttr[gNum[14]])]);
                 }
                 else {
-                    jchart[14][gNum[14]] = ChartFactory.createLineChart("Parametro RowCacheRequests", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[14][gNum[14]] = ChartFactory.createLineChart("RowCacheRequests Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[14][Integer.parseInt(IndexAttr[gNum[14]])]);
                 }
 
@@ -1039,11 +1039,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[15][gNum[15]].contains("E")) {
                     String[] partes = globales.ValAct[15][gNum[15]].split("E");
-                    jchart[15][gNum[15]] = ChartFactory.createLineChart("Parametro TotalDiskSpaceUsed", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[15][gNum[15]] = ChartFactory.createLineChart("TotalDiskSpaceUsed Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[15][Integer.parseInt(IndexAttr[gNum[15]])]);
                 }
                 else {
-                    jchart[15][gNum[15]] = ChartFactory.createLineChart("Parametro TotalDiskSpaceUsed", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[15][gNum[15]] = ChartFactory.createLineChart("TotalDiskSpaceUsed Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[15][Integer.parseInt(IndexAttr[gNum[15]])]);
                 }
 
@@ -1068,11 +1068,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[16][gNum[16]].contains("E")) {
                     String[] partes = globales.ValAct[16][gNum[16]].split("E");
-                    jchart[16][gNum[16]] = ChartFactory.createLineChart("Parametro WriteLatency", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[16][gNum[16]] = ChartFactory.createLineChart("WriteLatency Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[16][Integer.parseInt(IndexAttr[gNum[16]])]);
                 }
                 else {
-                    jchart[16][gNum[16]] = ChartFactory.createLineChart("Parametro WriteLatency", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[16][gNum[16]] = ChartFactory.createLineChart("WriteLatency Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[16][Integer.parseInt(IndexAttr[gNum[16]])]);
                 }
 
@@ -1097,11 +1097,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[17][gNum[17]].contains("E")) {
                     String[] partes = globales.ValAct[17][gNum[17]].split("E");
-                    jchart[17][gNum[17]] = ChartFactory.createLineChart("Parametro WriteTimeOuts", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[17][gNum[17]] = ChartFactory.createLineChart("WriteTimeOuts Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[17][Integer.parseInt(IndexAttr[gNum[17]])]);
                 }
                 else {
-                    jchart[17][gNum[17]] = ChartFactory.createLineChart("Parametro WriteTimeOuts", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[17][gNum[17]] = ChartFactory.createLineChart("WriteTimeOuts Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[17][Integer.parseInt(IndexAttr[gNum[17]])]);
                 }
 
@@ -1126,11 +1126,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[18][gNum[18]].contains("E")) {
                     String[] partes = globales.ValAct[18][gNum[18]].split("E");
-                    jchart[18][gNum[18]] = ChartFactory.createLineChart("Parametro WriteTotalLatency", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[18][gNum[18]] = ChartFactory.createLineChart("WriteTotalLatency Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[18][Integer.parseInt(IndexAttr[gNum[18]])]);
                 }
                 else {
-                    jchart[18][gNum[18]] = ChartFactory.createLineChart("Parametro WriteTotalLatency", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[18][gNum[18]] = ChartFactory.createLineChart("WriteTotalLatency Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[18][Integer.parseInt(IndexAttr[gNum[18]])]);
                 }
 
@@ -1155,11 +1155,11 @@ public class InterfazGrafica extends JFrame implements globales{
 
                 if(globales.ValAct[19][gNum[19]].contains("E")) {
                     String[] partes = globales.ValAct[19][gNum[19]].split("E");
-                    jchart[19][gNum[19]] = ChartFactory.createLineChart("Parametro WriteUnavailables", "Cantidad de datos recogidos", "Valor del atributo (E" + partes[1] + ")",
+                    jchart[19][gNum[19]] = ChartFactory.createLineChart("WriteUnavailables Parameter", "Amount of Data", "Attribute Value (E" + partes[1] + ")",
                             globales.dcd[19][Integer.parseInt(IndexAttr[gNum[19]])]);
                 }
                 else {
-                    jchart[19][gNum[19]] = ChartFactory.createLineChart("Parametro WriteUnavailables", "Cantidad de datos recogidos","Valor del atributo",
+                    jchart[19][gNum[19]] = ChartFactory.createLineChart("WriteUnavailables Parameter", "Amount of Data","Attribute Value",
                             globales.dcd[19][Integer.parseInt(IndexAttr[gNum[19]])]);
                 }
 
@@ -1365,8 +1365,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonAMHS.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("AllMemtablesHeapSize_"+ comboBoxAMHS.getSelectedItem() + "_Chart.png");
+                File f = new File("AllMemtablesHeapSize_"+ comboBoxAMHS.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[0][gNum[0]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1378,8 +1380,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonCT.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("CompletedTasks_"+comboBoxCT.getSelectedItem() + "_Chart.png");
+                File f = new File("CompletedTasks_"+comboBoxCT.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[1][gNum[1]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1391,8 +1395,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonE.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("Exceptions_"+comboBoxE.getSelectedItem() + "_Chart.png");
+                File f = new File("Exceptions_"+comboBoxE.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[2][gNum[2]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1404,8 +1410,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonKCHR.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("KeyCacheHitRate_"+comboBoxKCHR.getSelectedItem() + "_Chart.png");
+                File f = new File("KeyCacheHitRate_"+comboBoxKCHR.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[3][gNum[3]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1417,8 +1425,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonKCH.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("KeyChacheHits_"+comboBoxKCH.getSelectedItem() + "_Chart.png");
+                File f = new File("KeyChacheHits_"+comboBoxKCH.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[4][gNum[4]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1430,8 +1440,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonKCM.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("KeyCacheMisses_"+comboBoxKCM.getSelectedItem() + "_Chart.png");
+                File f = new File("KeyCacheMisses_"+comboBoxKCM.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[5][gNum[5]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1443,8 +1455,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonKCR.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("KeyCacheRequests_"+comboBoxKCR.getSelectedItem() + "_Chart.png");
+                File f = new File("KeyCacheRequests_"+comboBoxKCR.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[6][gNum[6]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1456,8 +1470,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonRL.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("ReadLatency_"+comboBoxRL.getSelectedItem() + "_Chart.png");
+                File f = new File("ReadLatency_"+comboBoxRL.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[7][gNum[7]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1469,8 +1485,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonRTO.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("ReadTimeOuts_"+comboBoxRTO.getSelectedItem() + "_Chart.png");
+                File f = new File("ReadTimeOuts_"+comboBoxRTO.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[8][gNum[8]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1482,8 +1500,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonRTL.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("ReadUnavailables_"+comboBoxRTL.getSelectedItem() + "_Chart.png");
+                File f = new File("ReadUnavailables_"+comboBoxRTL.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[9][gNum[9]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1495,8 +1515,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonRU.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("RowCacheHitRate_"+comboBoxRU.getSelectedItem() + "_Chart.png");
+                File f = new File("RowCacheHitRate_"+comboBoxRU.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[10][gNum[10]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1508,8 +1530,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonRCHR.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("RowCacheHitRate_"+comboBoxRCHR.getSelectedItem() + "_Chart.png");
+                File f = new File("RowCacheHitRate_"+comboBoxRCHR.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[11][gNum[11]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1521,8 +1545,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonRCH.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("RowCacheHits_"+comboBoxRCH.getSelectedItem() + "_Chart.png");
+                File f = new File("RowCacheHits_"+comboBoxRCH.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[12][gNum[12]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1534,8 +1560,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonRCM.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("RowCacheMisses_"+comboBoxRCM.getSelectedItem() + "_Chart.png");
+                File f = new File("RowCacheMisses_"+comboBoxRCM.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[13][gNum[13]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1547,8 +1575,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonRCR.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("RowCacheRequests_"+comboBoxRCR.getSelectedItem() + "_Chart.png");
+                File f = new File("RowCacheRequests_"+comboBoxRCR.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[14][gNum[14]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1561,8 +1591,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonTDSU.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("TotalDiskSpaceUsed_"+comboBoxTDSU.getSelectedItem() + "_Chart.png");
+                File f = new File("TotalDiskSpaceUsed_"+comboBoxTDSU.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[15][gNum[15]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1574,8 +1606,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonWL.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("WriteLatency_"+comboBoxWL.getSelectedItem() + "_Chart.png");
+                File f = new File("WriteLatency_"+comboBoxWL.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[16][gNum[16]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1587,8 +1621,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonWTO.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("WriteTimeOuts_"+comboBoxWTO.getSelectedItem() + "_Chart.png");
+                File f = new File("WriteTimeOuts_"+comboBoxWTO.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[17][gNum[17]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1600,8 +1636,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonWTL.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("WriteTotalLatency_"+comboBoxWTL.getSelectedItem() + "_Chart.png");
+                File f = new File("WriteTotalLatency_"+comboBoxWTL.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[18][gNum[18]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1613,8 +1651,10 @@ public class InterfazGrafica extends JFrame implements globales{
         SaveButtonWU.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
-                File f = new File("WriteUnavailables_"+comboBoxWU.getSelectedItem() + "_Chart.png");
+                File f = new File("WriteUnavailables_"+comboBoxWU.getSelectedItem() + "_Chart_" + timeE + ".png");
                 try {
                     ChartUtilities.saveChartAsPNG(f, jchart[19][gNum[19]], 400, 400, info);
                 } catch (IOException ex) {
@@ -1752,9 +1792,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonAMHS.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("AllMemtablesHeapSize_" + comboBoxAMHS.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("AllMemtablesHeapSize_" + comboBoxAMHS.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -1770,9 +1812,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonCT.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("CompletedTasks_" + comboBoxCT.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("CompletedTasks_" + comboBoxCT.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -1788,9 +1832,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonE.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("Exceptions_" + comboBoxE.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("Exceptions_" + comboBoxE.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -1806,9 +1852,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonKCHR.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("KeyCacheHitRate_" + comboBoxKCHR.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("KeyCacheHitRate_" + comboBoxKCHR.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -1825,9 +1873,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonKCH.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("KeyCacheHits_" + comboBoxKCH.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("KeyCacheHits_" + comboBoxKCH.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -1844,9 +1894,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonKCM.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("KeyCacheMisses_" + comboBoxKCM.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("KeyCacheMisses_" + comboBoxKCM.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -1863,9 +1915,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonKCR.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("KeyCacheRequests_" + comboBoxKCR.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("KeyCacheRequests_" + comboBoxKCR.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -1881,9 +1935,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonRL.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("ReadLatency_" + comboBoxRL.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("ReadLatency_" + comboBoxRL.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -1899,9 +1955,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonRTO.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("ReadTimeOuts_" + comboBoxRTO.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("ReadTimeOuts_" + comboBoxRTO.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -1917,9 +1975,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonRTL.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("ReadTotalLatency_" + comboBoxRTL.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("ReadTotalLatency_" + comboBoxRTL.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -1935,9 +1995,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonRU.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("ReadUnavailables_" + comboBoxRU.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("ReadUnavailables_" + comboBoxRU.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -1953,9 +2015,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonRCHR.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("RowCacheHitRate_" + comboBoxRCHR.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("RowCacheHitRate_" + comboBoxRCHR.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -1971,9 +2035,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonRCH.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("RowCacheHits_" + comboBoxRCH.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("RowCacheHits_" + comboBoxRCH.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -1989,9 +2055,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonRCM.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("RowCacheMisses_" + comboBoxRCM.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("RowCacheMisses_" + comboBoxRCM.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -2007,9 +2075,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonRCR.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("RowCacheRequests_" + comboBoxRCR.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("RowCacheRequests_" + comboBoxRCR.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -2025,9 +2095,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonTDSU.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("TotalDiskSpaceUsed_" + comboBoxTDSU.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("TotalDiskSpaceUsed_" + comboBoxTDSU.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -2043,9 +2115,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonWL.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("WriteLatency_" + comboBoxWL.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("WriteLatency_" + comboBoxWL.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -2061,9 +2135,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonWTO.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("WriteTimeOuts_" + comboBoxWTO.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("WriteTimeOuts_" + comboBoxWTO.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -2078,9 +2154,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonWTL.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("WriteTotalLatency_" + comboBoxWTL.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("WriteTotalLatency_" + comboBoxWTL.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -2096,9 +2174,11 @@ public class InterfazGrafica extends JFrame implements globales{
         saveCurrentDataButtonWU.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Long datatimeE = System.currentTimeMillis();
+                Timestamp timeE = new Timestamp(datatimeE);
                 FileOutputStream os = null;
                 try {
-                    os = new FileOutputStream("WriteUnavailables_" + comboBoxWU.getSelectedItem() + "_Data.txt");
+                    os = new FileOutputStream("WriteUnavailables_" + comboBoxWU.getSelectedItem() + "_Data_" + timeE + ".txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
