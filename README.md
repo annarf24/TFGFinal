@@ -24,6 +24,6 @@ En cas de voler compilar un mateix es recomana:
    - Finalment anar a  Build --> Build Artifacts --> Build
 L'arxiu jar apareixera a la carpeta out del projecte
 
-(1) https://search.maven.org/search?q=g:org.yaml%20AND%20a:snakeyaml
-(2) https://sourceforge.net/projects/jfreechart/files/ --> Descomprimir --> jfreechart-1.0.19/lib/jcommon-1.0.23.jar
-(3) https://sourceforge.net/projects/jfreechart/files/ --> Descomprimir --> jfreechart-1.0.19/lib/jfreechart-1.0.19.jar
+(1) https://search.maven.org/search?q=g:org.yaml%20AND%20a:snakeyaml .
+(2) https://sourceforge.net/projects/jfreechart/files/ --> Descomprimir --> jfreechart-1.0.19/lib/jcommon-1.0.23.jar .
+(3) https://sourceforge.net/projects/jfreechart/files/ --> Descomprimir --> jfreechart-1.0.19/lib/jfreechart-1.0.19.jar .
