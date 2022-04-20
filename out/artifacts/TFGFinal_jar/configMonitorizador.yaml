@@ -6,8 +6,11 @@ nodos:
 
 
 parametros: 
-#Escollir quins paràmetres monitorejar d'entre els següents i escollir els atributs concrets a monitorejar: (treure el # per escollir-los)
-#Si s'escull el parametre X s'ha de treure el # com a minim del name, num, atributs i almenys el d'un atribut
+#Escollir quins paràmetres monitorejar d'entre els següents i escollir els
+#atributs concrets a monitorejar: (treure el # per escollir-los)
+
+#Si s'escull el parametre X s'ha de treure el # com a minim del
+#name, num, atributs i almenys el d'un atribut
 
   - name: AllMemtablesHeapSize
     num: 1

@@ -2669,8 +2669,8 @@ public class InterfazGrafica extends JFrame implements globales{
 
     }
 
-    //funció que crea un arxiu txt i hi guarda tots els valors numèrics dels atributs que s'han consultat almenys un cop al llarg de l'execució
-    //(només es crida quan s'apreta el botó SaveAllData)
+    //funció que crea un arxiu txt i hi guarda tots els valors numèrics dels atributs que s'han consultat almenys un cop
+    //al llarg de l'execució (només es crida quan s'apreta el botó SaveAllData)
     //l'arxiu resultant consta de separadors amb els noms dels paràmetres i atributs que representen els valors numèrics
     //el nom de l'arxiu txt consta també d'un timestamp del moment en que s'ha creat
     public void saveAllData() {
